@@ -1,0 +1,20 @@
+version 1.2 ( updated 12-23-2013 )
+- Now you can update Elegant Themes in the Dashboard: https://www.elegantthemes.com/members-area/documentation.html#updater
+	* epanel/custom_functions.php
+- Bumped version number
+	* style.css
+
+version 1.1 ( updated 12-11-2013 )
+- Fixed errors with the theme on some servers
+	* et-pagebuilder/et-pagebuilder.php
+- Fixed issues with saving layouts with no modules
+	* et-pagebuilder/js/admin.js
+- Fixed Search Icon bug in Firefox
+	* style.css
+- Fixed the issue with flashing image in the slider with video preloader
+	* functions.php
+	* js/custom.js
+
+version 1.0
+
+- initial release
