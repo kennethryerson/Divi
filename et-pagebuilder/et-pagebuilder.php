@@ -808,6 +808,18 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+ 			<div class="et-pb-option">
+                                <label for="et_pb_auto">Auto: </label>
+                                <div class="et-pb-option-container">
+                                        <select name="et_pb_auto" id="et_pb_auto">
+                                                <option value="off"<%= typeof( et_pb_auto ) !== 'undefined' && 'off' === et_pb_auto ? ' selected="selected"' : '' %>>Auto advance off</option>
+                                                <option value="on"<%= typeof( et_pb_auto ) !== 'undefined' && 'on' === et_pb_auto ? ' selected="selected"' : '' %>>Auto advance on</option>
+                                        </select>
+
+                                        <p class="description">Enabling this option will cause slides to auto advance.</p>
+                                </div> <!-- .et-pb-option-container -->
+                        </div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
