@@ -111,7 +111,7 @@ function et_divi_load_scripts_styles(){
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
-	wp_register_script( 'divi-fitvids', $template_dir . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'divi-fitvids', $template_dir . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'waypoints', $template_dir . '/js/waypoints.min.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'divi-custom-script', $template_dir . '/js/custom.js', array( 'jquery' ), '1.0', true );
 	wp_localize_script( 'divi-custom-script', 'et_custom', array(
@@ -591,9 +591,9 @@ function et_divi_add_customizer_css(){ ?>
 
 		.et_pb_counter_amount, .et_pb_featured_table .et_pb_pricing_heading, .et_pb_pricing_table_button, .comment-reply-link, .form-submit input { background-color: <?php echo esc_html( et_get_option( 'accent_color', '#7EBEC5' ) ); ?>; }
 
-		.woocommerce a.button.alt, .woocommerce-page a.button.alt, .woocommerce button.button.alt, .woocommerce-page button.button.alt, .woocommerce input.button.alt, .woocommerce-page input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce-page #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce-message, .woocommerce-error, .woocommerce-info { background-color: <?php echo esc_html( et_get_option( 'accent_color', '#7EBEC5' ) ); ?> !important; }
+		.woocommerce a.button.alt, .woocommerce-page a.button.alt, .woocommerce button.button.alt, .woocommerce-page button.button.alt, .woocommerce input.button.alt, .woocommerce-page input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce-page #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce-message, .woocommerce-error, .woocommerce-info { background: <?php echo esc_html( et_get_option( 'accent_color', '#7EBEC5' ) ); ?> !important; }
 
-		#et_search_icon:hover, .mobile_menu_bar:before, .footer-widget h4, .et-social-icon a:hover, .et_pb_sum, .et_pb_pricing li a, .et_overlay:before { color: <?php echo esc_html( et_get_option( 'accent_color', '#7EBEC5' ) ); ?>; }
+		#et_search_icon:hover, .mobile_menu_bar:before, .footer-widget h4, .et-social-icon a:hover, .et_pb_sum, .et_pb_pricing li a, .et_overlay:before, .entry-summary p.price ins, .woocommerce div.product span.price, .woocommerce-page div.product span.price, .woocommerce #content div.product span.price, .woocommerce-page #content div.product span.price, .woocommerce div.product p.price, .woocommerce-page div.product p.price, .woocommerce #content div.product p.price, .woocommerce-page #content div.product p.price { color: <?php echo esc_html( et_get_option( 'accent_color', '#7EBEC5' ) ); ?> !important; }
 
 		.woocommerce .star-rating span:before, .woocommerce-page .star-rating span:before { color: <?php echo esc_html( et_get_option( 'accent_color', '#7EBEC5' ) ); ?> !important; }
 
@@ -635,7 +635,7 @@ function et_customizer_color_scheme_class( $body_class ) {
 
 	return $body_class;
 }
-/*add_filter( 'body_class', 'et_customizer_color_scheme_class' );*/
+add_filter( 'body_class', 'et_customizer_color_scheme_class' );
 
 function et_load_google_fonts_scripts() {
 	wp_enqueue_script( 'et_google_fonts', get_template_directory_uri() . '/epanel/google-fonts/et_google_fonts.js', array( 'jquery' ), '1.0', true );
@@ -677,6 +677,15 @@ function et_add_wp_version( $classes ) {
 }
 add_filter( 'body_class', 'et_add_wp_version' );
 add_filter( 'admin_body_class', 'et_add_wp_version' );
+
+function et_fixed_nav_class( $classes ) {
+	if ( 'on' === et_get_option( 'divi_fixed_nav', 'on' ) ) {
+		$classes[] = 'et_fixed_nav';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'et_fixed_nav_class' );
 
 function et_divi_activate_features(){
 	/* activate shortcodes */
@@ -741,6 +750,18 @@ global $pagenow;
 if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' )
 	add_action( 'init', 'et_divi_woocommerce_image_dimensions', 1 );
 
+/**
+ * Default values for WooCommerce images changed in version 1.3
+ * Checks if WooCommerce image dimensions have been updated already.
+ */
+function et_divi_check_woocommerce_images() {
+	if ( 'checked' === et_get_option( 'divi_1_3_images' ) ) return;
+
+	et_divi_woocommerce_image_dimensions();
+	et_update_option( 'divi_1_3_images', 'checked' );
+}
+add_action( 'admin_init', 'et_divi_check_woocommerce_images' );
+
 function et_divi_woocommerce_image_dimensions() {
   	$catalog = array(
 		'width' 	=> '400',
@@ -751,7 +772,7 @@ function et_divi_woocommerce_image_dimensions() {
 	$single = array(
 		'width' 	=> '510',
 		'height'	=> '9999',
-		'crop'		=> 1,
+		'crop'		=> 0,
 	);
 
 	$thumbnail = array(
@@ -816,6 +837,8 @@ add_shortcode( 'et_pb_slider', 'et_pb_slider' );
 add_shortcode( 'et_pb_fullwidth_slider', 'et_pb_slider' );
 function et_pb_slider( $atts, $content = '', $function_name ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'show_arrows' => 'on',
 			'show_pagination' => 'on',
 			'parallax' => 'off',
@@ -840,7 +863,7 @@ function et_pb_slider( $atts, $content = '', $function_name ) {
 	$content = do_shortcode( et_pb_fix_shortcodes( $content ) );
 
 	$output = sprintf(
-		'<div class="et_pb_slider%1$s%3$s">
+		'<div%4$s class="et_pb_slider%1$s%3$s%5$s">
 			<div class="et_pb_slides">
 				%2$s
 			</div> <!-- .et_pb_slides -->
@@ -848,7 +871,9 @@ function et_pb_slider( $atts, $content = '', $function_name ) {
 		',
 		$class,
 		$content,
-		( $et_pb_slider_has_video ? ' et_pb_preload' : '' )
+		( $et_pb_slider_has_video ? ' et_pb_preload' : '' ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -857,6 +882,7 @@ function et_pb_slider( $atts, $content = '', $function_name ) {
 add_shortcode( 'et_pb_slide', 'et_pb_slide' );
 function et_pb_slide( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
+			'alignment' => 'center',
 			'heading' => '',
 			'button_text' => '',
 			'button_link' => '#',
@@ -949,8 +975,6 @@ function et_pb_slide( $atts, $content = '' ) {
 		$image = sprintf( '<div class="et_pb_slide_video">%1$s</div>',
 			$video_embed
 		);
-
-		wp_enqueue_script( 'divi-fitvids' );
 	}
 
 	if ( '' !== $image ) $class = ' et_pb_slide_with_image';
@@ -958,6 +982,10 @@ function et_pb_slide( $atts, $content = '' ) {
 	if ( '' !== $video_url ) $class .= ' et_pb_slide_with_video';
 
 	$class .= " et_pb_bg_layout_{$background_layout}";
+
+	if ( 'bottom' !== $alignment ) {
+		$class .= " et_pb_media_alignment_{$alignment}";
+	}
 
 	$output = sprintf(
 		'<div class="et_pb_slide%6$s"%4$s>
@@ -987,6 +1015,8 @@ function et_pb_slide( $atts, $content = '' ) {
 add_shortcode( 'et_pb_section', 'et_pb_section' );
 function et_pb_section( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'background_image' => '',
 			'background_color' => '',
 			'background_video_mp4' => '',
@@ -1035,7 +1065,7 @@ function et_pb_section( $atts, $content = '' ) {
 	$style = '' !== $style ? " style='{$style}'" : '';
 
 	$output = sprintf(
-		'<div class="et_pb_section%4$s%5$s%6$s%7$s"%2$s>
+		'<div%8$s class="et_pb_section%4$s%5$s%6$s%7$s%9$s"%2$s>
 			%1$s
 			%3$s
 		</div> <!-- .et_pb_section -->',
@@ -1045,7 +1075,9 @@ function et_pb_section( $atts, $content = '' ) {
 		( '' !== $background_video ? ' et_pb_section_video et_pb_preload' : '' ),
 		( 'off' !== $inner_shadow ? ' et_pb_inner_shadow' : '' ),
 		( 'on' === $parallax ? ' et_pb_section_parallax' : '' ),
-		( 'off' !== $fullwidth ? ' et_pb_fullwidth_section' : '' )
+		( 'off' !== $fullwidth ? ' et_pb_fullwidth_section' : '' ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1091,24 +1123,30 @@ function et_pb_column( $atts, $content = '' ) {
 add_shortcode( 'et_pb_image', 'et_pb_image' );
 function et_pb_image( $atts ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'src' => '',
 			'alt' => '',
-			'animation' => 'off',
+			'animation' => 'left',
 			'url' => '',
+			'url_new_window' => 'off',
 		), $atts
 	) );
 
 	$output = sprintf(
-		'<img src="%1$s" alt="%2$s" class="et-waypoint et_pb_image%3$s" />',
+		'<img%4$s src="%1$s" alt="%2$s" class="et-waypoint et_pb_image%3$s%5$s" />',
 		esc_attr( $src ),
 		esc_attr( $alt ),
-		( 'off' !== $animation ? esc_attr( " et_pb_animation_{$animation}" ) : '' )
+		esc_attr( " et_pb_animation_{$animation}" ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	if ( '' !== $url )
-		$output = sprintf( '<a href="%1$s">%2$s</a>',
+		$output = sprintf( '<a href="%1$s"%3$s>%2$s</a>',
 			esc_url( $url ),
-			$output
+			$output,
+			( 'on' === $url_new_window ? ' target="_blank"' : '' )
 		);
 
 	return $output;
@@ -1117,6 +1155,8 @@ function et_pb_image( $atts ) {
 add_shortcode( 'et_pb_testimonial', 'et_pb_testimonial' );
 function et_pb_testimonial( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'author' => '',
 			'url' => '',
 			'url_new_window' => 'off',
@@ -1131,12 +1171,14 @@ function et_pb_testimonial( $atts, $content = '' ) {
 		);
 
 	$output = sprintf(
-		'<div class="et_pb_testimonial">
+		'<div%3$s class="et_pb_testimonial%4$s">
 			%1$s
 			<p class="et_pb_testimonial_author">—%2$s</p>
 		</div> <!-- .et_pb_testimonial -->',
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
-		$author
+		$author,
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1145,13 +1187,16 @@ function et_pb_testimonial( $atts, $content = '' ) {
 add_shortcode( 'et_pb_blurb', 'et_pb_blurb' );
 function et_pb_blurb( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'title' => '',
 			'url' => '',
 			'image' => '',
 			'url_new_window' => 'off',
 			'alt' => '',
 			'background_layout' => 'light',
-			'text_orientation' => 'left',
+			'text_orientation' => 'center',
+			'animation' => 'top',
 		), $atts
 	) );
 
@@ -1165,19 +1210,32 @@ function et_pb_blurb( $atts, $content = '' ) {
 	if ( '' !== $title )
 		$title = "<h3>{$title}</h3>";
 
-	if ( '' !== $image )
+	if ( '' !== $image ) {
 		$image = sprintf(
-			'<div class="et_pb_main_blurb_image">
-				<img src="%1$s" alt="%2$s" class="et-waypoint" />
-			</div>',
+			'<img src="%1$s" alt="%2$s" class="et-waypoint%3$s" />',
 			esc_attr( $image ),
-			esc_attr( $alt )
+			esc_attr( $alt ),
+			esc_attr( " et_pb_animation_{$animation}" )
 		);
+
+		$image = sprintf(
+			'<div class="et_pb_main_blurb_image">%1$s</div>',
+			( '' !== $url
+				? sprintf(
+					'<a href="%1$s"%3$s>%2$s</a>',
+					esc_url( $url ),
+					$image,
+					( 'on' === $url_new_window ? ' target="_blank"' : '' )
+				)
+				: $image
+			)
+		);
+	}
 
 	$class = " et_pb_bg_layout_{$background_layout} et_pb_text_align_{$text_orientation}";
 
 	$output = sprintf(
-		'<div class="et_pb_blurb%4$s">
+		'<div%5$s class="et_pb_blurb%4$s%6$s">
 			<div class="et_pb_blurb_content">
 				%2$s
 				%3$s
@@ -1187,7 +1245,9 @@ function et_pb_blurb( $atts, $content = '' ) {
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
 		$image,
 		$title,
-		esc_attr( $class )
+		esc_attr( $class ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1196,6 +1256,8 @@ function et_pb_blurb( $atts, $content = '' ) {
 add_shortcode( 'et_pb_text', 'et_pb_text' );
 function et_pb_text( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'background_layout' => 'light',
 			'text_orientation' => 'left',
 		), $atts
@@ -1204,11 +1266,13 @@ function et_pb_text( $atts, $content = '' ) {
 	$class = " et_pb_bg_layout_{$background_layout} et_pb_text_align_{$text_orientation}";
 
 	$output = sprintf(
-		'<div class="et_pb_text%2$s">
+		'<div%3$s class="et_pb_text%2$s%4$s">
 			%1$s
 		</div> <!-- .et_pb_text -->',
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
-		esc_attr( $class )
+		esc_attr( $class ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1216,6 +1280,12 @@ function et_pb_text( $atts, $content = '' ) {
 
 add_shortcode( 'et_pb_tabs', 'et_pb_tabs' );
 function et_pb_tabs( $atts, $content = '' ) {
+	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
+		), $atts
+	) );
+
 	global $et_pb_tab_titles;
 
 	$et_pb_tab_titles = array();
@@ -1232,7 +1302,7 @@ function et_pb_tabs( $atts, $content = '' ) {
 	}
 
 	$output = sprintf(
-		'<div class="et_pb_tabs">
+		'<div%3$s class="et_pb_tabs%4$s">
 			<ul class="et_pb_tabs_controls clearfix">
 				%1$s
 			</ul>
@@ -1241,7 +1311,9 @@ function et_pb_tabs( $atts, $content = '' ) {
 			</div> <!-- .et_pb_all_tabs -->
 		</div> <!-- .et_pb_tabs -->',
 		$tabs,
-		$all_tabs_content
+		$all_tabs_content,
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1272,13 +1344,15 @@ function et_pb_tab( $atts, $content = null ) {
 add_shortcode( 'et_pb_toggle', 'et_pb_toggle' );
 function et_pb_toggle( $atts, $content = null ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'title' => '',
 			'open' => 'off',
 		), $atts
 	) );
 
 	$output = sprintf(
-		'<div class="et_pb_toggle %2$s">
+		'<div%4$s class="et_pb_toggle %2$s%5$s">
 			<h3 class="et_pb_toggle_title">%1$s</h3>
 			<div class="et_pb_toggle_content clearfix">
 				%3$s
@@ -1286,7 +1360,9 @@ function et_pb_toggle( $atts, $content = null ) {
 		</div> <!-- .et_pb_toggle -->',
 		esc_html( $title ),
 		( 'on' === $open ? 'et_pb_toggle_open' : 'et_pb_toggle_close' ),
-		do_shortcode( et_pb_fix_shortcodes( $content ) )
+		do_shortcode( et_pb_fix_shortcodes( $content ) ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1297,6 +1373,8 @@ function et_pb_counters( $atts, $content = null ) {
 	global $et_pb_counters_colors;
 
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'background_layout' => 'light',
 			'background_color' => '#ddd',
 			'bar_bg_color' => et_get_option( 'accent_color', '#7EBEC5' ),
@@ -1311,11 +1389,13 @@ function et_pb_counters( $atts, $content = null ) {
 	$class = " et_pb_bg_layout_{$background_layout}";
 
 	$output = sprintf(
-		'<ul class="et_pb_counters et-waypoint%2$s">
+		'<ul%3$s class="et_pb_counters et-waypoint%2$s%4$s">
 			%1$s
 		</ul> <!-- .et_pb_counters -->',
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
-		esc_attr( $class )
+		esc_attr( $class ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1360,6 +1440,8 @@ function et_pb_counter( $atts, $content = null ) {
 add_shortcode( 'et_pb_cta', 'et_pb_cta' );
 function et_pb_cta( $atts, $content = null ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'title' => '',
 			'button_url' => '',
 			'button_text' => '',
@@ -1373,7 +1455,7 @@ function et_pb_cta( $atts, $content = null ) {
 	$class = " et_pb_bg_layout_{$background_layout} et_pb_text_align_{$text_orientation}";
 
 	$output = sprintf(
-		'<div class="et_pb_promo%4$s"%5$s>
+		'<div%6$s class="et_pb_promo%4$s%7$s"%5$s>
 			<div class="et_pb_promo_description">
 				%1$s
 				%2$s
@@ -1394,7 +1476,9 @@ function et_pb_cta( $atts, $content = null ) {
 		( 'on' === $use_background_color
 			? sprintf( ' style="background-color: %1$s;"', esc_attr( $background_color ) )
 			: ''
-		)
+		),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1474,6 +1558,8 @@ add_action( 'wp_ajax_nopriv_et_pb_submit_subscribe_form', 'et_pb_submit_subscrib
 add_shortcode( 'et_pb_signup', 'et_pb_signup' );
 function et_pb_signup( $atts, $content = null ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'title' => '',
 			'button_text' => __( 'Subscribe', 'Divi' ),
 			'background_color' => et_get_option( 'accent_color', '#7EBEC5' ),
@@ -1488,32 +1574,42 @@ function et_pb_signup( $atts, $content = null ) {
 
 	$form = '';
 
+	$firstname     = __( 'First Name', 'Divi' );
+	$lastname      = __( 'Last Name', 'Divi' );
+	$email_address = __( 'Email Address', 'Divi' );
+
 	if ( ! in_array( $mailchimp_list, array( '', 'none' ) ) ) {
 		$form = sprintf( '
 			<div class="et_pb_newsletter_form">
 				<div class="et_pb_newsletter_result"></div>
 				<p>
-					<label class="et_pb_contact_form_label" for="et_pb_signup_firstname" style="display: none;">First Name</label>
-					<input id="et_pb_signup_firstname" class="input" type="text" value="First Name" name="et_pb_signup_firstname">
+					<label class="et_pb_contact_form_label" for="et_pb_signup_firstname" style="display: none;">%3$s</label>
+					<input id="et_pb_signup_firstname" class="input" type="text" value="%4$s" name="et_pb_signup_firstname">
 				</p>
 				<p>
-					<label class="et_pb_contact_form_label" for="et_pb_signup_lastname" style="display: none;">Last Name</label>
-					<input id="et_pb_signup_lastname" class="input" type="text" value="Last Name" name="et_pb_signup_lastname">
+					<label class="et_pb_contact_form_label" for="et_pb_signup_lastname" style="display: none;">%5$s</label>
+					<input id="et_pb_signup_lastname" class="input" type="text" value="%6$s" name="et_pb_signup_lastname">
 				</p>
 				<p>
-					<label class="et_pb_contact_form_label" for="et_pb_signup_email" style="display: none;">Email Address</label>
-					<input id="et_pb_signup_email" class="input" type="text" value="Email Address" name="et_pb_signup_email">
+					<label class="et_pb_contact_form_label" for="et_pb_signup_email" style="display: none;">%7$s</label>
+					<input id="et_pb_signup_email" class="input" type="text" value="%8$s" name="et_pb_signup_email">
 				</p>
 				<p><a class="et_pb_newsletter_button" href="#">%1$s</a></p>
 				<input type="hidden" value="%2$s" name="et_pb_signup_list_id" />
 			</div>',
 			esc_html( $button_text ),
-			( ! in_array( $mailchimp_list, array( '', 'none' ) ) ? esc_attr( $mailchimp_list ) : '' )
+			( ! in_array( $mailchimp_list, array( '', 'none' ) ) ? esc_attr( $mailchimp_list ) : '' ),
+			esc_html( $firstname ),
+			esc_attr( $firstname ),
+			esc_html( $lastname ),
+			esc_attr( $lastname ),
+			esc_html( $email_address ),
+			esc_attr( $email_address )
 		);
 	}
 
 	$output = sprintf(
-		'<div class="et_pb_newsletter clearfix%4$s"%5$s>
+		'<div%6$s class="et_pb_newsletter clearfix%4$s%7$s"%5$s>
 			<div class="et_pb_newsletter_description">
 				%1$s
 				%2$s
@@ -1527,7 +1623,9 @@ function et_pb_signup( $atts, $content = null ) {
 		( 'on' === $use_background_color
 			? sprintf( ' style="background-color: %1$s;"', esc_attr( $background_color ) )
 			: ''
-		)
+		),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1536,6 +1634,8 @@ function et_pb_signup( $atts, $content = null ) {
 add_shortcode( 'et_pb_sidebar', 'et_pb_sidebar' );
 function et_pb_sidebar( $atts ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'orientation' => 'left',
 			'area' => '',
 			'background_layout' => 'light',
@@ -1556,12 +1656,14 @@ function et_pb_sidebar( $atts ) {
 	$class = " et_pb_bg_layout_{$background_layout}";
 
 	$output = sprintf(
-		'<div class="et_pb_widget_area %2$s clearfix%3$s">
+		'<div%4$s class="et_pb_widget_area %2$s clearfix%3$s%5$s">
 			%1$s
 		</div> <!-- .et_pb_widget_area -->',
 		$widgets,
 		esc_attr( "et_pb_widget_area_{$orientation}" ),
-		esc_attr( $class )
+		esc_attr( $class ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1570,6 +1672,8 @@ function et_pb_sidebar( $atts ) {
 add_shortcode( 'et_pb_blog', 'et_pb_blog' );
 function et_pb_blog( $atts ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'fullwidth' => 'on',
 			'posts_number' => 10,
 			'include_categories' => '',
@@ -1596,7 +1700,9 @@ function et_pb_blog( $atts ) {
 	if ( '' !== $include_categories )
 		$args['cat'] = $include_categories;
 
-	$args['paged'] = $paged;
+	if ( ! is_search() ) {
+		$args['paged'] = $paged;
+	}
 
 	ob_start();
 
@@ -1611,10 +1717,11 @@ function et_pb_blog( $atts ) {
 		<?php
 			$thumb = '';
 
-			$width = 'on' === $fullwidth ?  1080 : 400;
+			$width = 'on' === $fullwidth ? 1080 : 400;
 			$width = (int) apply_filters( 'et_pb_blog_image_width', $width );
 
-			$height = (int) apply_filters( 'et_pb_blog_image_height', 9999 );
+			$height = 'on' === $fullwidth ? 675 : 250;
+			$height = (int) apply_filters( 'et_pb_blog_image_height', $height );
 			$classtext = 'on' === $fullwidth ? 'et_pb_post_main_image' : '';
 			$titletext = get_the_title();
 			$thumbnail = get_thumbnail( $width, $height, $classtext, $titletext, $titletext, false, 'Blogimage' );
@@ -1653,16 +1760,20 @@ function et_pb_blog( $atts ) {
 					);
 				}
 
-				if ( 'on' === $show_content )
-					the_content( 'read more...', 'Divi' );
-				else
+				if ( 'on' === $show_content ) {
+					global $more;
+					$more = null;
+
+					the_content( __( 'read more...', 'Divi' ) );
+				} else {
 					the_excerpt();
+				}
 			?>
 
 			</article> <!-- .et_pb_post -->
 <?php	}
 
-		if ( 'on' === $show_pagination ) {
+		if ( 'on' === $show_pagination && ! is_search() ) {
 			echo '</div> <!-- .et_pb_posts -->';
 
 			$container_is_closed = true;
@@ -1685,13 +1796,15 @@ function et_pb_blog( $atts ) {
 	$class = " et_pb_bg_layout_{$background_layout}";
 
 	$output = sprintf(
-		'<div class="%1$s%3$s">
+		'<div%5$s class="%1$s%3$s%6$s">
 			%2$s
 		%4$s',
 		( 'on' === $fullwidth ? 'et_pb_posts' : 'et_pb_blog_grid clearfix' ),
 		$posts,
 		esc_attr( $class ),
-		( ! $container_is_closed ? '</div> <!-- .et_pb_posts -->' : '' )
+		( ! $container_is_closed ? '</div> <!-- .et_pb_posts -->' : '' ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	if ( 'on' !== $fullwidth )
@@ -1703,6 +1816,8 @@ function et_pb_blog( $atts ) {
 add_shortcode( 'et_pb_portfolio', 'et_pb_portfolio' );
 function et_pb_portfolio( $atts ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'fullwidth' => 'on',
 			'posts_number' => 10,
 			'include_categories' => '',
@@ -1727,12 +1842,14 @@ function et_pb_portfolio( $atts ) {
 			array(
 				'taxonomy' => 'project_category',
 				'field' => 'id',
-				'terms' => array( $include_categories ),
+				'terms' => explode( ',', $include_categories ),
 				'operator' => 'IN',
 			)
 		);
 
-	$args['paged'] = $paged;
+	if ( ! is_search() ) {
+		$args['paged'] = $paged;
+	}
 
 	ob_start();
 
@@ -1783,7 +1900,7 @@ function et_pb_portfolio( $atts ) {
 			</div> <!-- .et_pb_portfolio_item -->
 <?php	}
 
-		if ( 'on' === $show_pagination ) {
+		if ( 'on' === $show_pagination && ! is_search() ) {
 			echo '</div> <!-- .et_pb_portfolio -->';
 
 			$container_is_closed = true;
@@ -1806,13 +1923,15 @@ function et_pb_portfolio( $atts ) {
 	$class = " et_pb_bg_layout_{$background_layout}";
 
 	$output = sprintf(
-		'<div class="%1$s%3$s">
+		'<div%5$s class="%1$s%3$s%6$s">
 			%2$s
 		%4$s',
 		( 'on' === $fullwidth ? 'et_pb_portfolio' : 'et_pb_portfolio_grid clearfix' ),
 		$posts,
 		esc_attr( $class ),
-		( ! $container_is_closed ? '</div> <!-- .et_pb_portfolio -->' : '' )
+		( ! $container_is_closed ? '</div> <!-- .et_pb_portfolio -->' : '' ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1820,6 +1939,12 @@ function et_pb_portfolio( $atts ) {
 
 add_shortcode( 'et_pb_pricing_tables', 'et_pb_pricing_tables' );
 function et_pb_pricing_tables( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
+		), $atts
+	) );
+
 	global $et_pb_pricing_tables_num;
 
 	$et_pb_pricing_tables_num = 0;
@@ -1827,11 +1952,13 @@ function et_pb_pricing_tables( $atts, $content = null ) {
 	$content = do_shortcode( et_pb_fix_shortcodes( $content ) );
 
 	$output = sprintf(
-		'<div class="et_pb_pricing clearfix%2$s">
+		'<div%3$s class="et_pb_pricing clearfix%2$s%4$s">
 			%1$s
 		</div>',
 		$content,
-		esc_attr( " et_pb_pricing_{$et_pb_pricing_tables_num}" )
+		esc_attr( " et_pb_pricing_{$et_pb_pricing_tables_num}" ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -1934,6 +2061,8 @@ function et_pb_contact_form( $atts, $content = null ) {
 	global $et_pb_contact_form_num;
 
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'captcha' => 'on',
 			'email' => '',
 			'title' => '',
@@ -1982,7 +2111,7 @@ function et_pb_contact_form( $atts, $content = null ) {
 		$et_pb_second_digit = $_SESSION['et_pb_second_digit'];
 
 	if ( ! $et_contact_error && isset( $_POST['_wpnonce-et-pb-contact-form-submitted'] ) && wp_verify_nonce( $_POST['_wpnonce-et-pb-contact-form-submitted'], 'et-pb-contact-form-submit' ) ) {
-		$et_email_to = isset( $et_ptemplate_settings['et_email_to'] ) && ! empty( $et_ptemplate_settings['et_email_to'] )
+		$et_email_to = '' !== $email
 			? $email
 			: get_site_option( 'admin_email' );
 
@@ -2024,11 +2153,11 @@ function et_pb_contact_form( $atts, $content = null ) {
 				<form class="et_pb_contact_form clearfix" method="post" action="%1$s">
 					<div class="et_pb_contact_left">
 						<p class="clearfix">
-							<label class="et_pb_contact_form_label" for="et_pb_contact_name">%2$s</label>
+							<label class="et_pb_contact_form_label">%2$s</label>
 							<input type="text" class="input et_pb_contact_name" value="%3$s" name="et_pb_contact_name">
 						</p>
 						<p class="clearfix">
-							<label class="et_pb_contact_form_label" for="et_pb_contact_email">%4$s</label>
+							<label class="et_pb_contact_form_label">%4$s</label>
 							<input type="text" class="input et_pb_contact_email" value="%5$s" name="et_pb_contact_email">
 						</p>
 					</div> <!-- .et_pb_contact_left -->
@@ -2037,7 +2166,7 @@ function et_pb_contact_form( $atts, $content = null ) {
 
 					<div class="clear"></div>
 					<p class="clearfix">
-						<label class="et_pb_contact_form_label" for="et_pb_contact_message">%7$s</label>
+						<label class="et_pb_contact_form_label">%7$s</label>
 						<textarea name="et_pb_contact_message" class="et_pb_contact_message input">%8$s</textarea>
 					</p>
 
@@ -2064,7 +2193,7 @@ function et_pb_contact_form( $atts, $content = null ) {
 		);
 
 	$output = sprintf( '
-		<div id="%4$s" class="et_pb_contact_form_container clearfix">
+		<div id="%4$s" class="et_pb_contact_form_container clearfix%5$s">
 			%1$s
 			%2$s
 			%3$s
@@ -2073,7 +2202,11 @@ function et_pb_contact_form( $atts, $content = null ) {
 		( '' !== $title ? sprintf( '<h1 class="et_pb_contact_main_title">%1$s</h1>', esc_html( $title ) ) : '' ),
 		( '' !== $et_error_message ? sprintf( '<div class="et-pb-contact-message">%1$s</div>', $et_error_message ) : '' ),
 		$form,
-		esc_attr( 'et_pb_contact_form_' . $et_pb_contact_form_num )
+		( '' !== $module_id
+			? esc_attr( $module_id )
+			: esc_attr( 'et_pb_contact_form_' . $et_pb_contact_form_num )
+		),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -2082,6 +2215,8 @@ function et_pb_contact_form( $atts, $content = null ) {
 add_shortcode( 'et_pb_divider', 'et_pb_divider' );
 function et_pb_divider( $atts, $content = null ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'color' => '',
 			'show_divider' => 'off',
 			'height' => '',
@@ -2103,9 +2238,11 @@ function et_pb_divider( $atts, $content = null ) {
 	$style = '' !== $style ? " style='{$style}'" : '';
 
 	$output = sprintf(
-		'<hr class="et_pb_space%1$s"%2$s />',
+		'<hr%3$s class="et_pb_space%1$s%4$s"%2$s />',
 		( 'on' === $show_divider ? ' et_pb_divider' : '' ),
-		$style
+		$style,
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -2114,6 +2251,8 @@ function et_pb_divider( $atts, $content = null ) {
 add_shortcode( 'et_pb_shop', 'et_pb_shop' );
 function et_pb_shop( $atts, $content = null ) {
 	extract( shortcode_atts( array(
+			'module_id' => '',
+			'module_class' => '',
 			'type' => 'recent',
 			'posts_number' => '12',
 			'orderby' => 'menu_order',
@@ -2130,7 +2269,7 @@ function et_pb_shop( $atts, $content = null ) {
 	);
 
 	$output = sprintf(
-		'<div class="et_pb_shop">
+		'<div%2$s class="et_pb_shop%3$s">
 			%1$s
 		</div>',
 		do_shortcode(
@@ -2140,7 +2279,9 @@ function et_pb_shop( $atts, $content = null ) {
 				esc_attr( $orderby ),
 				esc_attr( $columns )
 			)
-		)
+		),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;
@@ -2149,16 +2290,19 @@ function et_pb_shop( $atts, $content = null ) {
 add_shortcode( 'et_pb_fullwidth_header', 'et_pb_fullwidth_header' );
 function et_pb_fullwidth_header( $atts, $content = null ) {
 	extract( shortcode_atts( array(
+			'module_id'         => '',
+			'module_class'      => '',
 			'title'             => '',
 			'subhead'           => '',
 			'background_layout' => 'light',
+			'text_orientation'  => 'left',
 		), $atts
 	) );
 
-	$class = " et_pb_bg_layout_{$background_layout}";
+	$class = " et_pb_bg_layout_{$background_layout} et_pb_text_align_{$text_orientation}";
 
 	$output = sprintf(
-		'<section class="et_pb_fullwidth_header%3$s">
+		'<section%4$s class="et_pb_fullwidth_header%3$s%5$s">
 			<div class="et_pb_row">
 				<h1>%1$s</h1>
 				%2$s
@@ -2166,7 +2310,9 @@ function et_pb_fullwidth_header( $atts, $content = null ) {
 		</section>',
 		$title,
 		( $subhead ? sprintf( '<p class="et_pb_fullwidth_header_subhead">%1$s</p>', $subhead ) : '' ),
-		esc_attr( $class )
+		esc_attr( $class ),
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 	);
 
 	return $output;

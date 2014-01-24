@@ -1,3 +1,63 @@
+version 1.3 ( updated 01-14-2014 )
+- Fixed the issue with multiple categories selected in the Portfolio module
+- Fixed the issue with the Contact Form module, not using the Email setting
+- Fixed the issue with the More Tag in the Blog module
+- Added 'Fixed Navigation Bar' option
+- Added 'Automatic slider animation' option
+- Added id and class options to modules. Defined et-hide-mobile class, it can be used to hide the module on mobile devices.
+- Fixed validation issues with Contact form and top menu
+- Fixed Color Schemes options not saving in the Customizer
+- Fixed Text Orientation in the Blurb module
+- Fixed the issue with Footer Widget Areas not styled in the Sidebar module
+- Fixed the issue with dropdown menu not showing in Safari and iPad in landscape mode
+- Removed Cropping from standard blog posts featured images
+- Slider arrows are shown at all times on mobile devices now
+- Added 'Image Vertical Alignment' option to the Slider module
+- Added localization for the Subscribe Module
+- Added link to the Blurb module image
+- Added 'open in a new window' option to the Image module
+- Added 'Text orientation' option to the Fullwidth Header module
+- Applied fitVids jQuery plugin to all videos
+- Added 'No Animation' option to Image and Blurb modules
+- Fixed 'Bottom To Top' animation
+- Fixed Pricing tables columns structure in 1/3, 2/3, 1/4, 1/2 columns
+- Removed cropping from the main product image
+- Removed default iOS form elements styling
+- Fixed Calendar widget styling
+- Fixed video embedding issues
+- Fixed the issue with sub menu, displayed behind embedded videos
+- Fixed 1/3 and 1/4 tab modules display on mobile breakpoints
+- Fixed 3.8 admin bar front-end styling on mobile devices
+- Fixed Products pages styling
+- Fixed Blog module styling in 1/4 column
+- Fixed pagination styling for blog/shop/portfolio pages
+- Fixed the issue with Slide Video not displaying in Firefox
+- Fixed slider description text width at mobile sizes
+- Fixed pricing table styling at 768px breakpoint
+- Fixed 1/3 and 1/4 column styling at 768px breakpoint
+- Fixed shop module styling at 768px breakpoint
+- Fixed slider module youtube videos size for all columns
+- Fixed the issue with pagination on search pages
+
+List of modified files:
+* epanel/options_divi.php
+* epanel/post_thumbnails_divi.php
+* et-pagebuilder/et-pagebuilder.php
+* functions.php
+* header.php
+* includes/functions/sidebars.php
+* index.php
+* js/custom.js
+* lang/de_DE.mo
+* lang/de_DE.po
+* lang/en_US.mo
+* lang/en_US.po
+* lang/ru_RU.mo
+* lang/ru_RU.po
+* page.php
+* single.php
+* style.css
+
 version 1.2 ( updated 12-23-2013 )
 - Now you can update Elegant Themes in the Dashboard: https://www.elegantthemes.com/members-area/documentation.html#updater
 	* epanel/custom_functions.php

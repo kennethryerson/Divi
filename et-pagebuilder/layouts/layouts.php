@@ -27,7 +27,7 @@ function et_pb_get_predefined_layouts() {
 [et_pb_section fullwidth="on"]
 [et_pb_fullwidth_slider show_arrows="on" show_pagination="on" parallax="on" auto="off" auto_speed="7000"]
 [et_pb_slide heading="Designed With Passion" background_image="http://www.elegantthemesimages.com/images/premade_bg.jpg" button_text="Join Today" background_color="#492144" button_link="http://elegantthemes.com"]No matter how you use Divi, your website is going to look great. Everything about Divi has been built beautifully and purposefully by our passionate team. We are so excited to release this labor of love to our community.[/et_pb_slide]
-[et_pb_slide heading="Elegantly Responsive" button_text="Join Today" background_color="#6aceb6" button_link="http://elegantthemes.com" image="http://www.elegantthemesimages.com/images/premade_iphone_slider.png" image_alt="Alt text for the image"]Vivamus ipsum velit, ullamcorper quis nibh non, molestie tempus sapien. Mauris ultrices, felis ut eleifend auctor, leo felis vehicula quam, ut accumsan augue nunc at nisl. Cras venenatis.[/et_pb_slide]
+[et_pb_slide heading="Elegantly Responsive" button_text="Join Today" background_color="#6aceb6" button_link="http://elegantthemes.com" image="http://www.elegantthemesimages.com/images/premade_iphone_slider2.png" image_alt="Alt text for the image" alignment="bottom"]Vivamus ipsum velit, ullamcorper quis nibh non, molestie tempus sapien. Mauris ultrices, felis ut eleifend auctor, leo felis vehicula quam, ut accumsan augue nunc at nisl. Cras venenatis.[/et_pb_slide]
 [/et_pb_fullwidth_slider]
 [/et_pb_section]
 
@@ -299,7 +299,7 @@ Some City, California, 33432
 [et_pb_section fullwidth="on"]
 [et_pb_fullwidth_slider show_arrows="on" show_pagination="on" parallax="on" auto="off" auto_speed="7000"]
 [et_pb_slide heading="Join Today" background_image="http://www.elegantthemesimages.com/images/premade_bg_2.jpg" button_text="Join Today" background_color="#144d6a" button_link="http://elegantthemes.com"]No matter how you use Divi, your website is going to look great. Everything about Divi has been built beautifully and purposefully by our passionate team. We are so excited to release this labor of love to our community.[/et_pb_slide]
-[et_pb_slide heading="The Best Deal" button_text="Join Today" background_color="#6aceb6" button_link="http://elegantthemes.com" image="http://www.elegantthemesimages.com/images/premade_iphone_slider.png" image_alt="Alt text for the image"]Vivamus ipsum velit, ullamcorper quis nibh non, molestie tempus sapien. Mauris ultrices, felis ut eleifend auctor, leo felis vehicula quam, ut accumsan augue nunc at nisl. Cras venenatis.[/et_pb_slide]
+[et_pb_slide heading="The Best Deal" button_text="Join Today" background_color="#6aceb6" button_link="http://elegantthemes.com" image="http://www.elegantthemesimages.com/images/premade_iphone_slider2.png" image_alt="Alt text for the image" alignment="bottom"]Vivamus ipsum velit, ullamcorper quis nibh non, molestie tempus sapien. Mauris ultrices, felis ut eleifend auctor, leo felis vehicula quam, ut accumsan augue nunc at nisl. Cras venenatis.[/et_pb_slide]
 [/et_pb_fullwidth_slider]
 [/et_pb_section]
 

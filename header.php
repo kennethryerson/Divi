@@ -47,7 +47,7 @@
 			</a>
 
 			<div id="et-top-navigation">
-				<nav id="top-menu">
+				<nav id="top-menu-nav">
 				<?php
 					$menuClass = 'nav';
 					if ( 'on' == et_get_option( 'divi_disable_toptier' ) ) $menuClass .= ' et_disable_top_tier';

@@ -564,6 +564,24 @@ echo <<<END
 					<p class="description">If enabled, your background image will stay fixed as your scroll, creating a fun parallax-like effect.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -600,6 +618,18 @@ echo <<<END
 			</div> <!-- .et-pb-option -->
 
 			<div class="et-pb-option">
+				<label for="et_pb_url_new_window">Url Opens : </label>
+				<div class="et-pb-option-container">
+					<select name="et_pb_url_new_window" id="et_pb_url_new_window">
+						<option value="off"<%= typeof( et_pb_url_new_window ) !== 'undefined' && 'off' === et_pb_url_new_window ?  ' selected="selected"' : '' %>>In The Same Window</option>
+						<option value="on"<%= typeof( et_pb_url_new_window ) !== 'undefined' && 'on' === et_pb_url_new_window ?  ' selected="selected"' : '' %>>In The New Tab</option>
+					</select>
+
+					<p class="description">Here you can choose whether or not your link opens in a new window</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
 				<label for="et_pb_animation">Animation: </label>
 				<div class="et-pb-option-container">
 					<select name="et_pb_animation" id="et_pb_animation">
@@ -607,6 +637,7 @@ echo <<<END
 						<option value="right"<%= typeof( et_pb_animation ) !== 'undefined' && 'right' === et_pb_animation ?  ' selected="selected"' : '' %>>Right To Left</option>
 						<option value="top"<%= typeof( et_pb_animation ) !== 'undefined' && 'top' === et_pb_animation ?  ' selected="selected"' : '' %>>Top To Bottom</option>
 						<option value="bottom"<%= typeof( et_pb_animation ) !== 'undefined' && 'bottom' === et_pb_animation ?  ' selected="selected"' : '' %>>Bottom To Top</option>
+						<option value="off"<%= typeof( et_pb_animation ) !== 'undefined' && 'off' === et_pb_animation ?  ' selected="selected"' : '' %>>No Animation</option>
 					</select>
 
 					<p class="description">This controls the direction of the lazy-loading animation.</p>
@@ -619,6 +650,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -668,6 +717,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div> <!-- .et-pb-main-settings -->
@@ -742,6 +809,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -780,6 +865,27 @@ echo <<<END
 			</div> <!-- .et-pb-option -->
 
 			<div class="et-pb-option">
+				<label for="et_pb_auto">Automatic Animation: </label>
+				<div class="et-pb-option-container">
+					<select name="et_pb_auto" id="et_pb_auto">
+						<option value="off"<%= typeof( et_pb_auto ) !== 'undefined' && 'off' === et_pb_auto ?  ' selected="selected"' : '' %>>Disabled</option>
+						<option value="on"<%= typeof( et_pb_auto ) !== 'undefined' && 'on' === et_pb_auto ?  ' selected="selected"' : '' %>>Enabled</option>
+					</select>
+
+					<p class="description">If you would like the slider to slide automatically, without the visitor having to click the next button, enable this option and then adjust the rotation speed below if desired.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_auto_speed">Automatic Animation Speed (in ms): </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_auto_speed" type="text" class="regular-text" value="<%= typeof( et_pb_auto_speed ) !== 'undefined' ?  et_pb_auto_speed : '' %>" />
+					<p class="description">Here you can designate how fast the slider fades between each slide, if 'Automatic Animation' option is enabled above. The higher the number the longer the pause between each rotation.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
 				<label for="et_pb_parallax">Parallax effect: </label>
 				<div class="et-pb-option-container">
 					<select name="et_pb_parallax" id="et_pb_parallax">
@@ -809,17 +915,23 @@ echo <<<END
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 
- 			<div class="et-pb-option">
-                                <label for="et_pb_auto">Auto: </label>
-                                <div class="et-pb-option-container">
-                                        <select name="et_pb_auto" id="et_pb_auto">
-                                                <option value="off"<%= typeof( et_pb_auto ) !== 'undefined' && 'off' === et_pb_auto ? ' selected="selected"' : '' %>>Auto advance off</option>
-                                                <option value="on"<%= typeof( et_pb_auto ) !== 'undefined' && 'on' === et_pb_auto ? ' selected="selected"' : '' %>>Auto advance on</option>
-                                        </select>
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
 
-                                        <p class="description">Enabling this option will cause slides to auto advance.</p>
-                                </div> <!-- .et-pb-option-container -->
-                        </div> <!-- .et-pb-option -->
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -858,6 +970,27 @@ echo <<<END
 			</div> <!-- .et-pb-option -->
 
 			<div class="et-pb-option">
+				<label for="et_pb_auto">Automatic Animation: </label>
+				<div class="et-pb-option-container">
+					<select name="et_pb_auto" id="et_pb_auto">
+						<option value="off"<%= typeof( et_pb_auto ) !== 'undefined' && 'off' === et_pb_auto ?  ' selected="selected"' : '' %>>Disabled</option>
+						<option value="on"<%= typeof( et_pb_auto ) !== 'undefined' && 'on' === et_pb_auto ?  ' selected="selected"' : '' %>>Enabled</option>
+					</select>
+
+					<p class="description">If you would like the slider to slide automatically, without the visitor having to click the next button, enable this option and then adjust the rotation speed below if desired.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_auto_speed">Automatic Animation Speed (in ms): </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_auto_speed" type="text" class="regular-text" value="<%= typeof( et_pb_auto_speed ) !== 'undefined' ?  et_pb_auto_speed : '' %>" />
+					<p class="description">Here you can designate how fast the slider fades between each slide, if 'Automatic Animation' option is enabled above. The higher the number the longer the pause between each rotation.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
 				<label for="et_pb_parallax">Parallax effect: </label>
 				<div class="et-pb-option-container">
 					<select name="et_pb_parallax" id="et_pb_parallax">
@@ -884,6 +1017,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -952,6 +1103,18 @@ echo <<<END
 					<input type='button' class='button button-upload et-pb-upload-button' value='Upload an Image' data-choose="Choose a Slide Image" data-update="Set As Slide Image" data-type="image" />
 
 					<p class="description">If defined, this slide image will appear to the left of your slide text. Upload an image, or leave blank for a text-only slide.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_alignment">Slide Image Vertical Alignment: </label>
+				<div class="et-pb-option-container">
+					<select name="et_pb_alignment" id="et_pb_alignment">
+						<option value="center"<%= typeof( et_pb_alignment ) !== 'undefined' && 'center' === et_pb_alignment ?  ' selected="selected"' : '' %>>Center</option>
+						<option value="bottom"<%= typeof( et_pb_alignment ) !== 'undefined' && 'bottom' === et_pb_alignment ?  ' selected="selected"' : '' %>>Bottom</option>
+					</select>
+
+					<p class="description">This setting determines the vertical alignment of your slide image. Your image can either be vertically centered, or aligned to the bottom of your slide.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 
@@ -1088,6 +1251,21 @@ echo <<<END
 			</div> <!-- .et-pb-option -->
 
 			<div class="et-pb-option">
+				<label for="et_pb_animation">Image Animation: </label>
+				<div class="et-pb-option-container">
+					<select name="et_pb_animation" id="et_pb_animation">
+						<option value="top"<%= typeof( et_pb_animation ) !== 'undefined' && 'top' === et_pb_animation ?  ' selected="selected"' : '' %>>Top To Bottom</option>
+						<option value="left"<%= typeof( et_pb_animation ) !== 'undefined' && 'left' === et_pb_animation ?  ' selected="selected"' : '' %>>Left To Right</option>
+						<option value="right"<%= typeof( et_pb_animation ) !== 'undefined' && 'right' === et_pb_animation ?  ' selected="selected"' : '' %>>Right To Left</option>
+						<option value="bottom"<%= typeof( et_pb_animation ) !== 'undefined' && 'bottom' === et_pb_animation ?  ' selected="selected"' : '' %>>Bottom To Top</option>
+						<option value="off"<%= typeof( et_pb_animation ) !== 'undefined' && 'off' === et_pb_animation ?  ' selected="selected"' : '' %>>No Animation</option>
+					</select>
+
+					<p class="description">This controls the direction of the lazy-loading animation.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
 				<label for="et_pb_background_layout">Text Color: </label>
 				<div class="et-pb-option-container">
 					<select name="et_pb_background_layout" id="et_pb_background_layout">
@@ -1103,8 +1281,8 @@ echo <<<END
 				<label for="et_pb_text_orientation">Text Orientation: </label>
 				<div class="et-pb-option-container">
 					<select name="et_pb_text_orientation" id="et_pb_text_orientation">
-						<option value="left"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'left' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Left</option>
 						<option value="center"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'center' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Center</option>
+						<option value="left"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'left' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Left</option>
 						<option value="right"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'right' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Right</option>
 					</select>
 
@@ -1127,6 +1305,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -1183,6 +1379,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -1226,6 +1440,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -1327,6 +1559,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -1447,6 +1697,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -1492,6 +1760,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -1535,6 +1821,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -1686,6 +1990,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -1790,6 +2112,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -1859,6 +2199,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -1887,6 +2245,24 @@ echo <<<END
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>
@@ -2054,6 +2430,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -2146,6 +2540,24 @@ echo <<<END
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
 		</div>
 	</script>
 
@@ -2184,11 +2596,42 @@ echo <<<END
 			</div> <!-- .et-pb-option -->
 
 			<div class="et-pb-option">
+				<label for="et_pb_text_orientation">Text Orientation: </label>
+				<div class="et-pb-option-container">
+					<select name="et_pb_text_orientation" id="et_pb_text_orientation">
+						<option value="left"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'left' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Left</option>
+						<option value="center"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'center' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Center</option>
+						<option value="right"<%= typeof( et_pb_text_orientation ) !== 'undefined' && 'right' === et_pb_text_orientation ?  ' selected="selected"' : '' %>>Right</option>
+					</select>
+
+					<p class="description">This controls the how your text is aligned within the module.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
 				<label for="admin_label">Admin Label: </label>
 
 				<div class="et-pb-option-container">
 					<input id="admin_label" type="text" class="regular-text" value="<%= typeof( admin_label ) !== 'undefined' ?  admin_label : '' %>" />
 					<p class="description">This will change the label of the module in the builder for easy identification.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_id">CSS ID: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_id" type="text" class="regular-text" value="<%= typeof( et_pb_module_id ) !== 'undefined' ?  et_pb_module_id : '' %>" />
+					<p class="description">Enter an optional CSS ID to be used for this module. An ID can be used to create custom CSS styling, or to create links to particular sections of your page.</p>
+				</div> <!-- .et-pb-option-container -->
+			</div> <!-- .et-pb-option -->
+
+			<div class="et-pb-option">
+				<label for="et_pb_module_class">CSS Class: </label>
+
+				<div class="et-pb-option-container">
+					<input id="et_pb_module_class" type="text" class="regular-text" value="<%= typeof( et_pb_module_class ) !== 'undefined' ?  et_pb_module_class : '' %>" />
+					<p class="description">Enter optional CSS classes to be used for this module. A CSS class can be used to create custom CSS styling. You can add multiple classes, separated with a space.</p>
 				</div> <!-- .et-pb-option-container -->
 			</div> <!-- .et-pb-option -->
 		</div>

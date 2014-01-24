@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Divi 1.0\n"
-"POT-Creation-Date: 2013-12-11 16:53+0400\n"
-"PO-Revision-Date: 2013-12-11 17:20+0400\n"
+"POT-Creation-Date: 2013-12-26 00:26+0400\n"
+"PO-Revision-Date: 2013-12-26 00:26+0400\n"
 "Last-Translator: \n"
 "Language-Team: Ann\n"
 "Language: de_DE\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "0 Comments"
 msgstr "Keine Kommentare"
 
-#: ../comments.php:13 ../functions.php:190
+#: ../comments.php:13 ../functions.php:194
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
@@ -85,381 +85,389 @@ msgstr "Designed by %1$s | Powered by %2$s"
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:60 ../functions.php:66
+#: ../functions.php:63 ../functions.php:69
 msgid "on"
 msgstr "am"
 
-#: ../functions.php:116
+#: ../functions.php:120
 msgid ""
 "Please, check the fields below to make sure you entered the correct "
 "information."
 msgstr ""
 
-#: ../functions.php:117
+#: ../functions.php:121
 msgid "Fill"
 msgstr ""
 
-#: ../functions.php:118
+#: ../functions.php:122
 msgid "field"
 msgstr ""
 
-#: ../functions.php:119
+#: ../functions.php:123
 msgid "Invalid email"
 msgstr ""
 
-#: ../functions.php:120
+#: ../functions.php:124
 msgid "Captcha"
 msgstr ""
 
-#: ../functions.php:169
+#: ../functions.php:173
 #, php-format
 msgid "Posts by %s"
 msgstr "Gepostet von %s"
 
-#: ../functions.php:186
+#: ../functions.php:190
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../functions.php:188
+#: ../functions.php:192
 msgid "No Comments"
 msgstr "Keine Kommentare"
 
-#: ../functions.php:203
+#: ../functions.php:207
 msgid "by"
 msgstr "von"
 
-#: ../functions.php:219 ../functions.php:220 ../functions.php:221
-#: ../functions.php:222
+#: ../functions.php:223 ../functions.php:224 ../functions.php:225
+#: ../functions.php:226
 msgid "ET Settings"
 msgstr ""
 
-#: ../functions.php:228
+#: ../functions.php:232
 msgid "Projects"
 msgstr ""
 
-#: ../functions.php:229
+#: ../functions.php:233
 msgid "Project"
 msgstr ""
 
-#: ../functions.php:230 ../functions.php:312
+#: ../functions.php:234 ../functions.php:316
 msgid "Add New"
 msgstr ""
 
-#: ../functions.php:231
+#: ../functions.php:235
 msgid "Add New Project"
 msgstr ""
 
-#: ../functions.php:232
+#: ../functions.php:236
 msgid "Edit Project"
 msgstr ""
 
-#: ../functions.php:233
+#: ../functions.php:237
 msgid "New Project"
 msgstr ""
 
-#: ../functions.php:234
+#: ../functions.php:238
 msgid "All Projects"
 msgstr ""
 
-#: ../functions.php:235
+#: ../functions.php:239
 msgid "View Project"
 msgstr ""
 
-#: ../functions.php:236
+#: ../functions.php:240
 msgid "Search Projects"
 msgstr ""
 
-#: ../functions.php:237 ../functions.php:319
+#: ../functions.php:241 ../functions.php:323
 msgid "Nothing found"
 msgstr "Nicht gefunden"
 
-#: ../functions.php:238 ../functions.php:320
+#: ../functions.php:242 ../functions.php:324
 msgid "Nothing found in Trash"
 msgstr ""
 
-#: ../functions.php:265 ../functions.php:275 ../epanel/options_divi.php:255
+#: ../functions.php:269 ../functions.php:279 ../epanel/options_divi.php:255
 msgid "Categories"
 msgstr ""
 
-#: ../functions.php:266
+#: ../functions.php:270
 msgid "Category"
 msgstr ""
 
-#: ../functions.php:267
+#: ../functions.php:271
 msgid "Search Categories"
 msgstr ""
 
-#: ../functions.php:268
+#: ../functions.php:272
 msgid "All Categories"
 msgstr ""
 
-#: ../functions.php:269
+#: ../functions.php:273
 msgid "Parent Category"
 msgstr ""
 
-#: ../functions.php:270
+#: ../functions.php:274
 msgid "Parent Category:"
 msgstr ""
 
-#: ../functions.php:271
+#: ../functions.php:275
 msgid "Edit Category"
 msgstr ""
 
-#: ../functions.php:272
+#: ../functions.php:276
 msgid "Update Category"
 msgstr ""
 
-#: ../functions.php:273
+#: ../functions.php:277
 msgid "Add New Category"
 msgstr ""
 
-#: ../functions.php:274
+#: ../functions.php:278
 msgid "New Category Name"
 msgstr ""
 
-#: ../functions.php:287 ../functions.php:297
+#: ../functions.php:291 ../functions.php:301
 msgid "Tags"
 msgstr ""
 
-#: ../functions.php:288
+#: ../functions.php:292
 msgid "Tag"
 msgstr ""
 
-#: ../functions.php:289
+#: ../functions.php:293
 msgid "Search Tags"
 msgstr ""
 
-#: ../functions.php:290
+#: ../functions.php:294
 msgid "All Tags"
 msgstr ""
 
-#: ../functions.php:291
+#: ../functions.php:295
 msgid "Parent Tag"
 msgstr ""
 
-#: ../functions.php:292
+#: ../functions.php:296
 msgid "Parent Tag:"
 msgstr ""
 
-#: ../functions.php:293
+#: ../functions.php:297
 msgid "Edit Tag"
 msgstr ""
 
-#: ../functions.php:294
+#: ../functions.php:298
 msgid "Update Tag"
 msgstr ""
 
-#: ../functions.php:295
+#: ../functions.php:299
 msgid "Add New Tag"
 msgstr ""
 
-#: ../functions.php:296
+#: ../functions.php:300
 msgid "New Tag Name"
 msgstr ""
 
-#: ../functions.php:310
+#: ../functions.php:314
 msgid "Layouts"
 msgstr ""
 
-#: ../functions.php:311
+#: ../functions.php:315
 msgid "Layout"
 msgstr ""
 
-#: ../functions.php:313
+#: ../functions.php:317
 msgid "Add New Layout"
 msgstr ""
 
-#: ../functions.php:314
+#: ../functions.php:318
 msgid "Edit Layout"
 msgstr ""
 
-#: ../functions.php:315
+#: ../functions.php:319
 msgid "New Layout"
 msgstr ""
 
-#: ../functions.php:316
+#: ../functions.php:320
 msgid "All Layouts"
 msgstr ""
 
-#: ../functions.php:317
+#: ../functions.php:321
 msgid "View Layout"
 msgstr ""
 
-#: ../functions.php:318
+#: ../functions.php:322
 msgid "Search Layouts"
 msgstr ""
 
-#: ../functions.php:342
+#: ../functions.php:346
 msgid "Skills"
 msgstr ""
 
-#: ../functions.php:345
+#: ../functions.php:349
 msgid "Posted on"
 msgstr "Gepostet am"
 
-#: ../functions.php:360 ../epanel/options_divi.php:79
+#: ../functions.php:364 ../epanel/options_divi.php:79
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:361 ../epanel/options_divi.php:80
+#: ../functions.php:365 ../epanel/options_divi.php:80
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../functions.php:362 ../epanel/options_divi.php:81
+#: ../functions.php:366 ../epanel/options_divi.php:81
 msgid "Full Width"
 msgstr ""
 
-#: ../functions.php:366
+#: ../functions.php:370
 msgid "Page Layout"
 msgstr ""
 
-#: ../functions.php:438
+#: ../functions.php:442
 msgid "Fonts"
 msgstr ""
 
-#: ../functions.php:443
+#: ../functions.php:447
 msgid "Schemes"
 msgstr ""
 
-#: ../functions.php:445
+#: ../functions.php:449
 msgid ""
 "Note: Color settings set above should be applied to the Default color scheme."
 msgstr ""
 
-#: ../functions.php:456
+#: ../functions.php:460
 msgid "Link Color"
 msgstr ""
 
-#: ../functions.php:469
+#: ../functions.php:473
 msgid "Main Font Color"
 msgstr ""
 
-#: ../functions.php:482
+#: ../functions.php:486
 msgid "Accent Color"
 msgstr ""
 
-#: ../functions.php:495
+#: ../functions.php:499
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../functions.php:508
+#: ../functions.php:512
 msgid "Menu Links Color"
 msgstr ""
 
-#: ../functions.php:521
+#: ../functions.php:525
 msgid "Active Menu Link Color"
 msgstr ""
 
-#: ../functions.php:533
+#: ../functions.php:537
 msgid "Header Font"
 msgstr ""
 
-#: ../functions.php:547
+#: ../functions.php:551
 msgid "Body Font"
 msgstr ""
 
-#: ../functions.php:562
+#: ../functions.php:566
 msgid "Color Schemes"
 msgstr ""
 
-#: ../functions.php:567
+#: ../functions.php:571
 msgid "Default"
 msgstr ""
 
-#: ../functions.php:568
+#: ../functions.php:572
 msgid "Green"
 msgstr ""
 
-#: ../functions.php:569
+#: ../functions.php:573
 msgid "Orange"
 msgstr ""
 
-#: ../functions.php:570
+#: ../functions.php:574
 msgid "Pink"
 msgstr ""
 
-#: ../functions.php:571
+#: ../functions.php:575
 msgid "Red"
 msgstr ""
 
-#: ../functions.php:652
+#: ../functions.php:656
 msgid "0 comments"
 msgstr "Keine Kommentare"
 
-#: ../functions.php:652
+#: ../functions.php:656
 msgid "1 comment"
 msgstr "1 Kommentar"
 
-#: ../functions.php:652
+#: ../functions.php:656
 msgid "comments"
 msgstr "Kommentare"
 
-#: ../functions.php:1230
+#: ../functions.php:1259
 msgid "Tab"
 msgstr ""
 
-#: ../functions.php:1438
+#: ../functions.php:1467
 msgid ""
 "<h2 class=\"et_pb_subscribed\">Subscribed - look for the confirmation email!"
 "</h2>"
 msgstr ""
 
-#: ../functions.php:1449
+#: ../functions.php:1478
 msgid "Subscribe"
 msgstr ""
 
-#: ../functions.php:1611
+#: ../functions.php:1491
+msgid "First Name"
+msgstr ""
+
+#: ../functions.php:1492
+msgid "Last Name"
+msgstr ""
+
+#: ../functions.php:1493 ../functions.php:2015
+msgid "Email Address"
+msgstr ""
+
+#: ../functions.php:1650
 #, php-format
 msgid "by %s |"
 msgstr ""
 
-#: ../functions.php:1616
+#: ../functions.php:1655
 #, php-format
 msgid "%s |"
 msgstr ""
 
-#: ../functions.php:1919
+#: ../functions.php:1958
 msgid "Make sure you entered the captcha."
 msgstr ""
 
-#: ../functions.php:1922
+#: ../functions.php:1961
 msgid "You entered the wrong number in captcha."
 msgstr ""
 
-#: ../functions.php:1929
+#: ../functions.php:1968
 msgid "Make sure you fill all fields."
 msgstr ""
 
-#: ../functions.php:1934
+#: ../functions.php:1973
 msgid "Invalid Email."
 msgstr ""
 
-#: ../functions.php:1970
+#: ../functions.php:2009
 msgid "Thanks for contacting us"
 msgstr ""
 
-#: ../functions.php:1975
+#: ../functions.php:2014
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:1976
-msgid "Email Address"
-msgstr ""
-
-#: ../functions.php:1977
+#: ../functions.php:2016
 msgid "Message"
 msgstr ""
 
-#: ../functions.php:2031
+#: ../functions.php:2070
 msgid "Submit"
 msgstr ""
 
-#: ../functions.php:2032 ../epanel/core_functions.php:203
+#: ../functions.php:2071 ../epanel/core_functions.php:203
 #: ../epanel/core_functions.php:379
 msgid "Reset"
 msgstr ""
 
-#: ../header.php:62 ../epanel/custom_functions.php:428
+#: ../header.php:62 ../epanel/custom_functions.php:434
 msgid "Home"
 msgstr "Startseite"
 
@@ -550,11 +558,11 @@ msgid ""
 "default values. <strong>Are you sure you want to do this?"
 msgstr ""
 
-#: ../epanel/custom_functions.php:845
+#: ../epanel/custom_functions.php:858
 msgid "Image doesn't exist"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1034
+#: ../epanel/custom_functions.php:1054
 #, php-format
 msgid ""
 "<div class=\"updated\"><p>This is a fresh installation of %1$s theme. Don't "
@@ -563,24 +571,22 @@ msgid ""
 "\">theme's options page</a>.</p></div>"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1046
+#: ../epanel/custom_functions.php:1066
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox"
-"\" title=\"%1$s\">View version %3$s details</a>. <em>Auto-updates are not "
-"available for this theme. If this is an Elegant Themes theme, then you must "
-"re-download the theme from the member's area and <a href=\"http://www."
-"elegantthemes.com/members-area/documentation.html#update\" target=\"_blank"
-"\">re-install it</a> in order to update it to the latest version.</em>"
+"\" title=\"%1$s\">View version %3$s details</a>. <em>Before you can update "
+"your Elegant Themes, you must first install the <a href=\"https://www."
+"elegantthemes.com/members-area/documentation.html#updater\" target=\"_blank"
+"\">Elegant Updater Plugin</a> to authenticate your subscription.</em>"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1050
+#: ../epanel/custom_functions.php:1070
 msgid ""
-"Auto-updates are not available for this theme. If this is an Elegant Themes "
-"theme, then you must re-download the theme from the member's area and <a "
-"href=\"http://www.elegantthemes.com/members-area/documentation.html#update\" "
-"target=\"_blank\">re-install it</a> in order to update it to the latest "
-"version."
+"Before you can update your Elegant Themes, you must first install the <a "
+"href=\"https://www.elegantthemes.com/members-area/documentation.html#updater"
+"\" target=\"_blank\">Elegant Updater Plugin</a> to authenticate your "
+"subscription."
 msgstr ""
 
 #: ../epanel/options_divi.php:38
@@ -1575,16 +1581,6 @@ msgstr ""
 
 #: ../et-pagebuilder/et-pagebuilder.php:335
 msgid "Page Builder"
-msgstr ""
-
-#: ../et-pagebuilder/et-pagebuilder.php:499
-#: ../et-pagebuilder/et-pagebuilder.php:930
-#: ../et-pagebuilder/et-pagebuilder.php:1247
-#: ../et-pagebuilder/et-pagebuilder.php:1335
-#: ../et-pagebuilder/et-pagebuilder.php:1475
-#: ../et-pagebuilder/et-pagebuilder.php:1987
-#: ../et-pagebuilder/et-pagebuilder.php:1998
-msgid "Hex Value"
 msgstr ""
 
 #: ../includes/navigation.php:2

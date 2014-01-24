@@ -56,6 +56,15 @@ $options = array (
 				   "desc" => esc_html__("If you would like to use your own custom favicon image click the Upload Image button.",$themename)
 			),
 
+			array( "name" => esc_html__("Fixed Navigation Bar",$themename),
+				   "id" => $shortname."_fixed_nav",
+				   "type" => "checkbox",
+				   "std" => "on",
+				   "desc" => esc_html__("By default the navigation bar stays on top of the screen at all times. We suggest to disable this option, if you need to use a logo taller than the default one.",$themename)
+			),
+
+			array( "type" => "clearfix",),
+
 			array( "name" => esc_html__("Grab the first post image",$themename),
 				   "id" => $shortname."_grab_image",
 				   "type" => "checkbox",

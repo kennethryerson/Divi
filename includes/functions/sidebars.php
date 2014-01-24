@@ -12,7 +12,7 @@ function et_widgets_init() {
 	register_sidebar( array(
 		'name' => 'Footer Area #1',
 		'id' => 'sidebar-2',
-		'before_widget' => '<div id="%1$s" class="fwidget %2$s">',
+		'before_widget' => '<div id="%1$s" class="fwidget et_pb_widget %2$s">',
 		'after_widget' => '</div> <!-- end .fwidget -->',
 		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
@@ -21,7 +21,7 @@ function et_widgets_init() {
 	register_sidebar( array(
 		'name' => 'Footer Area #2',
 		'id' => 'sidebar-3',
-		'before_widget' => '<div id="%1$s" class="fwidget %2$s">',
+		'before_widget' => '<div id="%1$s" class="fwidget et_pb_widget %2$s">',
 		'after_widget' => '</div> <!-- end .fwidget -->',
 		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
@@ -30,7 +30,7 @@ function et_widgets_init() {
 	register_sidebar( array(
 		'name' => 'Footer Area #3',
 		'id' => 'sidebar-4',
-		'before_widget' => '<div id="%1$s" class="fwidget %2$s">',
+		'before_widget' => '<div id="%1$s" class="fwidget et_pb_widget %2$s">',
 		'after_widget' => '</div> <!-- end .fwidget -->',
 		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
@@ -39,7 +39,7 @@ function et_widgets_init() {
 	register_sidebar( array(
 		'name' => 'Footer Area #4',
 		'id' => 'sidebar-5',
-		'before_widget' => '<div id="%1$s" class="fwidget %2$s">',
+		'before_widget' => '<div id="%1$s" class="fwidget et_pb_widget %2$s">',
 		'after_widget' => '</div> <!-- end .fwidget -->',
 		'before_title' => '<h4 class="title">',
 		'after_title' => '</h4>',
