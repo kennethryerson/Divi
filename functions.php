@@ -204,16 +204,16 @@ function et_postinfo_meta( $postinfo, $date_format, $comment_zero, $comment_one,
 	$postinfo_meta = '';
 
 	if ( in_array( 'author', $postinfo ) )
-		$postinfo_meta .= ' ' . esc_html__('by',$themename) . ' ' . et_get_the_author_posts_link();
+		$postinfo_meta .= ' ' . esc_html__('by',$themename) . ' ' . et_get_the_author_posts_link() . ' | ';
 
 	if ( in_array( 'date', $postinfo ) )
-		$postinfo_meta .= ' | ' . get_the_time( $date_format );
+		$postinfo_meta .= get_the_time( $date_format ) . ' | ';
 
 	if ( in_array( 'categories', $postinfo ) )
-		$postinfo_meta .= ' | ' . get_the_category_list(', ');
+		$postinfo_meta .= get_the_category_list(', ')  . ' | ';
 
 	if ( in_array( 'comments', $postinfo ) )
-		$postinfo_meta .= ' | ' . et_get_comments_popup_link( $comment_zero, $comment_one, $comment_more );
+		$postinfo_meta .= et_get_comments_popup_link( $comment_zero, $comment_one, $comment_more );
 
 	echo $postinfo_meta;
 }
@@ -792,6 +792,11 @@ function woocommerce_template_loop_product_thumbnail() {
 	);
 }
 
+function et_review_gravatar_size( $size ) {
+	return '80';
+}
+add_filter( 'woocommerce_review_gravatar_size', 'et_review_gravatar_size' );
+
 
 function et_divi_output_content_wrapper() {
 	echo '
@@ -809,7 +814,8 @@ function et_divi_output_content_wrapper_end() {
 		||
 		( is_shop() && 'et_full_width_page' !== et_get_option( 'divi_shop_page_sidebar', 'et_right_sidebar' ) )
 	)
-		woocommerce_get_template( 'shop/sidebar.php' );
+
+		woocommerce_get_sidebar();
 
 	echo '
 				</div> <!-- #content-area -->
@@ -914,7 +920,7 @@ function et_pb_slide( $atts, $content = '' ) {
 				%1$s
 			</div>',
 			do_shortcode( sprintf( '
-				<video loop="on" autoplay="on"%3$s%4$s>
+				<video loop="loop" autoplay="autoplay"%3$s%4$s>
 					%1$s
 					%2$s
 				</video>',
@@ -933,8 +939,16 @@ function et_pb_slide( $atts, $content = '' ) {
 		wp_enqueue_script( 'wp-mediaelement' );
 	}
 
-	if ( '' !== $heading )
+	if ( '' !== $heading ) {
+		if ( '#' !== $button_link ) {
+			$heading = sprintf( '<a href="%1$s">%2$s</a>',
+				esc_url( $button_link ),
+				$heading
+			);
+		}
+
 		$heading = '<h2>' . $heading . '</h2>';
+	}
 
 	$button = '';
 	if ( '' !== $button_text )
@@ -1037,7 +1051,7 @@ function et_pb_section( $atts, $content = '' ) {
 				%1$s
 			</div>',
 			do_shortcode( sprintf( '
-				<video loop="on" autoplay="on"%3$s%4$s>
+				<video loop="loop" autoplay="autoplay"%3$s%4$s>
 					%1$s
 					%2$s
 				</video>',
@@ -1066,8 +1080,8 @@ function et_pb_section( $atts, $content = '' ) {
 
 	$output = sprintf(
 		'<div%8$s class="et_pb_section%4$s%5$s%6$s%7$s%9$s"%2$s>
-			%1$s
 			%3$s
+			%1$s
 		</div> <!-- .et_pb_section -->',
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
 		$style,
@@ -1208,7 +1222,7 @@ function et_pb_blurb( $atts, $content = '' ) {
 		);
 
 	if ( '' !== $title )
-		$title = "<h3>{$title}</h3>";
+		$title = "<h4>{$title}</h4>";
 
 	if ( '' !== $image ) {
 		$image = sprintf(
@@ -1353,7 +1367,7 @@ function et_pb_toggle( $atts, $content = null ) {
 
 	$output = sprintf(
 		'<div%4$s class="et_pb_toggle %2$s%5$s">
-			<h3 class="et_pb_toggle_title">%1$s</h3>
+			<h5 class="et_pb_toggle_title">%1$s</h5>
 			<div class="et_pb_toggle_content clearfix">
 				%3$s
 			</div> <!-- .et_pb_toggle_content -->
@@ -1462,7 +1476,7 @@ function et_pb_cta( $atts, $content = null ) {
 			</div>
 			%3$s
 		</div>',
-		( '' !== $title ? '<h3>' . esc_html( $title ) . '</h3>' : '' ),
+		( '' !== $title ? '<h2>' . esc_html( $title ) . '</h2>' : '' ),
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
 		(
 			'' !== $button_url && '' !== $button_text
@@ -1616,7 +1630,7 @@ function et_pb_signup( $atts, $content = null ) {
 			</div>
 			%3$s
 		</div>',
-		( '' !== $title ? '<h3>' . esc_html( $title ) . '</h3>' : '' ),
+		( '' !== $title ? '<h2>' . esc_html( $title ) . '</h2>' : '' ),
 		do_shortcode( et_pb_fix_shortcodes( $content ) ),
 		$form,
 		esc_attr( $class ),
@@ -1688,6 +1702,8 @@ function et_pb_blog( $atts ) {
 		), $atts
 	) );
 
+	global $paged;
+
 	$container_is_closed = false;
 
 	if ( 'on' !== $fullwidth )
@@ -1695,13 +1711,17 @@ function et_pb_blog( $atts ) {
 
 	$args = array( 'posts_per_page' => (int) $posts_number );
 
-	$paged = is_front_page() ? get_query_var( 'page' ) : get_query_var( 'paged' );
+	$et_paged = is_front_page() ? get_query_var( 'page' ) : get_query_var( 'paged' );
+
+	if ( is_front_page() ) {
+		$paged = $et_paged;
+	}
 
 	if ( '' !== $include_categories )
 		$args['cat'] = $include_categories;
 
 	if ( ! is_search() ) {
-		$args['paged'] = $paged;
+		$args['paged'] = $et_paged;
 	}
 
 	ob_start();
@@ -1828,6 +1848,8 @@ function et_pb_portfolio( $atts ) {
 		), $atts
 	) );
 
+	global $paged;
+
 	$container_is_closed = false;
 
 	$args = array(
@@ -1835,7 +1857,11 @@ function et_pb_portfolio( $atts ) {
 		'post_type'      => 'project',
 	);
 
-	$paged = is_front_page() ? get_query_var( 'page' ) : get_query_var( 'paged' );
+	$et_paged = is_front_page() ? get_query_var( 'page' ) : get_query_var( 'paged' );
+
+	if ( is_front_page() ) {
+		$paged = $et_paged;
+	}
 
 	if ( '' !== $include_categories )
 		$args['tax_query'] = array(
@@ -1848,7 +1874,7 @@ function et_pb_portfolio( $atts ) {
 		);
 
 	if ( ! is_search() ) {
-		$args['paged'] = $paged;
+		$args['paged'] = $et_paged;
 	}
 
 	ob_start();
@@ -1890,7 +1916,7 @@ function et_pb_portfolio( $atts ) {
 		?>
 
 			<?php if ( 'on' === $show_title ) : ?>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 
 			<?php if ( 'on' === $show_categories ) : ?>
@@ -2115,15 +2141,19 @@ function et_pb_contact_form( $atts, $content = null ) {
 			? $email
 			: get_site_option( 'admin_email' );
 
-		$et_site_name = is_multisite() ? $current_site->site_name : get_bloginfo( 'name' );
+		$et_site_name = get_option( 'blogname' );
 
-		$contact_name 	= sanitize_text_field( $_POST['et_pb_contact_name'] );
+		$contact_name 	= stripslashes( sanitize_text_field( $_POST['et_pb_contact_name'] ) );
 		$contact_email 	= sanitize_email( $_POST['et_pb_contact_email'] );
 
 		$headers  = 'From: ' . $contact_name . ' <' . $contact_email . '>' . "\r\n";
 		$headers .= 'Reply-To: ' . $contact_name . ' <' . $contact_email . '>';
 
-		wp_mail( apply_filters( 'et_contact_page_email_to', $et_email_to ), sprintf( '[%s] ' . sanitize_text_field( $_POST['et_contact_subject'] ), $et_site_name ), wp_strip_all_tags( $_POST['et_pb_contact_message'] ), apply_filters( 'et_contact_page_headers', $headers, $contact_name, $contact_email ) );
+		wp_mail( apply_filters( 'et_contact_page_email_to', $et_email_to ),
+			sprintf( __( 'New Message From %1$s%2$s', 'Divi' ),
+				sanitize_text_field( $et_site_name ),
+				( '' !== $title ? sprintf( _x( ' - %s', 'contact form title separator', 'Divi' ), sanitize_text_field( $title ) ) : '' )
+			), stripslashes( wp_strip_all_tags( $_POST['et_pb_contact_message'] ) ), apply_filters( 'et_contact_page_headers', $headers, $contact_name, $contact_email ) );
 
 		$et_error_message = sprintf( '<p>%1$s</p>', esc_html__( 'Thanks for contacting us', 'Divi' ) );
 	}

@@ -372,7 +372,7 @@ if ( ! function_exists( 'et_build_epanel' ) ){
 			<div style="clear: both;"></div>
 			<div style="position: relative;">
 				<div class="defaults-hover">
-					<?php _e( 'This will return all of the settings throughout the options page to their default values. <strong>Are you sure you want to do this?', $themename ); ?></strong>
+					<?php _e( 'This will return all of the settings throughout the options page to their default values. <strong>Are you sure you want to do this?</strong>', $themename ); ?>
 					<div class="clearfix"></div>
 					<form method="post">
 						<?php wp_nonce_field( 'et-nojs-reset_epanel', '_wpnonce_reset' ); ?>
@@ -406,7 +406,7 @@ function et_epanel_save_callback() {
 
 if ( ! function_exists( 'epanel_save_data' ) ){
 	function epanel_save_data( $source ){
-		global $options;
+		global $options, $shortname;
 
 		if ( !current_user_can('switch_themes') )
 			die('-1');
@@ -474,8 +474,14 @@ if ( ! function_exists( 'epanel_save_data' ) ){
 
 								if ( isset( $value['validation_type'] ) ) {
 									// html is not allowed
-									if ( 'nohtml' == $value['validation_type'] )
-										et_update_option( $value['id'], wp_strip_all_tags( stripslashes( $_POST[$value['id']] ) ) );
+									if ( 'nohtml' == $value['validation_type'] ) {
+										if ( $value['id'] === ( $shortname . '_custom_css' ) ) {
+											// don't strip slashes from custom css, it should be possible to use \ for icon fonts
+											et_update_option( $value['id'], wp_strip_all_tags( $_POST[$value['id']] ) );
+										} else {
+											et_update_option( $value['id'], wp_strip_all_tags( stripslashes( $_POST[$value['id']] ) ) );
+										}
+									}
 								} else {
 									if ( current_user_can( 'unfiltered_html' ) )
 										et_update_option( $value['id'], stripslashes( $_POST[$value['id']] ) );

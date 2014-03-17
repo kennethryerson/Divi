@@ -170,14 +170,6 @@ function et_add_simple_buttons(){
 						'key' => ''
 					));
 
-	$buttons[] = array('name' => 'buzz',
-					'options' => array(
-						'display_name' => 'buzz',
-						'open_tag' => '\n[buzz]',
-						'close_tag' => '[/buzz]\n',
-						'key' => ''
-					));
-
 	$buttons[] = array('name' => 'twitter',
 					'options' => array(
 						'display_name' => 'twitter',
@@ -251,13 +243,6 @@ function et_stumble($atts, $content = null){
 add_shortcode('facebook','et_facebook');
 function et_facebook($atts, $content = null){
 	$output = "<a name='fb_share' type='button_count' href='http://www.facebook.com/sharer.php'>Share</a><script src='http://static.ak.fbcdn.net/connect.php/js/FB.Share' type='text/javascript'></script>";
-	return $output;
-}
-
-add_shortcode('buzz','et_buzz');
-function et_buzz($atts, $content = null){
-	$output = "<a title='Post to Google Buzz' class='google-buzz-button' href='http://www.google.com/buzz/post' data-button-style='normal-count'></a>
-<script type='text/javascript' src='http://www.google.com/buzz/api/button.js'></script>";
 	return $output;
 }
 

@@ -2060,8 +2060,8 @@ echo <<<END
 				<label for="et_pb_show_title">Title: </label>
 				<div class="et-pb-option-container">
 					<select name="et_pb_show_title" id="et_pb_show_title">
-						<option value="on"<%= typeof( et_pb_show_title ) !== 'undefined' && 'on' === et_pb_show_title ?  ' selected="selected"' : '' %>>Show Tttle</option>
-						<option value="off"<%= typeof( et_pb_show_title ) !== 'undefined' && 'off' === et_pb_show_title ?  ' selected="selected"' : '' %>>Don't Show Tttle</option>
+						<option value="on"<%= typeof( et_pb_show_title ) !== 'undefined' && 'on' === et_pb_show_title ?  ' selected="selected"' : '' %>>Show Title</option>
+						<option value="off"<%= typeof( et_pb_show_title ) !== 'undefined' && 'off' === et_pb_show_title ?  ' selected="selected"' : '' %>>Don't Show Title</option>
 					</select>
 
 					<p class="description">Turn project titles on or off.</p>

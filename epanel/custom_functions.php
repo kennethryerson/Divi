@@ -160,7 +160,11 @@ if ( ! function_exists( 'truncate_post' ) ){
 			}
 
 			// trim text to a certain number of characters, also remove spaces from the end of a string ( space counts as a character )
-			$truncate = rtrim( wp_trim_words( $truncate, $amount, '' ) );
+			if ( ! $echo ) {
+				$truncate = rtrim( et_wp_trim_words( $truncate, $amount, '' ) );
+			} else {
+				$truncate = rtrim( wp_trim_words( $truncate, $amount, '' ) );
+			}
 
 			// remove the last word to make sure we display all words correctly
 			if ( '' != $echo_out ) {
@@ -176,6 +180,30 @@ if ( ! function_exists( 'truncate_post' ) ){
 			if ( $echo ) echo $truncate;
 			else return $truncate;
 		};
+	}
+}
+
+if ( ! function_exists( 'et_wp_trim_words' ) ){
+	function et_wp_trim_words( $text, $num_words = 55, $more = null ) {
+		if ( null === $more )
+			$more = __( '&hellip;' );
+		$original_text = $text;
+		$text = wp_strip_all_tags( $text );
+
+		$text = trim( preg_replace( "/[\n\r\t ]+/", ' ', $text ), ' ' );
+		preg_match_all( '/./u', $text, $words_array );
+		$words_array = array_slice( $words_array[0], 0, $num_words + 1 );
+		$sep = '';
+
+		if ( count( $words_array ) > $num_words ) {
+			array_pop( $words_array );
+			$text = implode( $sep, $words_array );
+			$text = $text . $more;
+		} else {
+			$text = implode( $sep, $words_array );
+		}
+
+		return apply_filters( 'wp_trim_words', $text, $num_words, $more, $original_text );
 	}
 }
 
@@ -526,14 +554,15 @@ if ( ! function_exists( 'get_categname' ) ){
 }
 
 /*this function gets category id by its name*/
-if ( ! function_exists( 'get_catId' ) ){
-	function get_catId( $cat_name )
+if ( ! function_exists( 'get_catId' ) ) {
+	function get_catId( $cat_name, $taxonomy = 'category' )
 	{
 		$cat_name_id = is_numeric( $cat_name ) ? (int) $cat_name : (int) get_cat_ID( html_entity_decode( $cat_name, ENT_QUOTES ) );
 
 		// wpml compatibility
-		if ( function_exists( 'icl_object_id' ) )
-			$cat_name_id = (int) icl_object_id( $cat_name_id, 'category', true );
+		if ( function_exists( 'icl_object_id' ) ) {
+			$cat_name_id = (int) icl_object_id( $cat_name_id, $taxonomy, true );
+		}
 
 		return $cat_name_id;
 	}
@@ -582,91 +611,182 @@ if ( ! function_exists( 'et_generate_wpml_ids' ) ){
 	}
 }
 
+if ( ! function_exists( 'elegant_is_blog_posts_page' ) ){
+	function elegant_is_blog_posts_page() {
+		/**
+		 * Returns true if static page is set in WP-Admin / Settings / Reading
+		 * and Posts page is displayed
+		 */
+
+		static $et_is_blog_posts_cached = null;
+
+		if ( null === $et_is_blog_posts_cached ) {
+			$et_is_blog_posts_cached = (bool) is_home() && 0 !== intval( get_option( 'page_for_posts', '0' ) );
+		}
+
+		return $et_is_blog_posts_cached;
+	}
+}
+
 /*this function controls the meta titles display*/
 if ( ! function_exists( 'elegant_titles' ) ){
 	function elegant_titles() {
-		global $shortname;
+		global $shortname, $themename;
+
+		$custom_title = '';
 
 		$sitename = get_bloginfo('name');
 		$site_description = get_bloginfo('description');
 
 		#if the title is being displayed on the homepage
-		if (is_home() || is_front_page()) {
-			if (et_get_option($shortname.'_seo_home_title') == 'on') echo et_get_option($shortname.'_seo_home_titletext');
-			else {
+		if ( ( is_home() || is_front_page() ) && ! elegant_is_blog_posts_page() ) {
+			if ( 'on' === et_get_option( $shortname . '_seo_home_title' ) ) {
+				$custom_title = et_get_option( $shortname . '_seo_home_titletext' );
+			} else {
 				$seo_home_type = et_get_option( $shortname . '_seo_home_type' );
-				$seo_home_separate = et_get_option($shortname.'_seo_home_separate');
+				$seo_home_separate = et_get_option( $shortname . '_seo_home_separate' );
 
-				if ( $seo_home_type == 'BlogName | Blog description' ) echo $sitename . esc_html( $seo_home_separate ) . $site_description;
-				if ( $seo_home_type == 'Blog description | BlogName') echo $site_description . esc_html( $seo_home_separate ) . $sitename;
-				if ( $seo_home_type == 'BlogName only') echo $sitename;
+				if ( $seo_home_type == 'BlogName | Blog description' ) {
+					$custom_title = $sitename . esc_html( $seo_home_separate ) . $site_description;
+				}
+				if ( $seo_home_type == 'Blog description | BlogName') {
+					$custom_title = $site_description . esc_html( $seo_home_separate ) . $sitename;
+				}
+				if ( $seo_home_type == 'BlogName only') {
+					$custom_title = $sitename;
+				}
 			}
 		}
+
 		#if the title is being displayed on single posts/pages
-		if ( ( is_single() || is_page() ) && ! is_front_page() ) {
+		if ( ( ( is_single() || is_page() ) && ! is_front_page() ) || elegant_is_blog_posts_page() ) {
 			global $wp_query;
-			$postid = $wp_query->post->ID;
+			$postid = elegant_is_blog_posts_page() ? intval( get_option( 'page_for_posts' ) ) : $wp_query->post->ID;
 			$key = et_get_option($shortname.'_seo_single_field_title');
 			$exists3 = get_post_meta($postid, ''.$key.'', true);
-					if (et_get_option($shortname.'_seo_single_title') == 'on' && $exists3 !== '' ) echo $exists3;
-					else {
-						$seo_single_type = et_get_option($shortname.'_seo_single_type');
-						$seo_single_separate = et_get_option($shortname.'_seo_single_separate');
-						if ( $seo_single_type == 'BlogName | Post title' ) echo $sitename . esc_html( $seo_single_separate ) . wp_title('',false,'');
-						if ( $seo_single_type == 'Post title | BlogName' ) echo wp_title('',false,'') . esc_html( $seo_single_separate ) . $sitename;
-						if ( $seo_single_type == 'Post title only' ) echo wp_title('',false,'');
-					}
 
+			if ( 'on' === et_get_option( $shortname . '_seo_single_title' ) && '' !== $exists3 ) {
+				$custom_title = $exists3;
+			} else {
+				$seo_single_type = et_get_option( $shortname . '_seo_single_type' );
+				$seo_single_separate = et_get_option( $shortname . '_seo_single_separate' );
+				$page_title = single_post_title( '', false );
+
+				if ( $seo_single_type == 'BlogName | Post title' ) {
+					$custom_title = $sitename . esc_html( $seo_single_separate ) . $page_title;
+				}
+
+				if ( $seo_single_type == 'Post title | BlogName' ) {
+					$custom_title = $page_title . esc_html( $seo_single_separate ) . $sitename;
+				}
+
+				if ( $seo_single_type == 'Post title only' ) {
+					$custom_title = $page_title;
+				}
+			}
 		}
+
 		#if the title is being displayed on index pages (categories/archives/search results)
-		if (is_category() || is_archive() || is_search()) {
-			$seo_index_type = et_get_option($shortname.'_seo_index_type');
-			$seo_index_separate = et_get_option($shortname.'_seo_index_separate');
-			if ( $seo_index_type == 'BlogName | Category name' ) echo $sitename . esc_html( $seo_index_separate ) . wp_title('',false,'');
-			if ( $seo_index_type == 'Category name | BlogName') echo wp_title('',false,'') . esc_html( $seo_index_separate ) . $sitename;
-			if ( $seo_index_type == 'Category name only') echo wp_title('',false,'');
+		if ( is_category() || is_archive() || is_search() || is_404() ) {
+			$page_title = '';
+
+			$seo_index_type = et_get_option( $shortname . '_seo_index_type' );
+			$seo_index_separate = et_get_option( $shortname . '_seo_index_separate' );
+
+			if ( is_category() || is_tag() || is_tax() ) {
+				$page_title = single_term_title( '', false );
+			} else if ( is_post_type_archive() ) {
+				$page_title = post_type_archive_title( '', false );
+			} else if ( is_author() ) {
+				$page_title = get_the_author_meta( 'display_name', get_query_var( 'author' ) );
+			} else if ( is_date() ) {
+				$page_title = __( 'Archives', $themename );
+			} else if ( is_search() ) {
+				$page_title = sprintf( __( 'Search results for "%s"', $themename ), esc_attr( get_search_query() ) );
+			} else if ( is_404() ) {
+				$page_title = __( '404 Not Found', $themename );
+			}
+
+			if ( $seo_index_type == 'BlogName | Category name' ) {
+				$custom_title = $sitename . esc_html( $seo_index_separate ) . $page_title;
+			}
+
+			if ( $seo_index_type == 'Category name | BlogName') {
+				$custom_title = $page_title . esc_html( $seo_index_separate ) . $sitename;
+			}
+
+			if ( $seo_index_type == 'Category name only') {
+				$custom_title = $page_title;
+			}
 		}
+
+		// Improves compatibility with SEO plugins
+		echo apply_filters( 'wp_title', wp_strip_all_tags( $custom_title ) );
 	}
 }
 
 /*this function controls the meta description display*/
 if ( ! function_exists( 'elegant_description' ) ){
 	function elegant_description() {
-		global $shortname;
+		// Don't use ePanel SEO if WordPress SEO or All In One SEO Pack plugins are active
+		if ( class_exists( 'WPSEO_Frontend' ) || class_exists( 'All_in_One_SEO_Pack' ) ) {
+			return;
+		}
+
+		global $shortname, $themename;
 
 		#homepage descriptions
-		if ( is_home() && et_get_option($shortname.'_seo_home_description') == 'on' ) echo '<meta name="description" content="' . esc_attr( et_get_option($shortname.'_seo_home_descriptiontext') ) .'" />';
+		if ( et_get_option($shortname.'_seo_home_description') == 'on' && ( ( is_home() || is_front_page() ) && ! elegant_is_blog_posts_page() ) ) {
+			echo '<meta name="description" content="' . esc_attr( et_get_option($shortname.'_seo_home_descriptiontext') ) .'" />';
+		}
 
 		#single page descriptions
-		global $wp_query;
-		if ( isset($wp_query->post->ID) ) $postid = $wp_query->post->ID;
-		$key2 = et_get_option($shortname.'_seo_single_field_description');
-		if ( isset($postid) ) $exists = get_post_meta($postid, ''.$key2.'', true);
-		if (et_get_option($shortname.'_seo_single_description') == 'on' && $exists !== '') {
-			if (is_single() || is_page()) echo '<meta name="description" content="' . esc_attr( $exists ) . '" />';
+		if ( et_get_option($shortname.'_seo_single_description') == 'on' && ( is_single() || is_page() || elegant_is_blog_posts_page() ) ) {
+			global $wp_query;
+
+			if ( isset($wp_query->post->ID) || elegant_is_blog_posts_page() ) {
+				$postid = elegant_is_blog_posts_page() ? intval( get_option( 'page_for_posts' ) ) : $wp_query->post->ID;
+			}
+
+			$key2 = et_get_option($shortname.'_seo_single_field_description');
+
+			if ( isset($postid) ) $exists = get_post_meta($postid, ''.$key2.'', true);
+
+			if ( $exists !== '' ) {
+				echo '<meta name="description" content="' . esc_attr( $exists ) . '" />';
+			}
 		}
 
 		#index descriptions
-		remove_filter('term_description','wpautop');
-		$cat = get_query_var('cat');
-		$exists2 = category_description($cat);
-		$description_added = false;
-
 		$seo_index_description = et_get_option($shortname.'_seo_index_description');
+		if ( $seo_index_description == 'on' ) {
+			$description_added = false;
 
-		if ($exists2 !== '' && $seo_index_description == 'on') {
-			if (is_category()) {
-				echo '<meta name="description" content="'. esc_attr( $exists2 ) .'" />';
+			if ( is_category() ) {
+				remove_filter( 'term_description', 'wpautop' );
+				$cat = get_query_var( 'cat' );
+				$exists2 = category_description( $cat );
+
+				if ( $exists2 !== '' ) {
+					echo '<meta name="description" content="' . esc_attr( $exists2 ) . '" />';
+					$description_added = true;
+				}
+			}
+
+			if ( is_archive() && ! $description_added ) {
+				printf( '<meta name="description" content="%1$s" />',
+					esc_attr( sprintf( __( 'Currently viewing archives from %1$s', $themename ),
+						wp_title( '', false, '' )
+					) )
+				);
+
 				$description_added = true;
 			}
-		}
-		if (is_archive() && $seo_index_description == 'on' && ! $description_added) {
-			echo '<meta name="description" content="Currently viewing archives from'. esc_attr( wp_title('',false,'') ) .'" />';
-			$description_added = true;
-		}
-		if (is_search() && $seo_index_description == 'on' && ! $description_added) {
-			echo '<meta name="description" content="'. esc_attr( wp_title('',false,'') ) .'" />';
-			$description_added = true;
+
+			if ( is_search() && ! $description_added ) {
+				echo '<meta name="description" content="' . esc_attr( wp_title('',false,'') ) . '" />';
+				$description_added = true;
+			}
 		}
 	}
 }
@@ -674,18 +794,32 @@ if ( ! function_exists( 'elegant_description' ) ){
 /*this function controls the meta keywords display*/
 if ( ! function_exists( 'elegant_keywords' ) ){
 	function elegant_keywords() {
+		// Don't use ePanel SEO if WordPress SEO or All In One SEO Pack plugins are active
+		if ( class_exists( 'WPSEO_Frontend' ) || class_exists( 'All_in_One_SEO_Pack' ) ) {
+			return;
+		}
+
 		global $shortname;
 
 		#homepage keywords
-		if (is_home() && et_get_option($shortname.'_seo_home_keywords') == 'on') echo '<meta name="keywords" content="'.esc_attr( et_get_option($shortname.'_seo_home_keywordstext') ).'" />';
+		if ( et_get_option($shortname.'_seo_home_keywords') == 'on' && ( ( is_home() || is_front_page() ) && ! elegant_is_blog_posts_page() ) ) {
+			echo '<meta name="keywords" content="' . esc_attr( et_get_option($shortname.'_seo_home_keywordstext') ) . '" />';
+		}
 
 		#single page keywords
-		global $wp_query;
-		if (isset($wp_query->post->ID)) $postid = $wp_query->post->ID;
-		$key3 = et_get_option($shortname.'_seo_single_field_keywords');
-		if (isset($postid)) $exists4 = get_post_meta($postid, ''.$key3.'', true);
-		if (isset($exists4) && $exists4 !== '' && et_get_option($shortname.'_seo_single_keywords') == 'on') {
-			if (is_single() || is_page()) echo '<meta name="keywords" content="' . esc_attr( $exists4 ) . '" />';
+		if ( et_get_option($shortname.'_seo_single_keywords') == 'on' ) {
+			global $wp_query;
+			if ( isset( $wp_query->post->ID ) || elegant_is_blog_posts_page() ) {
+				$postid = elegant_is_blog_posts_page() ? intval( get_option( 'page_for_posts' ) ) : $wp_query->post->ID;
+			}
+
+			$key3 = et_get_option($shortname.'_seo_single_field_keywords');
+
+			if (isset($postid)) $exists4 = get_post_meta($postid, ''.$key3.'', true);
+
+			if ( isset($exists4) && $exists4 !== '' ) {
+				if ( is_single() || is_page() || elegant_is_blog_posts_page() ) echo '<meta name="keywords" content="' . esc_attr( $exists4 ) . '" />';
+			}
 		}
 	}
 }
@@ -693,22 +827,34 @@ if ( ! function_exists( 'elegant_keywords' ) ){
 /*this function controls canonical urls*/
 if ( ! function_exists( 'elegant_canonical' ) ){
 	function elegant_canonical() {
+		// Don't use ePanel SEO if WordPress SEO or All In One SEO Pack plugins are active
+		if ( class_exists( 'WPSEO_Frontend' ) || class_exists( 'All_in_One_SEO_Pack' ) ) {
+			return;
+		}
+
 		global $shortname;
 
 		#homepage urls
-		if (is_home() && et_get_option($shortname.'_seo_home_canonical') == 'on') echo '<link rel="canonical" href="'. esc_url( home_url() ).'" />';
+		if ( et_get_option($shortname.'_seo_home_canonical') == 'on' && is_home() && ! elegant_is_blog_posts_page() ) {
+			echo '<link rel="canonical" href="'. esc_url( home_url() ).'" />';
+		}
 
 		#single page urls
-		global $wp_query;
-		if (isset($wp_query->post->ID)) $postid = $wp_query->post->ID;
-		if (et_get_option($shortname.'_seo_single_canonical') == 'on') {
-			if (is_single() || is_page()) echo '<link rel="canonical" href="'.esc_url( get_permalink() ).'" />';
+		if ( et_get_option($shortname.'_seo_single_canonical') == 'on' ) {
+			global $wp_query;
+			if ( isset( $wp_query->post->ID ) || elegant_is_blog_posts_page() ) {
+				$postid = elegant_is_blog_posts_page() ? intval( get_option( 'page_for_posts' ) ) : $wp_query->post->ID;
+			}
+
+			if ( ( is_single() || is_page() || elegant_is_blog_posts_page() ) && ! is_front_page() ) {
+				echo '<link rel="canonical" href="' . esc_url( get_permalink( $postid ) ) . '" />';
+			}
 		}
 
 		#index page urls
-		if (et_get_option($shortname.'_seo_index_canonical') == 'on') {
+		if ( et_get_option($shortname.'_seo_index_canonical') == 'on' ) {
 			$current_page_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-			if (is_archive() || is_category() || is_search()) echo '<link rel="canonical" href="'. esc_url( $current_page_url ).'" />';
+			if ( is_archive() || is_category() || is_search() ) echo '<link rel="canonical" href="'. esc_url( $current_page_url ).'" />';
 		}
 	}
 }
@@ -782,6 +928,13 @@ function et_update_uploads_dir( $upload_path ){
 
 if ( ! function_exists( 'et_resize_image' ) ){
 	function et_resize_image( $thumb, $new_width, $new_height, $crop ){
+		/*
+		 * Fixes the issue with x symbol between width and height values in the filename.
+		 * For instance, sports-400x400.jpg file results in 'image not found' in getimagesize() function.
+		 */
+		$thumb = str_replace( '%26%23215%3B', 'x', rawurlencode( $thumb ) );
+		$thumb = rawurldecode( $thumb );
+
 		if ( is_ssl() ) $thumb = preg_replace( '#^http://#', 'https://', $thumb );
 		$info = pathinfo($thumb);
 		$ext = $info['extension'];
@@ -835,12 +988,12 @@ if ( ! function_exists( 'et_resize_image' ) ){
 
 		#prepend image filesize to be able to use images with the same filename
 		$suffix = $add_to_suffix . $suffix;
-		$destfilename_attributes = '-' . $suffix . '.' . $ext;
+		$destfilename_attributes = '-' . $suffix . '.' . strtolower( $ext );
 
 		$checkfilename = ( '' != $destination_dir && null !== $destination_dir ) ? path_join( $destination_dir, $name ) : path_join( dirname( $localfile ), $name );
 		$checkfilename .= $destfilename_attributes;
 
-		if ( $is_jpeg ) $checkfilename = preg_replace( '#.jpeg$#', '.jpg', $checkfilename );
+		if ( $is_jpeg ) $checkfilename = preg_replace( '#.jpg$#', '.jpeg', $checkfilename );
 
 		$uploads_dir = wp_upload_dir();
 		$uploads_dir['basedir'] = preg_replace( '#\/\/#', '/', $uploads_dir['basedir'] );
@@ -1122,7 +1275,11 @@ function et_add_custom_css() {
 
 	if ( false === $custom_css || '' == $custom_css ) return;
 
-	echo '<style type="text/css" id="et-custom-css">' . "\n" . $custom_css . "\n" . '</style>';
+	/**
+	 * The theme doesn't strip slashes from custom css, when saving to the database,
+	 * so it does that before outputting the code on front-end
+	 */
+	echo '<style type="text/css" id="et-custom-css">' . "\n" . stripslashes( $custom_css ) . "\n" . '</style>';
 }
 add_action( 'wp_head', 'et_add_custom_css', 100 );
 

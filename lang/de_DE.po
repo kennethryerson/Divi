@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Divi 1.0\n"
-"POT-Creation-Date: 2013-12-26 00:26+0400\n"
-"PO-Revision-Date: 2013-12-26 00:26+0400\n"
+"POT-Creation-Date: 2014-02-26 22:35+0400\n"
+"PO-Revision-Date: 2014-02-26 22:35+0400\n"
 "Last-Translator: \n"
 "Language-Team: Ann\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: _x;_n;_e;__;esc_html__;esc_html_e;esc_attr__;"
 "esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
@@ -177,7 +177,7 @@ msgstr "Nicht gefunden"
 msgid "Nothing found in Trash"
 msgstr ""
 
-#: ../functions.php:269 ../functions.php:279 ../epanel/options_divi.php:255
+#: ../functions.php:269 ../functions.php:279 ../epanel/options_divi.php:264
 msgid "Categories"
 msgstr ""
 
@@ -297,15 +297,15 @@ msgstr ""
 msgid "Posted on"
 msgstr "Gepostet am"
 
-#: ../functions.php:364 ../epanel/options_divi.php:79
+#: ../functions.php:364 ../epanel/options_divi.php:88
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:365 ../epanel/options_divi.php:80
+#: ../functions.php:365 ../epanel/options_divi.php:89
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../functions.php:366 ../epanel/options_divi.php:81
+#: ../functions.php:366 ../epanel/options_divi.php:90
 msgid "Full Width"
 msgstr ""
 
@@ -394,80 +394,94 @@ msgstr "1 Kommentar"
 msgid "comments"
 msgstr "Kommentare"
 
-#: ../functions.php:1259
+#: ../functions.php:1345
 msgid "Tab"
 msgstr ""
 
-#: ../functions.php:1467
+#: ../functions.php:1565
 msgid ""
 "<h2 class=\"et_pb_subscribed\">Subscribed - look for the confirmation email!"
 "</h2>"
 msgstr ""
 
-#: ../functions.php:1478
+#: ../functions.php:1578
 msgid "Subscribe"
 msgstr ""
 
-#: ../functions.php:1491
+#: ../functions.php:1591
 msgid "First Name"
 msgstr ""
 
-#: ../functions.php:1492
+#: ../functions.php:1592
 msgid "Last Name"
 msgstr ""
 
-#: ../functions.php:1493 ../functions.php:2015
+#: ../functions.php:1593 ../functions.php:2152
 msgid "Email Address"
 msgstr ""
 
-#: ../functions.php:1650
+#: ../functions.php:1761
 #, php-format
 msgid "by %s |"
 msgstr ""
 
-#: ../functions.php:1655
+#: ../functions.php:1766
 #, php-format
 msgid "%s |"
 msgstr ""
 
-#: ../functions.php:1958
+#: ../functions.php:1781
+msgid "read more..."
+msgstr ""
+
+#: ../functions.php:2091
 msgid "Make sure you entered the captcha."
 msgstr ""
 
-#: ../functions.php:1961
+#: ../functions.php:2094
 msgid "You entered the wrong number in captcha."
 msgstr ""
 
-#: ../functions.php:1968
+#: ../functions.php:2101
 msgid "Make sure you fill all fields."
 msgstr ""
 
-#: ../functions.php:1973
+#: ../functions.php:2106
 msgid "Invalid Email."
 msgstr ""
 
-#: ../functions.php:2009
+#: ../functions.php:2141
+#, php-format
+msgid "New Message From %1$s%2$s"
+msgstr ""
+
+#: ../functions.php:2143
+#, php-format
+msgid " - %s"
+msgstr ""
+
+#: ../functions.php:2146
 msgid "Thanks for contacting us"
 msgstr ""
 
-#: ../functions.php:2014
+#: ../functions.php:2151
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:2016
+#: ../functions.php:2153
 msgid "Message"
 msgstr ""
 
-#: ../functions.php:2070
+#: ../functions.php:2207
 msgid "Submit"
 msgstr ""
 
-#: ../functions.php:2071 ../epanel/core_functions.php:203
+#: ../functions.php:2208 ../epanel/core_functions.php:203
 #: ../epanel/core_functions.php:379
 msgid "Reset"
 msgstr ""
 
-#: ../header.php:62 ../epanel/custom_functions.php:434
+#: ../header.php:62 ../epanel/custom_functions.php:462
 msgid "Home"
 msgstr "Startseite"
 
@@ -507,8 +521,8 @@ msgstr ""
 msgid "settings reset."
 msgstr ""
 
-#: ../epanel/core_functions.php:111 ../epanel/options_divi.php:260
-#: ../epanel/options_divi.php:411
+#: ../epanel/core_functions.php:111 ../epanel/options_divi.php:269
+#: ../epanel/options_divi.php:420
 msgid "General Settings"
 msgstr ""
 
@@ -555,14 +569,37 @@ msgstr ""
 #: ../epanel/core_functions.php:375
 msgid ""
 "This will return all of the settings throughout the options page to their "
-"default values. <strong>Are you sure you want to do this?"
+"default values. <strong>Are you sure you want to do this?</strong>"
 msgstr ""
 
-#: ../epanel/custom_functions.php:858
+#: ../epanel/custom_functions.php:189
+msgid "&hellip;"
+msgstr ""
+
+#: ../epanel/custom_functions.php:703
+msgid "Archives"
+msgstr ""
+
+#: ../epanel/custom_functions.php:705
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: ../epanel/custom_functions.php:707
+#, fuzzy
+msgid "404 Not Found"
+msgstr "Nicht gefunden"
+
+#: ../epanel/custom_functions.php:778
+#, php-format
+msgid "Currently viewing archives from %1$s"
+msgstr ""
+
+#: ../epanel/custom_functions.php:1011
 msgid "Image doesn't exist"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1054
+#: ../epanel/custom_functions.php:1207
 #, php-format
 msgid ""
 "<div class=\"updated\"><p>This is a fresh installation of %1$s theme. Don't "
@@ -571,7 +608,7 @@ msgid ""
 "\">theme's options page</a>.</p></div>"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1066
+#: ../epanel/custom_functions.php:1219
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox"
@@ -581,7 +618,7 @@ msgid ""
 "\">Elegant Updater Plugin</a> to authenticate your subscription.</em>"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1070
+#: ../epanel/custom_functions.php:1223
 msgid ""
 "Before you can update your Elegant Themes, you must first install the <a "
 "href=\"https://www.elegantthemes.com/members-area/documentation.html#updater"
@@ -614,10 +651,21 @@ msgid ""
 msgstr ""
 
 #: ../epanel/options_divi.php:59
-msgid "Grab the first post image"
+msgid "Fixed Navigation Bar"
 msgstr ""
 
 #: ../epanel/options_divi.php:63
+msgid ""
+"By default the navigation bar stays on top of the screen at all times. We "
+"suggest to disable this option, if you need to use a logo taller than the "
+"default one."
+msgstr ""
+
+#: ../epanel/options_divi.php:68
+msgid "Grab the first post image"
+msgstr ""
+
+#: ../epanel/options_divi.php:72
 msgid ""
 "By default thumbnail images are created using custom fields. However, if you "
 "would rather use the images that are already in your post for your thumbnail "
@@ -626,85 +674,85 @@ msgid ""
 "image in your post. The image must be hosted on your own server."
 msgstr ""
 
-#: ../epanel/options_divi.php:66
+#: ../epanel/options_divi.php:75
 msgid "Blog Style Mode"
 msgstr ""
 
-#: ../epanel/options_divi.php:70
+#: ../epanel/options_divi.php:79
 msgid ""
 "By default the theme truncates your posts on index/homepages automatically "
 "to create post previews. If you would rather show your posts in full on "
 "index pages like a traditional blog then you can activate this feature."
 msgstr ""
 
-#: ../epanel/options_divi.php:75
+#: ../epanel/options_divi.php:84
 msgid "Shop Page Layout"
 msgstr ""
 
-#: ../epanel/options_divi.php:84
+#: ../epanel/options_divi.php:93
 msgid "Here you can choose Shop page layout."
 msgstr ""
 
-#: ../epanel/options_divi.php:88
+#: ../epanel/options_divi.php:97
 msgid "MailChimp API Key"
 msgstr ""
 
-#: ../epanel/options_divi.php:93
+#: ../epanel/options_divi.php:102
 #, php-format
 msgid ""
 "Enter your MailChimp API key. You can create an api key <a target=\"_blank\" "
 "href=\"%1$s\">here</a>"
 msgstr ""
 
-#: ../epanel/options_divi.php:160
+#: ../epanel/options_divi.php:169
 msgid "Number of Posts displayed on Category page"
 msgstr ""
 
-#: ../epanel/options_divi.php:164
+#: ../epanel/options_divi.php:173
 msgid ""
 "Here you can designate how many recent articles are displayed on the "
 "Category page. This option works independently from the Settings > Reading "
 "options in wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:168
+#: ../epanel/options_divi.php:177
 msgid "Number of Posts displayed on Archive pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:172
+#: ../epanel/options_divi.php:181
 msgid ""
 "Here you can designate how many recent articles are displayed on the Archive "
 "pages. This option works independently from the Settings > Reading options "
 "in wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:176
+#: ../epanel/options_divi.php:185
 msgid "Number of Posts displayed on Search pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:180
+#: ../epanel/options_divi.php:189
 msgid ""
 "Here you can designate how many recent articles are displayed on the Search "
 "results pages. This option works independently from the Settings > Reading "
 "options in wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:184
+#: ../epanel/options_divi.php:193
 msgid "Number of Posts displayed on Tag pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:188
+#: ../epanel/options_divi.php:197
 msgid ""
 "Here you can designate how many recent articles are displayed on the Tag "
 "pages. This option works independently from the Settings > Reading options "
 "in wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:192
+#: ../epanel/options_divi.php:201
 msgid "Date format"
 msgstr ""
 
-#: ../epanel/options_divi.php:196
+#: ../epanel/options_divi.php:205
 msgid ""
 "This option allows you to change how your dates are displayed. For more "
 "information please refer to the WordPress codex here:<a href='http://codex."
@@ -712,67 +760,67 @@ msgid ""
 "Time</a>"
 msgstr ""
 
-#: ../epanel/options_divi.php:202
+#: ../epanel/options_divi.php:211
 msgid "Use excerpts when defined"
 msgstr ""
 
-#: ../epanel/options_divi.php:206
+#: ../epanel/options_divi.php:215
 msgid "This will enable the use of excerpts in posts or pages."
 msgstr ""
 
-#: ../epanel/options_divi.php:209
+#: ../epanel/options_divi.php:218
 msgid "Responsive shortcodes"
 msgstr ""
 
-#: ../epanel/options_divi.php:213
+#: ../epanel/options_divi.php:222
 msgid "Enable this option to make shortcodes respond to various screen sizes"
 msgstr ""
 
-#: ../epanel/options_divi.php:218
+#: ../epanel/options_divi.php:227
 msgid "Google Fonts subsets"
 msgstr ""
 
-#: ../epanel/options_divi.php:222
+#: ../epanel/options_divi.php:231
 msgid "This will enable Google Fonts for Non-English languages."
 msgstr ""
 
-#: ../epanel/options_divi.php:227
+#: ../epanel/options_divi.php:236
 msgid "Custom CSS"
 msgstr ""
 
-#: ../epanel/options_divi.php:231
+#: ../epanel/options_divi.php:240
 msgid "Here you can add custom css to override or extend default styles."
 msgstr ""
 
-#: ../epanel/options_divi.php:250
+#: ../epanel/options_divi.php:259
 msgid "Pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:268
+#: ../epanel/options_divi.php:277
 msgid "Exclude pages from the navigation bar"
 msgstr ""
 
-#: ../epanel/options_divi.php:272
+#: ../epanel/options_divi.php:281
 msgid ""
 "Here you can choose to remove certain pages from the navigation menu. All "
 "pages marked with an X will not appear in your navigation bar. "
 msgstr ""
 
-#: ../epanel/options_divi.php:276 ../epanel/options_divi.php:331
+#: ../epanel/options_divi.php:285 ../epanel/options_divi.php:340
 msgid "Show dropdown menus"
 msgstr ""
 
-#: ../epanel/options_divi.php:280
+#: ../epanel/options_divi.php:289
 msgid ""
 "If you would like to remove the dropdown menus from the pages navigation bar "
 "disable this feature."
 msgstr ""
 
-#: ../epanel/options_divi.php:283
+#: ../epanel/options_divi.php:292
 msgid "Display Home link"
 msgstr ""
 
-#: ../epanel/options_divi.php:287
+#: ../epanel/options_divi.php:296
 msgid ""
 "By default the theme creates a Home link that, when clicked, leads back to "
 "your blog's homepage. If, however, you are using a static homepage and have "
@@ -780,86 +828,86 @@ msgid ""
 "link. In this case you should disable this feature to remove the link."
 msgstr ""
 
-#: ../epanel/options_divi.php:292
+#: ../epanel/options_divi.php:301
 msgid "Sort Pages Links"
 msgstr ""
 
-#: ../epanel/options_divi.php:296
+#: ../epanel/options_divi.php:305
 msgid "Here you can choose to sort your pages links."
 msgstr ""
 
-#: ../epanel/options_divi.php:299
+#: ../epanel/options_divi.php:308
 msgid "Order Pages Links by Ascending/Descending"
 msgstr ""
 
-#: ../epanel/options_divi.php:303
+#: ../epanel/options_divi.php:312
 msgid ""
 "Here you can choose to reverse the order that your pages links are "
 "displayed. You can choose between ascending and descending."
 msgstr ""
 
-#: ../epanel/options_divi.php:306 ../epanel/options_divi.php:347
+#: ../epanel/options_divi.php:315 ../epanel/options_divi.php:356
 msgid "Number of dropdown tiers shown"
 msgstr ""
 
-#: ../epanel/options_divi.php:310 ../epanel/options_divi.php:351
+#: ../epanel/options_divi.php:319 ../epanel/options_divi.php:360
 msgid ""
 "This options allows you to control how many teirs your pages dropdown menu "
 "has. Increasing the number allows for additional menu items to be shown."
 msgstr ""
 
-#: ../epanel/options_divi.php:323
+#: ../epanel/options_divi.php:332
 msgid "Exclude categories from the navigation bar"
 msgstr ""
 
-#: ../epanel/options_divi.php:327
+#: ../epanel/options_divi.php:336
 msgid ""
 "Here you can choose to remove certain categories from the navigation menu. "
 "All categories marked with an X will not appear in your navigation bar. "
 msgstr ""
 
-#: ../epanel/options_divi.php:335
+#: ../epanel/options_divi.php:344
 msgid ""
 "If you would like to remove the dropdown menus from the categories "
 "navigation bar disable this feature."
 msgstr ""
 
-#: ../epanel/options_divi.php:338
+#: ../epanel/options_divi.php:347
 msgid "Hide empty categories"
 msgstr ""
 
-#: ../epanel/options_divi.php:342
+#: ../epanel/options_divi.php:351
 msgid ""
 "If you would like categories to be displayed in your navigationbar that "
 "don't have any posts in them then disable this option. By default empty "
 "categories are hidden"
 msgstr ""
 
-#: ../epanel/options_divi.php:357
+#: ../epanel/options_divi.php:366
 msgid "Sort Categories Links by Name/ID/Slug/Count/Term Group"
 msgstr ""
 
-#: ../epanel/options_divi.php:361
+#: ../epanel/options_divi.php:370
 msgid ""
 "By default pages are sorted by name. However if you would rather have them "
 "sorted by ID you can adjust this setting."
 msgstr ""
 
-#: ../epanel/options_divi.php:364
+#: ../epanel/options_divi.php:373
 msgid "Order Category Links by Ascending/Descending"
 msgstr ""
 
-#: ../epanel/options_divi.php:368
+#: ../epanel/options_divi.php:377
 msgid ""
 "Here you can choose to reverse the order that your categories links are "
 "displayed. You can choose between ascending and descending."
 msgstr ""
 
-#: ../epanel/options_divi.php:377
+#: ../epanel/options_divi.php:386
 msgid "Disable top tier dropdown menu links"
 msgstr ""
 
-#: ../epanel/options_divi.php:381
+#: ../epanel/options_divi.php:390
 msgid ""
 "In some cases users will want to create parent categories or links as "
 "placeholders to hold a list of child links or categories. In this case it is "
@@ -869,19 +917,19 @@ msgid ""
 "clicked."
 msgstr ""
 
-#: ../epanel/options_divi.php:401
+#: ../epanel/options_divi.php:410
 msgid "Single Post Layout"
 msgstr ""
 
-#: ../epanel/options_divi.php:406
+#: ../epanel/options_divi.php:415
 msgid "Single Page Layout"
 msgstr ""
 
-#: ../epanel/options_divi.php:419
+#: ../epanel/options_divi.php:428
 msgid "Choose which items to display in the postinfo section"
 msgstr ""
 
-#: ../epanel/options_divi.php:423
+#: ../epanel/options_divi.php:432
 msgid ""
 "Here you can choose which items appear in the postinfo section on single "
 "post pages. This is the area, usually below the post title, which displays "
@@ -889,84 +937,84 @@ msgid ""
 "appear. "
 msgstr ""
 
-#: ../epanel/options_divi.php:427
+#: ../epanel/options_divi.php:436
 msgid "Show comments on posts"
 msgstr ""
 
-#: ../epanel/options_divi.php:431
+#: ../epanel/options_divi.php:440
 msgid ""
 "You can disable this option if you want to remove the comments and comment "
 "form from single post pages. "
 msgstr ""
 
-#: ../epanel/options_divi.php:434
+#: ../epanel/options_divi.php:443
 msgid "Place Thumbs on Posts"
 msgstr ""
 
-#: ../epanel/options_divi.php:438
+#: ../epanel/options_divi.php:447
 msgid ""
 "By default thumbnails are placed at the beginning of your post on single "
 "post pages. If you would like to remove this initial thumbnail image to "
 "avoid repetition simply disable this option. "
 msgstr ""
 
-#: ../epanel/options_divi.php:449
+#: ../epanel/options_divi.php:458
 msgid "Place Thumbs on Pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:453
+#: ../epanel/options_divi.php:462
 msgid ""
 "By default thumbnails are not placed on pages (they are only used on posts). "
 "However, if you want to use thumbnails on posts you can! Just enable this "
 "option. "
 msgstr ""
 
-#: ../epanel/options_divi.php:456
+#: ../epanel/options_divi.php:465
 msgid "Show comments on pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:460
+#: ../epanel/options_divi.php:469
 msgid ""
 "By default comments are not placed on pages, however, if you would like to "
 "allow people to comment on your pages simply enable this option. "
 msgstr ""
 
-#: ../epanel/options_divi.php:471
+#: ../epanel/options_divi.php:480
 msgid "Post info section"
 msgstr ""
 
-#: ../epanel/options_divi.php:475
+#: ../epanel/options_divi.php:484
 msgid ""
 "Here you can choose which items appear in the postinfo section on pages. "
 "This is the area, usually below the post title, which displays basic "
 "information about your post. The highlighted itmes shown below will appear. "
 msgstr ""
 
-#: ../epanel/options_divi.php:480
+#: ../epanel/options_divi.php:489
 msgid "Show Thumbs on Index pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:484
+#: ../epanel/options_divi.php:493
 msgid "Enable this option to show thumbnails on Index Pages."
 msgstr ""
 
-#: ../epanel/options_divi.php:503
+#: ../epanel/options_divi.php:512
 msgid "Homepage SEO"
 msgstr ""
 
-#: ../epanel/options_divi.php:508
+#: ../epanel/options_divi.php:517
 msgid "Single Post Page SEO"
 msgstr ""
 
-#: ../epanel/options_divi.php:513
+#: ../epanel/options_divi.php:522
 msgid "Index Page SEO"
 msgstr ""
 
-#: ../epanel/options_divi.php:521
+#: ../epanel/options_divi.php:530
 msgid " Enable custom title "
 msgstr ""
 
-#: ../epanel/options_divi.php:525
+#: ../epanel/options_divi.php:534
 msgid ""
 "By default the theme uses a combination of your blog name and your blog "
 "description, as defined when you created your blog, to create your homepage "
@@ -974,11 +1022,11 @@ msgid ""
 "option and fill in the custom title field below. "
 msgstr ""
 
-#: ../epanel/options_divi.php:528
+#: ../epanel/options_divi.php:537
 msgid " Enable meta description"
 msgstr ""
 
-#: ../epanel/options_divi.php:532
+#: ../epanel/options_divi.php:541
 msgid ""
 "By default the theme uses your blog description, as defined when you created "
 "your blog, to fill in the meta description field. If you would like to use a "
@@ -986,11 +1034,11 @@ msgid ""
 "description field below. "
 msgstr ""
 
-#: ../epanel/options_divi.php:535
+#: ../epanel/options_divi.php:544
 msgid " Enable meta keywords"
 msgstr ""
 
-#: ../epanel/options_divi.php:539
+#: ../epanel/options_divi.php:548
 msgid ""
 "By default the theme does not add keywords to your header. Most search "
 "engines don't use keywords to rank your site anymore, but some people define "
@@ -998,11 +1046,11 @@ msgid ""
 "then enable this option and fill in the custom keywords field below. "
 msgstr ""
 
-#: ../epanel/options_divi.php:542 ../epanel/options_divi.php:675
+#: ../epanel/options_divi.php:551 ../epanel/options_divi.php:684
 msgid " Enable canonical URL's"
 msgstr ""
 
-#: ../epanel/options_divi.php:546
+#: ../epanel/options_divi.php:555
 msgid ""
 "Canonicalization helps to prevent the indexing of duplicate content by "
 "search engines, and as a result, may help avoid duplicate content penalties "
@@ -1016,43 +1064,43 @@ msgid ""
 "permalinks and the domain name defined in the settings tab of wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:551
+#: ../epanel/options_divi.php:560
 msgid "Homepage custom title (if enabled)"
 msgstr ""
 
-#: ../epanel/options_divi.php:555
+#: ../epanel/options_divi.php:564
 msgid ""
 "If you have enabled custom titles you can add your custom title here. "
 "Whatever you type here will be placed between the < title >< /title > tags "
 "in header.php"
 msgstr ""
 
-#: ../epanel/options_divi.php:559
+#: ../epanel/options_divi.php:568
 msgid "Homepage meta description (if enabled)"
 msgstr ""
 
-#: ../epanel/options_divi.php:563
+#: ../epanel/options_divi.php:572
 msgid ""
 "If you have enabled meta descriptions you can add your custom description "
 "here."
 msgstr ""
 
-#: ../epanel/options_divi.php:567
+#: ../epanel/options_divi.php:576
 msgid "Homepage meta keywords (if enabled)"
 msgstr ""
 
-#: ../epanel/options_divi.php:571
+#: ../epanel/options_divi.php:580
 msgid ""
 "If you have enabled meta keywords you can add your custom keywords here. "
 "Keywords should be separated by comas. For example: wordpress,themes,"
 "templates,elegant"
 msgstr ""
 
-#: ../epanel/options_divi.php:575 ../epanel/options_divi.php:653
+#: ../epanel/options_divi.php:584 ../epanel/options_divi.php:662
 msgid "If custom titles are disabled, choose autogeneration method"
 msgstr ""
 
-#: ../epanel/options_divi.php:580
+#: ../epanel/options_divi.php:589
 msgid ""
 "If you are not using cutsom post titles you can still have control over how "
 "your titles are generated. Here you can choose which order you would like "
@@ -1060,22 +1108,22 @@ msgid ""
 "name from the title completely."
 msgstr ""
 
-#: ../epanel/options_divi.php:583 ../epanel/options_divi.php:661
-#: ../epanel/options_divi.php:699
+#: ../epanel/options_divi.php:592 ../epanel/options_divi.php:670
+#: ../epanel/options_divi.php:708
 msgid "Define a character to separate BlogName and Post title"
 msgstr ""
 
-#: ../epanel/options_divi.php:587 ../epanel/options_divi.php:665
+#: ../epanel/options_divi.php:596 ../epanel/options_divi.php:674
 msgid ""
 "Here you can change which character separates your blog title and post name "
 "when using autogenerated post titles. Common values are | or -"
 msgstr ""
 
-#: ../epanel/options_divi.php:597
+#: ../epanel/options_divi.php:606
 msgid "Enable custom titles"
 msgstr ""
 
-#: ../epanel/options_divi.php:601
+#: ../epanel/options_divi.php:610
 msgid ""
 "By default the theme creates post titles based on the title of your post and "
 "your blog name. If you would like to make your meta title different than "
@@ -1084,11 +1132,11 @@ msgid ""
 "you must choose a custom field name for your title below."
 msgstr ""
 
-#: ../epanel/options_divi.php:604
+#: ../epanel/options_divi.php:613
 msgid "Enable custom description"
 msgstr ""
 
-#: ../epanel/options_divi.php:608
+#: ../epanel/options_divi.php:617
 msgid ""
 "If you would like to add a meta description to your post you can do so using "
 "custom fields. This option must be enabled for descriptions to be displayed "
@@ -1096,11 +1144,11 @@ msgid ""
 "off the custom field name you define below."
 msgstr ""
 
-#: ../epanel/options_divi.php:613
+#: ../epanel/options_divi.php:622
 msgid "Enable custom keywords"
 msgstr ""
 
-#: ../epanel/options_divi.php:617
+#: ../epanel/options_divi.php:626
 msgid ""
 "If you would like to add meta keywords to your post you can do so using "
 "custom fields. This option must be enabled for keywords to be displayed on "
@@ -1108,11 +1156,11 @@ msgid ""
 "custom field name you define below."
 msgstr ""
 
-#: ../epanel/options_divi.php:620
+#: ../epanel/options_divi.php:629
 msgid "Enable canonical URL's"
 msgstr ""
 
-#: ../epanel/options_divi.php:624 ../epanel/options_divi.php:679
+#: ../epanel/options_divi.php:633 ../epanel/options_divi.php:688
 msgid ""
 "Canonicalization helps to prevent the indexing of duplicate content by "
 "search engines, and as a result, may help avoid duplicate content penalties "
@@ -1126,40 +1174,40 @@ msgid ""
 "permalinks and the domain name defined in the settings tab of wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:629
+#: ../epanel/options_divi.php:638
 msgid "Custom field Name to be used for title"
 msgstr ""
 
-#: ../epanel/options_divi.php:633
+#: ../epanel/options_divi.php:642
 msgid ""
 "When you define your title using custom fields you should use this value for "
 "the custom field Name. The Value of your custom field should be the custom "
 "title you would like to use."
 msgstr ""
 
-#: ../epanel/options_divi.php:637
+#: ../epanel/options_divi.php:646
 msgid "Custom field Name to be used for description"
 msgstr ""
 
-#: ../epanel/options_divi.php:641
+#: ../epanel/options_divi.php:650
 msgid ""
 "When you define your meta description using custom fields you should use "
 "this value for the custom field Name. The Value of your custom field should "
 "be the custom description you would like to use."
 msgstr ""
 
-#: ../epanel/options_divi.php:645
+#: ../epanel/options_divi.php:654
 msgid "Custom field Name to be used for keywords"
 msgstr ""
 
-#: ../epanel/options_divi.php:649
+#: ../epanel/options_divi.php:658
 msgid ""
 "When you define your keywords using custom fields you should use this value "
 "for the custom field Name. The Value of your custom field should be the meta "
 "keywords you would like to use, separated by comas."
 msgstr ""
 
-#: ../epanel/options_divi.php:658
+#: ../epanel/options_divi.php:667
 msgid ""
 "If you are not using cutsom post titles you can still have control over hw "
 "your titles are generated. Here you can choose which order you would like "
@@ -1167,156 +1215,156 @@ msgid ""
 "name from the title completely."
 msgstr ""
 
-#: ../epanel/options_divi.php:682
+#: ../epanel/options_divi.php:691
 msgid "Enable meta descriptions"
 msgstr ""
 
-#: ../epanel/options_divi.php:686
+#: ../epanel/options_divi.php:695
 msgid ""
 "Check this box if you want to display meta descriptions on category/archive "
 "pages. The description is based off the category description you choose when "
 "creating/edit your category in wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:691
+#: ../epanel/options_divi.php:700
 msgid "Choose title autogeneration method"
 msgstr ""
 
-#: ../epanel/options_divi.php:696
+#: ../epanel/options_divi.php:705
 msgid ""
 "Here you can choose how your titles on index pages are generated. You can "
 "change which order your blog name and index title are displayed, or you can "
 "remove the blog name from the title completely."
 msgstr ""
 
-#: ../epanel/options_divi.php:703
+#: ../epanel/options_divi.php:712
 msgid ""
 "Here you can change which character separates your blog title and index page "
 "name when using autogenerated post titles. Common values are | or -"
 msgstr ""
 
-#: ../epanel/options_divi.php:724
+#: ../epanel/options_divi.php:733
 msgid "Code Integration"
 msgstr ""
 
-#: ../epanel/options_divi.php:732
+#: ../epanel/options_divi.php:741
 msgid "Enable header code"
 msgstr ""
 
-#: ../epanel/options_divi.php:736
+#: ../epanel/options_divi.php:745
 msgid ""
 "Disabling this option will remove the header code below from your blog. This "
 "allows you to remove the code while saving it for later use."
 msgstr ""
 
-#: ../epanel/options_divi.php:739
+#: ../epanel/options_divi.php:748
 msgid "Enable body code"
 msgstr ""
 
-#: ../epanel/options_divi.php:743
+#: ../epanel/options_divi.php:752
 msgid ""
 "Disabling this option will remove the body code below from your blog. This "
 "allows you to remove the code while saving it for later use."
 msgstr ""
 
-#: ../epanel/options_divi.php:748
+#: ../epanel/options_divi.php:757
 msgid "Enable single top code"
 msgstr ""
 
-#: ../epanel/options_divi.php:752
+#: ../epanel/options_divi.php:761
 msgid ""
 "Disabling this option will remove the single top code below from your blog. "
 "This allows you to remove the code while saving it for later use."
 msgstr ""
 
-#: ../epanel/options_divi.php:755
+#: ../epanel/options_divi.php:764
 msgid "Enable single bottom code"
 msgstr ""
 
-#: ../epanel/options_divi.php:759
+#: ../epanel/options_divi.php:768
 msgid ""
 "Disabling this option will remove the single bottom code below from your "
 "blog. This allows you to remove the code while saving it for later use."
 msgstr ""
 
-#: ../epanel/options_divi.php:764
+#: ../epanel/options_divi.php:773
 msgid "Add code to the < head > of your blog"
 msgstr ""
 
-#: ../epanel/options_divi.php:768
+#: ../epanel/options_divi.php:777
 msgid ""
 "Any code you place here will appear in the head section of every page of "
 "your blog. This is useful when you need to add javascript or css to all "
 "pages."
 msgstr ""
 
-#: ../epanel/options_divi.php:771
+#: ../epanel/options_divi.php:780
 msgid ""
 "Add code to the < body > (good for tracking codes such as google analytics)"
 msgstr ""
 
-#: ../epanel/options_divi.php:775
+#: ../epanel/options_divi.php:784
 msgid ""
 "Any code you place here will appear in body section of all pages of your "
 "blog. This is usefull if you need to input a tracking pixel for a state "
 "counter such as Google Analytics."
 msgstr ""
 
-#: ../epanel/options_divi.php:778
+#: ../epanel/options_divi.php:787
 msgid "Add code to the top of your posts"
 msgstr ""
 
-#: ../epanel/options_divi.php:782 ../epanel/options_divi.php:789
+#: ../epanel/options_divi.php:791 ../epanel/options_divi.php:798
 msgid ""
 "Any code you place here will be placed at the top of all single posts. This "
 "is useful if you are looking to integrating things such as social "
 "bookmarking links."
 msgstr ""
 
-#: ../epanel/options_divi.php:785
+#: ../epanel/options_divi.php:794
 msgid "Add code to the bottom of your posts, before the comments"
 msgstr ""
 
-#: ../epanel/options_divi.php:807
+#: ../epanel/options_divi.php:816
 msgid "Documentation"
 msgstr ""
 
-#: ../epanel/options_divi.php:833
+#: ../epanel/options_divi.php:842
 msgid "Manage Un-widgetized Advertisements"
 msgstr ""
 
-#: ../epanel/options_divi.php:841
+#: ../epanel/options_divi.php:850
 msgid "Enable Single Post 468x60 banner"
 msgstr ""
 
-#: ../epanel/options_divi.php:845
+#: ../epanel/options_divi.php:854
 msgid ""
 "Enabling this option will display a 468x60 banner ad on the bottom of your "
 "post pages below the single post content. If enabled you must fill in the "
 "banner image and destination url below."
 msgstr ""
 
-#: ../epanel/options_divi.php:850
+#: ../epanel/options_divi.php:859
 msgid "Input 468x60 advertisement banner image"
 msgstr ""
 
-#: ../epanel/options_divi.php:854
+#: ../epanel/options_divi.php:863
 msgid "Here you can provide 468x60 banner image url"
 msgstr ""
 
-#: ../epanel/options_divi.php:858
+#: ../epanel/options_divi.php:867
 msgid "Input 468x60 advertisement destination url"
 msgstr ""
 
-#: ../epanel/options_divi.php:862
+#: ../epanel/options_divi.php:871
 msgid "Here you can provide 468x60 banner destination url"
 msgstr ""
 
-#: ../epanel/options_divi.php:866
+#: ../epanel/options_divi.php:875
 msgid "Input 468x60 adsense code"
 msgstr ""
 
-#: ../epanel/options_divi.php:870
+#: ../epanel/options_divi.php:879
 msgid "Place your adsense code here."
 msgstr ""
 
@@ -1328,184 +1376,184 @@ msgstr "Vorherig"
 msgid "Next"
 msgstr "Nächste"
 
-#: ../epanel/shortcodes/shortcodes.php:302
+#: ../epanel/shortcodes/shortcodes.php:287
 msgid "Member Login"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:305
+#: ../epanel/shortcodes/shortcodes.php:290
 msgid "Username: "
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:306
+#: ../epanel/shortcodes/shortcodes.php:291
 msgid "Password: "
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:307
+#: ../epanel/shortcodes/shortcodes.php:292
 msgid "Login"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:343
+#: ../epanel/shortcodes/shortcodes.php:328
 msgid "Add a Tooltip Text"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:365
+#: ../epanel/shortcodes/shortcodes.php:350
 msgid "Click here to learn more"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:975
+#: ../epanel/shortcodes/shortcodes.php:960
 msgid "Caption"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:976
+#: ../epanel/shortcodes/shortcodes.php:961
 msgid "Caption goes here"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:977
+#: ../epanel/shortcodes/shortcodes.php:962
 msgid "Caption title goes here"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:981
+#: ../epanel/shortcodes/shortcodes.php:966
 msgid "State"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:983
+#: ../epanel/shortcodes/shortcodes.php:968
 msgid "Select between expanded and closed state"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:988
-#: ../epanel/shortcodes/shortcodes.php:1004
-#: ../epanel/shortcodes/shortcodes.php:1033
-#: ../epanel/shortcodes/shortcodes.php:1113
+#: ../epanel/shortcodes/shortcodes.php:973
+#: ../epanel/shortcodes/shortcodes.php:989
+#: ../epanel/shortcodes/shortcodes.php:1018
+#: ../epanel/shortcodes/shortcodes.php:1098
 msgid "Content"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:989
-#: ../epanel/shortcodes/shortcodes.php:1005
-#: ../epanel/shortcodes/shortcodes.php:1091
-#: ../epanel/shortcodes/shortcodes.php:1114
+#: ../epanel/shortcodes/shortcodes.php:974
+#: ../epanel/shortcodes/shortcodes.php:990
+#: ../epanel/shortcodes/shortcodes.php:1076
+#: ../epanel/shortcodes/shortcodes.php:1099
 msgid "Content goes here"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:990
-#: ../epanel/shortcodes/shortcodes.php:1006
-#: ../epanel/shortcodes/shortcodes.php:1035
+#: ../epanel/shortcodes/shortcodes.php:975
+#: ../epanel/shortcodes/shortcodes.php:991
+#: ../epanel/shortcodes/shortcodes.php:1020
 msgid "Content text or html"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:997
-#: ../epanel/shortcodes/shortcodes.php:1019
+#: ../epanel/shortcodes/shortcodes.php:982
+#: ../epanel/shortcodes/shortcodes.php:1004
 msgid "Type"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:999
+#: ../epanel/shortcodes/shortcodes.php:984
 msgid "Type of the box"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1013
+#: ../epanel/shortcodes/shortcodes.php:998
 msgid "Link"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1015
+#: ../epanel/shortcodes/shortcodes.php:1000
 msgid "URL"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1021
+#: ../epanel/shortcodes/shortcodes.php:1006
 msgid "Choose button type"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1026
+#: ../epanel/shortcodes/shortcodes.php:1011
 msgid "Color"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1028
+#: ../epanel/shortcodes/shortcodes.php:1013
 msgid "Choose button color"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1034
+#: ../epanel/shortcodes/shortcodes.php:1019
 msgid "Link text"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1039
+#: ../epanel/shortcodes/shortcodes.php:1024
 msgid "Icon"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1041
+#: ../epanel/shortcodes/shortcodes.php:1026
 msgid "Used for icon button type"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1046
+#: ../epanel/shortcodes/shortcodes.php:1031
 msgid "Open link in new window"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1048
+#: ../epanel/shortcodes/shortcodes.php:1033
 msgid "Select yes if the link should be opened in a new window"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1056
+#: ../epanel/shortcodes/shortcodes.php:1041
 msgid "Slider Type"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1058
+#: ../epanel/shortcodes/shortcodes.php:1043
 msgid "Select Slider Type here"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1063
+#: ../epanel/shortcodes/shortcodes.php:1048
 msgid "Effect"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1065
+#: ../epanel/shortcodes/shortcodes.php:1050
 msgid "Select Animation Effect"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1070
+#: ../epanel/shortcodes/shortcodes.php:1055
 msgid "Auto"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1072
+#: ../epanel/shortcodes/shortcodes.php:1057
 msgid "Choose yes if you want for automatic slider animation"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1077
+#: ../epanel/shortcodes/shortcodes.php:1062
 msgid "Auto Speed"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1079
+#: ../epanel/shortcodes/shortcodes.php:1064
 msgid "Automattic slider speed (works only if Auto is set to yes)"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1083
+#: ../epanel/shortcodes/shortcodes.php:1068
 msgid "Tab Text"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1090
+#: ../epanel/shortcodes/shortcodes.php:1075
 msgid "Tab Content"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1092
+#: ../epanel/shortcodes/shortcodes.php:1077
 msgid "Paste image url here, if you chose \"images\" slider type"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1100
+#: ../epanel/shortcodes/shortcodes.php:1085
 msgid "Image Url"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1102
+#: ../epanel/shortcodes/shortcodes.php:1087
 msgid "Author Image URL"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1106
+#: ../epanel/shortcodes/shortcodes.php:1091
 msgid "Use resizing"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1183
+#: ../epanel/shortcodes/shortcodes.php:1168
 msgid "+ Add One More Tab"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1333
+#: ../epanel/shortcodes/shortcodes.php:1318
 msgid "Image Height"
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:1334
+#: ../epanel/shortcodes/shortcodes.php:1319
 msgid "Image Width"
 msgstr ""
 
@@ -1620,21 +1668,4 @@ msgstr ""
 
 #: ../includes/functions/installation.php:1
 msgid "Read Divi Documentation"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:25
-msgid "Your comment is awaiting approval"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:32
-msgid "verified owner"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:40
-#, php-format
-msgid "Rated %d out of 5"
-msgstr ""
-
-#: ../woocommerce/single-product/review.php:41
-msgid "out of 5"
 msgstr ""
