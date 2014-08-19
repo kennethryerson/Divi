@@ -1,48 +1,51 @@
-	<footer id="main-footer">
-		<?php get_sidebar( 'footer' ); ?>
+<?php if ( 'on' == et_get_option( 'divi_back_to_top', 'false' ) ) : ?>
 
-		<div id="footer-bottom">
-			<div class="container clearfix">
-				<ul id="et-social-icons">
-				<?php if ( 'on' === et_get_option( 'divi_show_facebook_icon', 'on' ) ) : ?>
-					<li class="et-social-icon et-social-facebook">
-						<a href="<?php echo esc_url( et_get_option( 'divi_facebook_url', '#' ) ); ?>">
-							<span><?php esc_html_e( 'Facebook', 'Divi' ); ?></span>
-						</a>
-					</li>
-				<?php endif; ?>
-				<?php if ( 'on' === et_get_option( 'divi_show_twitter_icon', 'on' ) ) : ?>
-					<li class="et-social-icon et-social-twitter">
-						<a href="<?php echo esc_url( et_get_option( 'divi_twitter_url', '#' ) ); ?>">
-							<span><?php esc_html_e( 'Twitter', 'Divi' ); ?></span>
-						</a>
-					</li>
-				<?php endif; ?>
-				<?php if ( 'on' === et_get_option( 'divi_show_google_icon', 'on' ) ) : ?>
-					<li class="et-social-icon et-social-google">
-						<a href="<?php echo esc_url( et_get_option( 'divi_google_url', '#' ) ); ?>">
-							<span><?php esc_html_e( 'Google', 'Divi' ); ?></span>
-						</a>
-					</li>
-				<?php endif; ?>
-				<?php if ( 'on' === et_get_option( 'divi_show_rss_icon', 'on' ) ) : ?>
+	<span class="et_pb_scroll_top et-pb-icon"></span>
+
+<?php endif;
+
+if ( ! is_page_template( 'page-template-blank.php' ) ) : ?>
+
+			<footer id="main-footer">
+				<?php get_sidebar( 'footer' ); ?>
+
+
+		<?php
+			if ( has_nav_menu( 'footer-menu' ) ) : ?>
+
+				<div id="et-footer-nav">
+					<div class="container">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'footer-menu',
+								'depth'          => '1',
+								'menu_class'     => 'bottom-nav',
+								'container'      => '',
+								'fallback_cb'    => '',
+							) );
+						?>
+					</div>
+				</div> <!-- #et-footer-nav -->
+
+			<?php endif; ?>
+
+				<div id="footer-bottom">
+					<div class="container clearfix">
 				<?php
-					$et_rss_url = '' !== et_get_option( 'divi_rss_url' )
-						? et_get_option( 'divi_rss_url' )
-						: get_bloginfo( 'comments_rss2_url' );
+					if ( false !== et_get_option( 'show_footer_social_icons', true ) ) {
+						get_template_part( 'includes/social_icons', 'footer' );
+					}
 				?>
-					<li class="et-social-icon et-social-rss">
-						<a href="<?php echo esc_url( $et_rss_url ); ?>">
-							<span><?php esc_html_e( 'RSS', 'Divi' ); ?></span>
-						</a>
-					</li>
-				<?php endif; ?>
-				</ul>
 
-				<p id="footer-info"><?php printf( __( 'Designed by %1$s | Powered by %2$s', 'Divi' ), '<a href="http://www.elegantthemes.com" title="Premium WordPress Themes">Elegant Themes</a>', '<a href="http://www.wordpress.org">WordPress</a>' ); ?></p>
-			</div>	<!-- .container -->
-		</div>
-	</footer> <!-- #main-footer -->
+						<p id="footer-info"><?php printf( __( 'Designed by %1$s | Powered by %2$s', 'Divi' ), '<a href="http://www.elegantthemes.com" title="Premium WordPress Themes">Elegant Themes</a>', '<a href="http://www.wordpress.org">WordPress</a>' ); ?></p>
+					</div>	<!-- .container -->
+				</div>
+			</footer> <!-- #main-footer -->
+		</div> <!-- #et-main-area -->
+
+<?php endif; // ! is_page_template( 'page-template-blank.php' ) ?>
+
+	</div> <!-- #page-container -->
 
 	<?php wp_footer(); ?>
 </body>

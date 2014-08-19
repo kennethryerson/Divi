@@ -1,7 +1,7 @@
 ( function($) {
 
 	$( document ).ready( function() {
-		$( '.widget-liquid-right' ).append( '<div id="et_pb_widget_area_create"><p>Here you can create new widget areas for use in the Sidebar module.</p><p><label>Widget Name <input id="et_pb_new_widget_area_name" value="" /></label></p><p class="et_pb_widget_area_result"></p><button class="button button-primary et_pb_create_widget_area">Create</button></div>' );
+		$( '.widget-liquid-right' ).append( '<div id="et_pb_widget_area_create"><p>Here you can create new widget areas for use in the Sidebar module.</p><p>Note: Naming your widget area "sidebar 1", "sidebar 2", "sidebar 3", "sidebar 4" or "sidebar 5" will cause conflicts with this theme.</p><p><label>Widget Name <input id="et_pb_new_widget_area_name" value="" /></label></p><p class="et_pb_widget_area_result"></p><button class="button button-primary et_pb_create_widget_area">Create</button></div>' );
 
 		var $create_box = $( '#et_pb_widget_area_create' ),
 			$widget_name_input = $create_box.find( '#et_pb_new_widget_area_name' ),

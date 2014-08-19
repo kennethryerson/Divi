@@ -1,3 +1,198 @@
+version 2.1.2 ( updated 07-24-2014 )
+- Fixed the issue with wrong theme number value detected, if a child theme is being used
+	* functions.php
+- Bumped version number
+	* style.css
+
+version 2.1.1 ( updated 07-23-2014 )
+- Fixed the issue with ul and ol elements styling in Page Builder layouts
+- Bumped version number
+	* style.css
+
+version 2.1 ( updated 07-22-2014 )
+- Added "Back to top" button
+- Added Side Navigation on single pages
+- Fixed the issue with button arrow position in Chrome
+- Don't show page builder code on search results page
+- WYSIWIG mode in Page Builder is now saved, it defaulted to Visual before
+- Gallery module: Fixed the issue with "Random Order" option
+- Fixed 1/4 column slider appearance
+- Fixed html list appearance on index page
+- Fixed the issue with Firefox not saving the layout if modules were moved
+- Fixed the issue with double quotes, used in Page Builder settings
+- Modified Page Builder elements to be responsive
+- Added transparent background option to Sections
+- Added Close button to the Specialty Section Modal window
+- Image Module: Added Title Text option
+- Added smooth scrolling for internal links
+- Subscribe Module: Integrated Mailchimp 2.0 API
+- Added the option to enable smooth scrolling
+- Image module: Added "Remove space below the image" option
+- Filterable Portfolio: Fixed animation issues in Firefox
+- Fixed Widget Area Select ( dropdown ) styling issues
+- Added the option to enable/disable background-size: cover for "body"
+- Circle Counter: Added limit to the number field
+- Circle Counter: Fixed the issue with lazy loading animation
+- Disabled the Lazy Loading effect on mobile devices to improve usability
+- Filterable Portfolio: Fixed the animation in FF browser
+- Pagination: Added localization for Previous and Next links
+- Fixed the issue with scrolling to the top of window, when the user clones a section or a row
+- Fixed "Menu displayed behind the embedded videos in IE" issue
+- Users shouldn't create sidebars with certain names. Added a note to the Widgets page.
+- Fixed Woocommerce notification bar appearance
+- Fixed the issue with separator in postmeta
+- Fixed "Link color" option in the Customizer
+- Added sidebar on WooCommerce category pages
+- Fixed some styling issues on the category page
+- Section Module: Fixed Background Color option description
+- Blog Module: Fixed the width of posts in 4/4 column
+- Comments are now visible on pages, where they have been disabled, if there is at least 1 comment on the page
+- Map Module: Fixed the issue with custom ID/Class settings
+- Blurbs Module: Fixed settings description
+- Fixed the issue with inactive secondary menu items on mobile devices
+- Fixed the issue with lightbox on pages with several gallery modules. Lightbox scrolls through the images from a single gallery now.
+- Slider Module: Added parallax option
+- Fixed the issue with jumping image in the slider module
+- Pricing Table Module: Fixed layout issues
+- Fixed the issue with jumping slides during transitions
+- Secondary navigation: Added email link
+- Map Module: Added mouse zoom option
+- Fixed mega menu width on iPad
+- Filterable Portfolio Module: Now it displays only selected categories, not all the categories selected projects assigned to.
+- Blog Module: Added option to display the read more button if "Show Excerpts" option is selected
+- Login Module: Fixed the module appearance for logged in users
+- Map Module: Centered infowindow above the pin
+- Fixed the issue with module settings window visibility. It's not hidden below the Wordpress menu anymore.
+- Project Page: Fixed the issue with the space on top of the page
+- Fixed the issue with the search field display
+- Fixed the fullscreen editor visibility issues
+- Portfolio Module: Fixed portfolio layout issues
+- Renamed icon font files to fix the issue with cache
+- Accordion module: Fixed some animation glitches
+- Countdown Module: Fixed issues in Safari and IE
+- Fixed fonts options in the Customizer
+- Fixed the issue with content visible on some password protected posts pages
+
+List of modified files:
+* epanel/google-fonts/et_google_fonts.js
+* epanel/options_divi.php
+* et-pagebuilder/css/style.css
+* et-pagebuilder/et-pagebuilder.php
+* et-pagebuilder/fonts/etbuilder.eot
+* et-pagebuilder/fonts/etbuilder.svg
+* et-pagebuilder/fonts/etbuilder.ttf
+* et-pagebuilder/fonts/etbuilder.woff
+* et-pagebuilder/fonts/etbuilder_v2.eot
+* et-pagebuilder/fonts/etbuilder_v2.svg
+* et-pagebuilder/fonts/etbuilder_v2.ttf
+* et-pagebuilder/fonts/etbuilder_v2.woff
+* et-pagebuilder/js/admin.js
+* et-pagebuilder/js/widgets.js
+* fonts/ETmodules.eot
+* fonts/ETmodules.svg
+* fonts/ETmodules.ttf
+* fonts/ETmodules.woff
+* fonts/ETmodules_v2.eot
+* fonts/ETmodules_v2.svg
+* fonts/ETmodules_v2.ttf
+* fonts/ETmodules_v2.woff
+* footer.php
+* functions.php
+* header.php
+* includes/subscription/mailchimp/MCAPI.class.php
+* includes/subscription/mailchimp/Mailchimp.php
+* includes/subscription/mailchimp/Mailchimp/Campaigns.php
+* includes/subscription/mailchimp/Mailchimp/Conversations.php
+* includes/subscription/mailchimp/Mailchimp/Ecomm.php
+* includes/subscription/mailchimp/Mailchimp/Exceptions.php
+* includes/subscription/mailchimp/Mailchimp/Folders.php
+* includes/subscription/mailchimp/Mailchimp/Gallery.php
+* includes/subscription/mailchimp/Mailchimp/Goal.php
+* includes/subscription/mailchimp/Mailchimp/Helper.php
+* includes/subscription/mailchimp/Mailchimp/Lists.php
+* includes/subscription/mailchimp/Mailchimp/Mobile.php
+* includes/subscription/mailchimp/Mailchimp/Neapolitan.php
+* includes/subscription/mailchimp/Mailchimp/Reports.php
+* includes/subscription/mailchimp/Mailchimp/Templates.php
+* includes/subscription/mailchimp/Mailchimp/Users.php
+* includes/subscription/mailchimp/Mailchimp/Vip.php
+* index.php
+* js/custom.js
+* js/smoothscroll.js
+* js/theme-customizer.js
+* lang/de_DE.mo
+* lang/de_DE.po
+* lang/en_US.mo
+* lang/en_US.po
+* lang/ru_RU.mo
+* lang/ru_RU.po
+* page.php
+* single-project.php
+* single.php
+* style.css
+
+version 2.0 ( updated 05-21-2014 )
+* All files changed/updated
+- Added many options to WordPress Customizer
+- Added lightbox to images
+- Added real parallax effect
+- More elements utilize accent color setting
+- Added Aweber and Feedburner integrations for Subscribe module
+- Added post formats support
+	- Video
+	- Audio
+	- Quote
+	- Gallery
+	- Link
+- New Header Options
+	- Added vertical navigation option
+	- Added optional secondary header menu
+	- Added boxed layout option
+	- Added centered main menu option
+- Pagebuilder Updates
+	- New specialty sections
+	- Added many new pre-made layouts
+	- Added clone module functionality
+- Updated Modules
+	- Blurb
+	- Testimonials
+- Added New Modules
+	- Gallery
+	- Audio
+	- Login
+	- Filterable Portfolio
+	- Circle Counter
+	- Number Counter
+	- Accordion
+	- Team Member
+	- Countdown Timer
+	- Social Media Follow
+	- Map
+	- Fullwidth Map
+	- Fullwidth Menu
+	- Fullwidth Portfolio
+- Fixed the issue with jumping backround image in sliders
+- Many bug fixes and CSS improvements
+- Bumped version number
+
+
+version 1.9.1 ( updated 04-21-2014 )
+- Fixed Page Builder issues in IE9 and IE10
+	* et-pagebuilder/js/admin.js
+- Bumped version number
+	* style.css
+
+version 1.9 ( updated 04-17-2014 )
+- Corrected js files version number
+	* et-pagebuilder/et-pagebuilder.php
+- Bumped version number
+	* style.css
+
+version 1.8 ( updated 04-15-2014 )
+- The theme is compatible with WordPress 3.9 now
+	* et-pagebuilder/js/admin.js
+	* et-pagebuilder/css/style.css
+
 version 1.7 ( updated 03-06-2014 )
 - Fixed the issue with Blog and Portfolio modules pagination on static frontpage
 - Fixed the issue with video background in a section, overlaying any content within the section

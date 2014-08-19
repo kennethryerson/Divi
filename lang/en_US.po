@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Divi 1.0\n"
-"POT-Creation-Date: 2014-02-26 22:34+0400\n"
-"PO-Revision-Date: 2014-02-26 22:34+0400\n"
+"POT-Creation-Date: 2014-07-22 21:30+0400\n"
+"PO-Revision-Date: 2014-07-22 21:31+0400\n"
 "Last-Translator: \n"
 "Language-Team: Ann\n"
 "Language: en_US\n"
@@ -11,23 +11,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.3\n"
 "X-Poedit-KeywordsList: _x;_n;_e;__;esc_html__;esc_html_e;esc_attr__;"
-"esc_attr_e\n"
+"esc_attr_e;esc_attr_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../comments.php:4
+#, fuzzy
 msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
+msgstr "Više fotografija"
 
 #: ../comments.php:13
 msgid "0 Comments"
 msgstr ""
 
-#: ../comments.php:13 ../functions.php:194
+#: ../comments.php:13 ../functions.php:228
+#, fuzzy
 msgid "1 Comment"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
 #: ../comments.php:13
 msgid "Comments"
@@ -54,448 +56,738 @@ msgid "Submit a Comment"
 msgstr ""
 
 #: ../comments.php:56
-#, php-format
+#, fuzzy, php-format
 msgid "Leave a Reply to %s"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
-#: ../footer.php:10
-msgid "Facebook"
-msgstr ""
-
-#: ../footer.php:17
-msgid "Twitter"
-msgstr ""
-
-#: ../footer.php:24
-msgid "Google"
-msgstr ""
-
-#: ../footer.php:36
-msgid "RSS"
-msgstr ""
-
-#: ../footer.php:42
-#, php-format
+#: ../footer.php:40
+#, fuzzy, php-format
 msgid "Designed by %1$s | Powered by %2$s"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
 #: ../functions.php:30
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:63 ../functions.php:69
+#: ../functions.php:31
+msgid "Secondary Menu"
+msgstr ""
+
+#: ../functions.php:32
+msgid "Footer Menu"
+msgstr ""
+
+#: ../functions.php:69
 msgid "on"
 msgstr ""
 
-#: ../functions.php:120
+#: ../functions.php:126
 msgid ""
 "Please, check the fields below to make sure you entered the correct "
 "information."
 msgstr ""
 
-#: ../functions.php:121
+#: ../functions.php:127
 msgid "Fill"
 msgstr ""
 
-#: ../functions.php:122
+#: ../functions.php:128
 msgid "field"
 msgstr ""
 
-#: ../functions.php:123
+#: ../functions.php:129
 msgid "Invalid email"
 msgstr ""
 
-#: ../functions.php:124
+#: ../functions.php:130
 msgid "Captcha"
 msgstr ""
 
-#: ../functions.php:173
-#, php-format
-msgid "Posts by %s"
+#: ../functions.php:131
+msgid "Prev"
 msgstr ""
 
-#: ../functions.php:190
-msgid "% Comments"
+#: ../functions.php:132 ../epanel/shortcodes/shortcodes.php:15
+msgid "Next"
 msgstr ""
 
-#: ../functions.php:192
-msgid "No Comments"
+#: ../functions.php:163
+msgid "Select Page"
 msgstr ""
 
 #: ../functions.php:207
+#, fuzzy, php-format
+msgid "Posts by %s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:224
+msgid "% Comments"
+msgstr ""
+
+#: ../functions.php:226
+msgid "No Comments"
+msgstr ""
+
+#: ../functions.php:241
 msgid "by"
 msgstr ""
 
-#: ../functions.php:223 ../functions.php:224 ../functions.php:225
-#: ../functions.php:226
+#: ../functions.php:263 ../functions.php:264 ../functions.php:265
+#: ../functions.php:266
 msgid "ET Settings"
 msgstr ""
 
-#: ../functions.php:232
+#: ../functions.php:272
 msgid "Projects"
 msgstr ""
 
-#: ../functions.php:233
+#: ../functions.php:273
 msgid "Project"
 msgstr ""
 
-#: ../functions.php:234 ../functions.php:316
+#: ../functions.php:274 ../functions.php:356
 msgid "Add New"
 msgstr ""
 
-#: ../functions.php:235
+#: ../functions.php:275
 msgid "Add New Project"
 msgstr ""
 
-#: ../functions.php:236
+#: ../functions.php:276
 msgid "Edit Project"
 msgstr ""
 
-#: ../functions.php:237
+#: ../functions.php:277
 msgid "New Project"
 msgstr ""
 
-#: ../functions.php:238
+#: ../functions.php:278
 msgid "All Projects"
 msgstr ""
 
-#: ../functions.php:239
+#: ../functions.php:279
 msgid "View Project"
 msgstr ""
 
-#: ../functions.php:240
+#: ../functions.php:280
+#, fuzzy
 msgid "Search Projects"
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../functions.php:241 ../functions.php:323
+#: ../functions.php:281 ../functions.php:363
 msgid "Nothing found"
 msgstr ""
 
-#: ../functions.php:242 ../functions.php:324
+#: ../functions.php:282 ../functions.php:364
 msgid "Nothing found in Trash"
 msgstr ""
 
-#: ../functions.php:269 ../functions.php:279 ../epanel/options_divi.php:264
+#: ../functions.php:309 ../functions.php:319 ../epanel/options_divi.php:290
 msgid "Categories"
 msgstr ""
 
-#: ../functions.php:270
+#: ../functions.php:310
 msgid "Category"
 msgstr ""
 
-#: ../functions.php:271
+#: ../functions.php:311
+#, fuzzy
 msgid "Search Categories"
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../functions.php:272
+#: ../functions.php:312
 msgid "All Categories"
 msgstr ""
 
-#: ../functions.php:273
+#: ../functions.php:313
 msgid "Parent Category"
 msgstr ""
 
-#: ../functions.php:274
+#: ../functions.php:314
 msgid "Parent Category:"
 msgstr ""
 
-#: ../functions.php:275
+#: ../functions.php:315
 msgid "Edit Category"
 msgstr ""
 
-#: ../functions.php:276
+#: ../functions.php:316
 msgid "Update Category"
 msgstr ""
 
-#: ../functions.php:277
+#: ../functions.php:317
 msgid "Add New Category"
 msgstr ""
 
-#: ../functions.php:278
+#: ../functions.php:318
 msgid "New Category Name"
 msgstr ""
 
-#: ../functions.php:291 ../functions.php:301
+#: ../functions.php:331 ../functions.php:341
 msgid "Tags"
 msgstr ""
 
-#: ../functions.php:292
+#: ../functions.php:332
 msgid "Tag"
 msgstr ""
 
-#: ../functions.php:293
+#: ../functions.php:333
+#, fuzzy
 msgid "Search Tags"
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../functions.php:294
+#: ../functions.php:334
 msgid "All Tags"
 msgstr ""
 
-#: ../functions.php:295
+#: ../functions.php:335
 msgid "Parent Tag"
 msgstr ""
 
-#: ../functions.php:296
+#: ../functions.php:336
 msgid "Parent Tag:"
 msgstr ""
 
-#: ../functions.php:297
+#: ../functions.php:337
 msgid "Edit Tag"
 msgstr ""
 
-#: ../functions.php:298
+#: ../functions.php:338
 msgid "Update Tag"
 msgstr ""
 
-#: ../functions.php:299
+#: ../functions.php:339
 msgid "Add New Tag"
 msgstr ""
 
-#: ../functions.php:300
+#: ../functions.php:340
 msgid "New Tag Name"
 msgstr ""
 
-#: ../functions.php:314
+#: ../functions.php:354
 msgid "Layouts"
 msgstr ""
 
-#: ../functions.php:315
+#: ../functions.php:355
 msgid "Layout"
 msgstr ""
 
-#: ../functions.php:317
+#: ../functions.php:357
 msgid "Add New Layout"
 msgstr ""
 
-#: ../functions.php:318
+#: ../functions.php:358
 msgid "Edit Layout"
 msgstr ""
 
-#: ../functions.php:319
+#: ../functions.php:359
 msgid "New Layout"
 msgstr ""
 
-#: ../functions.php:320
+#: ../functions.php:360
 msgid "All Layouts"
 msgstr ""
 
-#: ../functions.php:321
+#: ../functions.php:361
 msgid "View Layout"
 msgstr ""
 
-#: ../functions.php:322
+#: ../functions.php:362
+#, fuzzy
 msgid "Search Layouts"
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../functions.php:346
+#: ../functions.php:386
 msgid "Skills"
 msgstr ""
 
-#: ../functions.php:349
+#: ../functions.php:389
 msgid "Posted on"
 msgstr ""
 
-#: ../functions.php:364 ../epanel/options_divi.php:88
+#: ../functions.php:406 ../epanel/options_divi.php:88
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:365 ../epanel/options_divi.php:89
+#: ../functions.php:407 ../epanel/options_divi.php:89
 msgid "Left Sidebar"
 msgstr ""
 
-#: ../functions.php:366 ../epanel/options_divi.php:90
+#: ../functions.php:408 ../epanel/options_divi.php:90
 msgid "Full Width"
 msgstr ""
 
-#: ../functions.php:370
+#: ../functions.php:412 ../functions.php:797 ../functions.php:829
+msgid "Light"
+msgstr ""
+
+#: ../functions.php:413 ../functions.php:796 ../functions.php:828
+msgid "Dark"
+msgstr ""
+
+#: ../functions.php:426
 msgid "Page Layout"
 msgstr ""
 
-#: ../functions.php:442
+#: ../functions.php:440
+msgid "Side Navigation"
+msgstr ""
+
+#: ../functions.php:458
+msgid "Use Background Color"
+msgstr ""
+
+#: ../functions.php:462
+msgid "Background Color"
+msgstr ""
+
+#: ../functions.php:463
+msgid "Hex Value"
+msgstr ""
+
+#: ../functions.php:467
+msgid "Text Color"
+msgstr ""
+
+#: ../functions.php:552
+msgid "Theme Settings"
+msgstr ""
+
+#: ../functions.php:557
 msgid "Fonts"
 msgstr ""
 
-#: ../functions.php:447
+#: ../functions.php:562
 msgid "Schemes"
 msgstr ""
 
-#: ../functions.php:449
+#: ../functions.php:564
 msgid ""
 "Note: Color settings set above should be applied to the Default color scheme."
 msgstr ""
 
-#: ../functions.php:460
+#: ../functions.php:575
 msgid "Link Color"
 msgstr ""
 
-#: ../functions.php:473
+#: ../functions.php:588
 msgid "Main Font Color"
 msgstr ""
 
-#: ../functions.php:486
+#: ../functions.php:601
 msgid "Accent Color"
 msgstr ""
 
-#: ../functions.php:499
+#: ../functions.php:614
 msgid "Footer Background Color"
 msgstr ""
 
-#: ../functions.php:512
+#: ../functions.php:627
 msgid "Menu Links Color"
 msgstr ""
 
-#: ../functions.php:525
+#: ../functions.php:640
 msgid "Active Menu Link Color"
 msgstr ""
 
-#: ../functions.php:537
-msgid "Header Font"
+#: ../functions.php:652
+msgid "Boxed Layout"
 msgstr ""
 
-#: ../functions.php:551
-msgid "Body Font"
+#: ../functions.php:666
+msgid "Stretch Background Image"
 msgstr ""
 
-#: ../functions.php:566
-msgid "Color Schemes"
+#: ../functions.php:679
+msgid "Vertical Navigation"
 msgstr ""
 
-#: ../functions.php:571
+#: ../functions.php:692
+msgid "Show Social Icons in Header"
+msgstr ""
+
+#: ../functions.php:706
+msgid "Show Social Icons in Footer"
+msgstr ""
+
+#: ../functions.php:720
+#, fuzzy
+msgid "Show Search Icon"
+msgstr "pretraži stranice..."
+
+#: ../functions.php:734
+msgid "Header Style"
+msgstr ""
+
+#: ../functions.php:738 ../functions.php:877
 msgid "Default"
 msgstr ""
 
-#: ../functions.php:572
+#: ../functions.php:739
+msgid "Centered"
+msgstr ""
+
+#: ../functions.php:751
+msgid "Phone Number"
+msgstr ""
+
+#: ../functions.php:764
+msgid "Email"
+msgstr ""
+
+#: ../functions.php:778
+msgid "Primary Navigation Background"
+msgstr ""
+
+#: ../functions.php:792
+msgid "Primary Navigation Text Color"
+msgstr ""
+
+#: ../functions.php:810
+msgid "Secondary Navigation Background"
+msgstr ""
+
+#: ../functions.php:824
+msgid "Secondary Navigation Text Color"
+msgstr ""
+
+#: ../functions.php:842
+msgid "Header Font"
+msgstr ""
+
+#: ../functions.php:857
+msgid "Body Font"
+msgstr ""
+
+#: ../functions.php:872
+msgid "Color Schemes"
+msgstr ""
+
+#: ../functions.php:878
 msgid "Green"
 msgstr ""
 
-#: ../functions.php:573
+#: ../functions.php:879
 msgid "Orange"
 msgstr ""
 
-#: ../functions.php:574
+#: ../functions.php:880
 msgid "Pink"
 msgstr ""
 
-#: ../functions.php:575
+#: ../functions.php:881
 msgid "Red"
 msgstr ""
 
-#: ../functions.php:656
+#: ../functions.php:966
 msgid "0 comments"
 msgstr ""
 
-#: ../functions.php:656
+#: ../functions.php:966
+#, fuzzy
 msgid "1 comment"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
-#: ../functions.php:656
+#: ../functions.php:966
 msgid "comments"
 msgstr ""
 
-#: ../functions.php:1345
+#: ../functions.php:1265
+#, fuzzy, php-format
+msgid "%1$s %2$s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:1267
+msgid "Item"
+msgstr ""
+
+#: ../functions.php:1267
+#, fuzzy
+msgid "Items"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:1440
+msgid "Connecting..."
+msgstr ""
+
+#: ../functions.php:1441
+msgid "Connection failed"
+msgstr ""
+
+#: ../functions.php:1442
+msgid "Removing connection..."
+msgstr ""
+
+#: ../functions.php:1443
+msgid "Done"
+msgstr ""
+
+#: ../functions.php:1472
+#, fuzzy, php-format
+msgid ""
+"Step 1: <a href=\"%1$s\" target=\"_blank\">Generate authorization code</a>"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:1473
+#, fuzzy
+msgid ""
+"Step 2: Paste in the authorization code and click \"Make a connection\" "
+"button: "
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:1474
+msgid "Make a connection"
+msgstr ""
+
+#: ../functions.php:1477
+msgid "Aweber is set up properly. You can remove connection here if you wish."
+msgstr ""
+
+#: ../functions.php:1478
+msgid "Remove the connection"
+msgstr ""
+
+#: ../functions.php:1486
+msgid "Nonce failed."
+msgstr ""
+
+#: ../functions.php:1492
+msgid "Authorization code is empty."
+msgstr ""
+
+#: ../functions.php:1503
+msgid ""
+"Authorization code is invalid. Try regenerating it and paste in the new code."
+msgstr ""
+
+#: ../functions.php:1534
+msgid "Nonce failed"
+msgstr ""
+
+#: ../functions.php:1629
+#, fuzzy
+msgid "Read more"
+msgstr "Više informacija"
+
+#: ../functions.php:2187 ../includes/social_icons.php:6
+msgid "Facebook"
+msgstr ""
+
+#: ../functions.php:2195 ../includes/social_icons.php:13
+msgid "Twitter"
+msgstr ""
+
+#: ../functions.php:2203
+msgid "Google+"
+msgstr ""
+
+#: ../functions.php:2211
+msgid "LinkedIn"
+msgstr ""
+
+#: ../functions.php:2430
 msgid "Tab"
 msgstr ""
 
-#: ../functions.php:1565
+#: ../functions.php:2629
+msgid "Follow"
+msgstr ""
+
+#: ../functions.php:2713
+msgid "Days"
+msgstr ""
+
+#: ../functions.php:2714
+msgid "Hours"
+msgstr ""
+
+#: ../functions.php:2715
+msgid "Hrs"
+msgstr ""
+
+#: ../functions.php:2716
+msgid "Minutes"
+msgstr ""
+
+#: ../functions.php:2717
+msgid "Min"
+msgstr ""
+
+#: ../functions.php:2718
+msgid "Seconds"
+msgstr ""
+
+#: ../functions.php:2719
+msgid "Sec"
+msgstr ""
+
+#: ../functions.php:2872
+#, fuzzy, php-format
+msgid "by <strong>%1$s</strong>"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:3012
+msgid "Configuration error"
+msgstr ""
+
+#: ../functions.php:3022
+#, fuzzy
+msgid "Please enter first name"
+msgstr "Više fotografija"
+
+#: ../functions.php:3024
+msgid "Incorrect email"
+msgstr ""
+
+#: ../functions.php:3026
+msgid "Configuration error: List is not defined"
+msgstr ""
+
+#: ../functions.php:3028
 msgid ""
 "<h2 class=\"et_pb_subscribed\">Subscribed - look for the confirmation email!"
 "</h2>"
 msgstr ""
 
-#: ../functions.php:1578
+#: ../functions.php:3039
+msgid "Configuration error: api key is not defined"
+msgstr ""
+
+#: ../functions.php:3104
 msgid "Subscribe"
 msgstr ""
 
-#: ../functions.php:1591
+#: ../functions.php:3120
 msgid "First Name"
 msgstr ""
 
-#: ../functions.php:1592
+#: ../functions.php:3121
 msgid "Last Name"
 msgstr ""
 
-#: ../functions.php:1593 ../functions.php:2152
+#: ../functions.php:3122 ../functions.php:4264
 msgid "Email Address"
 msgstr ""
 
-#: ../functions.php:1761
-#, php-format
-msgid "by %s |"
-msgstr ""
-
-#: ../functions.php:1766
-#, php-format
-msgid "%s |"
-msgstr ""
-
-#: ../functions.php:1781
-msgid "read more..."
-msgstr ""
-
-#: ../functions.php:2091
-msgid "Make sure you entered the captcha."
-msgstr ""
-
-#: ../functions.php:2094
-msgid "You entered the wrong number in captcha."
-msgstr ""
-
-#: ../functions.php:2101
-msgid "Make sure you fill all fields."
-msgstr ""
-
-#: ../functions.php:2106
-msgid "Invalid Email."
-msgstr ""
-
-#: ../functions.php:2141
-#, php-format
-msgid "New Message From %1$s%2$s"
-msgstr ""
-
-#: ../functions.php:2143
-#, php-format
-msgid " - %s"
-msgstr ""
-
-#: ../functions.php:2146
-msgid "Thanks for contacting us"
-msgstr ""
-
-#: ../functions.php:2151
+#: ../functions.php:3178 ../functions.php:4263
 msgid "Name"
 msgstr ""
 
-#: ../functions.php:2153
+#: ../functions.php:3255
+#, fuzzy, php-format
+msgid "Logged in as %1$s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:3257
+msgid "Log out"
+msgstr ""
+
+#: ../functions.php:3266
+msgid "Username"
+msgstr ""
+
+#: ../functions.php:3267
+msgid "Password"
+msgstr ""
+
+#: ../functions.php:3287
+msgid "Forgot your password?"
+msgstr ""
+
+#: ../functions.php:3294 ../epanel/shortcodes/shortcodes.php:292
+msgid "Login"
+msgstr ""
+
+#: ../functions.php:3469
+#, fuzzy, php-format
+msgid "by %s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:3479
+#, fuzzy, php-format
+msgid "%s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:3499
+#, fuzzy
+msgid "read more..."
+msgstr "Više informacija"
+
+#: ../functions.php:3506
+#, fuzzy
+msgid "read more"
+msgstr "Više informacija"
+
+#: ../functions.php:3926
+msgid "All"
+msgstr ""
+
+#: ../functions.php:4203
+msgid "Make sure you entered the captcha."
+msgstr ""
+
+#: ../functions.php:4206
+msgid "You entered the wrong number in captcha."
+msgstr ""
+
+#: ../functions.php:4213
+msgid "Make sure you fill all fields."
+msgstr ""
+
+#: ../functions.php:4218
+msgid "Invalid Email."
+msgstr ""
+
+#: ../functions.php:4253
+#, fuzzy, php-format
+msgid "New Message From %1$s%2$s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:4255
+#, fuzzy, php-format
+msgid " - %s"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../functions.php:4258
+msgid "Thanks for contacting us"
+msgstr ""
+
+#: ../functions.php:4265
 msgid "Message"
 msgstr ""
 
-#: ../functions.php:2207
+#: ../functions.php:4318
 msgid "Submit"
 msgstr ""
 
-#: ../functions.php:2208 ../epanel/core_functions.php:203
-#: ../epanel/core_functions.php:379
-msgid "Reset"
-msgstr ""
-
-#: ../header.php:62 ../epanel/custom_functions.php:462
+#: ../functions.php:4504 ../header.php:143 ../epanel/custom_functions.php:465
 msgid "Home"
 msgstr ""
 
-#: ../page.php:46 ../single-project.php:51 ../single.php:34
+#: ../header.php:170
+#, fuzzy
+msgid "Search &hellip;"
+msgstr "pretraži stranice..."
+
+#: ../header.php:172
+#, fuzzy
+msgid "Search for:"
+msgstr "pretraži stranice..."
+
+#: ../page-template-blank.php:49 ../page.php:48 ../single-project.php:53
+#: ../single.php:93
 msgid "Pages:"
 msgstr ""
 
-#: ../single-project.php:60
+#: ../single-project.php:62
 msgid "&larr;"
 msgstr ""
 
-#: ../single-project.php:61
+#: ../single-project.php:63
 msgid "&rarr;"
 msgstr ""
 
-#: ../epanel/core_functions.php:26 ../epanel/core_functions.php:391
+#: ../epanel/core_functions.php:26 ../epanel/core_functions.php:395
 msgid "Saving..."
 msgstr ""
 
@@ -519,8 +811,8 @@ msgstr ""
 msgid "settings reset."
 msgstr ""
 
-#: ../epanel/core_functions.php:111 ../epanel/options_divi.php:269
-#: ../epanel/options_divi.php:420
+#: ../epanel/core_functions.php:111 ../epanel/options_divi.php:295
+#: ../epanel/options_divi.php:446
 msgid "General Settings"
 msgstr ""
 
@@ -552,6 +844,10 @@ msgstr ""
 msgid "Support Docs"
 msgstr ""
 
+#: ../epanel/core_functions.php:203 ../epanel/core_functions.php:383
+msgid "Reset"
+msgstr ""
+
 #: ../epanel/core_functions.php:204
 msgid "Upload Image"
 msgstr ""
@@ -560,62 +856,62 @@ msgstr ""
 msgid "You don't have pages"
 msgstr ""
 
-#: ../epanel/core_functions.php:364
+#: ../epanel/core_functions.php:368
 msgid "Save changes"
 msgstr ""
 
-#: ../epanel/core_functions.php:375
+#: ../epanel/core_functions.php:379
 msgid ""
 "This will return all of the settings throughout the options page to their "
 "default values. <strong>Are you sure you want to do this?</strong>"
 msgstr ""
 
-#: ../epanel/custom_functions.php:189
+#: ../epanel/custom_functions.php:192
 msgid "&hellip;"
 msgstr ""
 
-#: ../epanel/custom_functions.php:703
+#: ../epanel/custom_functions.php:706
 msgid "Archives"
 msgstr ""
 
-#: ../epanel/custom_functions.php:705
-#, php-format
+#: ../epanel/custom_functions.php:708
+#, fuzzy, php-format
 msgid "Search results for \"%s\""
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../epanel/custom_functions.php:707
+#: ../epanel/custom_functions.php:710
 msgid "404 Not Found"
 msgstr ""
 
-#: ../epanel/custom_functions.php:778
-#, php-format
+#: ../epanel/custom_functions.php:781
+#, fuzzy, php-format
 msgid "Currently viewing archives from %1$s"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
-#: ../epanel/custom_functions.php:1011
+#: ../epanel/custom_functions.php:1014
 msgid "Image doesn't exist"
 msgstr ""
 
-#: ../epanel/custom_functions.php:1207
-#, php-format
+#: ../epanel/custom_functions.php:1210
+#, fuzzy, php-format
 msgid ""
 "<div class=\"updated\"><p>This is a fresh installation of %1$s theme. Don't "
 "forget to go to <a href=\"%2$s\">ePanel</a> to set it up. This message will "
 "disappear once you have clicked the Save button within the <a href=\"%2$s"
 "\">theme's options page</a>.</p></div>"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
-#: ../epanel/custom_functions.php:1219
-#, php-format
+#: ../epanel/custom_functions.php:1222
+#, fuzzy, php-format
 msgid ""
 "There is a new version of %1$s available. <a href=\"%2$s\" class=\"thickbox"
 "\" title=\"%1$s\">View version %3$s details</a>. <em>Before you can update "
 "your Elegant Themes, you must first install the <a href=\"https://www."
 "elegantthemes.com/members-area/documentation.html#updater\" target=\"_blank"
 "\">Elegant Updater Plugin</a> to authenticate your subscription.</em>"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
-#: ../epanel/custom_functions.php:1223
+#: ../epanel/custom_functions.php:1226
 msgid ""
 "Before you can update your Elegant Themes, you must first install the <a "
 "href=\"https://www.elegantthemes.com/members-area/documentation.html#updater"
@@ -672,22 +968,24 @@ msgid ""
 msgstr ""
 
 #: ../epanel/options_divi.php:75
+#, fuzzy
 msgid "Blog Style Mode"
-msgstr ""
+msgstr "Zanimljivosti"
 
 #: ../epanel/options_divi.php:79
+#, fuzzy
 msgid ""
 "By default the theme truncates your posts on index/homepages automatically "
 "to create post previews. If you would rather show your posts in full on "
 "index pages like a traditional blog then you can activate this feature."
-msgstr ""
+msgstr "Zanimljivosti"
 
 #: ../epanel/options_divi.php:84
-msgid "Shop Page Layout"
+msgid "Shop Page & Category Page Layout for WooCommerce"
 msgstr ""
 
 #: ../epanel/options_divi.php:93
-msgid "Here you can choose Shop page layout."
+msgid "Here you can choose Shop Page & Category Page Layout for WooCommerce."
 msgstr ""
 
 #: ../epanel/options_divi.php:97
@@ -695,216 +993,254 @@ msgid "MailChimp API Key"
 msgstr ""
 
 #: ../epanel/options_divi.php:102
-#, php-format
+#, fuzzy, php-format
 msgid ""
 "Enter your MailChimp API key. You can create an api key <a target=\"_blank\" "
 "href=\"%1$s\">here</a>"
+msgstr "by %1$s | Powered by %2$s"
+
+#: ../epanel/options_divi.php:105
+msgid "Aweber Authorization"
 msgstr ""
 
-#: ../epanel/options_divi.php:169
+#: ../epanel/options_divi.php:107
+msgid "Authorize your Aweber account here."
+msgstr ""
+
+#: ../epanel/options_divi.php:181
 msgid "Number of Posts displayed on Category page"
 msgstr ""
 
-#: ../epanel/options_divi.php:173
+#: ../epanel/options_divi.php:185
+#, fuzzy
 msgid ""
 "Here you can designate how many recent articles are displayed on the "
 "Category page. This option works independently from the Settings > Reading "
 "options in wp-admin."
-msgstr ""
+msgstr "Zadnje objave"
 
-#: ../epanel/options_divi.php:177
+#: ../epanel/options_divi.php:189
 msgid "Number of Posts displayed on Archive pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:181
+#: ../epanel/options_divi.php:193
+#, fuzzy
 msgid ""
 "Here you can designate how many recent articles are displayed on the Archive "
 "pages. This option works independently from the Settings > Reading options "
 "in wp-admin."
-msgstr ""
+msgstr "Zadnje objave"
 
-#: ../epanel/options_divi.php:185
+#: ../epanel/options_divi.php:197
+#, fuzzy
 msgid "Number of Posts displayed on Search pages"
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../epanel/options_divi.php:189
+#: ../epanel/options_divi.php:201
+#, fuzzy
 msgid ""
 "Here you can designate how many recent articles are displayed on the Search "
 "results pages. This option works independently from the Settings > Reading "
 "options in wp-admin."
-msgstr ""
+msgstr "Zadnje objave"
 
-#: ../epanel/options_divi.php:193
+#: ../epanel/options_divi.php:205
 msgid "Number of Posts displayed on Tag pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:197
+#: ../epanel/options_divi.php:209
+#, fuzzy
 msgid ""
 "Here you can designate how many recent articles are displayed on the Tag "
 "pages. This option works independently from the Settings > Reading options "
 "in wp-admin."
-msgstr ""
+msgstr "Zadnje objave"
 
-#: ../epanel/options_divi.php:201
+#: ../epanel/options_divi.php:213
 msgid "Date format"
 msgstr ""
 
-#: ../epanel/options_divi.php:205
+#: ../epanel/options_divi.php:217
+#, fuzzy
 msgid ""
 "This option allows you to change how your dates are displayed. For more "
 "information please refer to the WordPress codex here:<a href='http://codex."
 "wordpress.org/Formatting_Date_and_Time' target='_blank'>Formatting Date and "
 "Time</a>"
-msgstr ""
+msgstr "Više informacija"
 
-#: ../epanel/options_divi.php:211
+#: ../epanel/options_divi.php:223
 msgid "Use excerpts when defined"
 msgstr ""
 
-#: ../epanel/options_divi.php:215
+#: ../epanel/options_divi.php:227
 msgid "This will enable the use of excerpts in posts or pages."
 msgstr ""
 
-#: ../epanel/options_divi.php:218
+#: ../epanel/options_divi.php:230
 msgid "Responsive shortcodes"
 msgstr ""
 
-#: ../epanel/options_divi.php:222
+#: ../epanel/options_divi.php:234
 msgid "Enable this option to make shortcodes respond to various screen sizes"
 msgstr ""
 
-#: ../epanel/options_divi.php:227
+#: ../epanel/options_divi.php:239
 msgid "Google Fonts subsets"
 msgstr ""
 
-#: ../epanel/options_divi.php:231
+#: ../epanel/options_divi.php:243
 msgid "This will enable Google Fonts for Non-English languages."
 msgstr ""
 
-#: ../epanel/options_divi.php:236
+#: ../epanel/options_divi.php:246
+msgid "Back To Top Button"
+msgstr ""
+
+#: ../epanel/options_divi.php:250
+msgid "Enable this option to display Back To Top Button while scrolling"
+msgstr ""
+
+#: ../epanel/options_divi.php:253
+msgid "Smooth Scrolling"
+msgstr ""
+
+#: ../epanel/options_divi.php:257
+msgid "Enable this option to get the smooth scrolling effect with mouse wheel"
+msgstr ""
+
+#: ../epanel/options_divi.php:262
 msgid "Custom CSS"
 msgstr ""
 
-#: ../epanel/options_divi.php:240
+#: ../epanel/options_divi.php:266
 msgid "Here you can add custom css to override or extend default styles."
 msgstr ""
 
-#: ../epanel/options_divi.php:259
+#: ../epanel/options_divi.php:285
 msgid "Pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:277
+#: ../epanel/options_divi.php:303
+#, fuzzy
 msgid "Exclude pages from the navigation bar"
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:281
+#: ../epanel/options_divi.php:307
+#, fuzzy
 msgid ""
 "Here you can choose to remove certain pages from the navigation menu. All "
 "pages marked with an X will not appear in your navigation bar. "
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:285 ../epanel/options_divi.php:340
+#: ../epanel/options_divi.php:311 ../epanel/options_divi.php:366
 msgid "Show dropdown menus"
 msgstr ""
 
-#: ../epanel/options_divi.php:289
+#: ../epanel/options_divi.php:315
+#, fuzzy
 msgid ""
 "If you would like to remove the dropdown menus from the pages navigation bar "
 "disable this feature."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:292
+#: ../epanel/options_divi.php:318
 msgid "Display Home link"
 msgstr ""
 
-#: ../epanel/options_divi.php:296
+#: ../epanel/options_divi.php:322
+#, fuzzy
 msgid ""
 "By default the theme creates a Home link that, when clicked, leads back to "
 "your blog's homepage. If, however, you are using a static homepage and have "
 "already created a page called Home to use, this will result in a duplicate "
 "link. In this case you should disable this feature to remove the link."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:301
+#: ../epanel/options_divi.php:327
 msgid "Sort Pages Links"
 msgstr ""
 
-#: ../epanel/options_divi.php:305
+#: ../epanel/options_divi.php:331
 msgid "Here you can choose to sort your pages links."
 msgstr ""
 
-#: ../epanel/options_divi.php:308
+#: ../epanel/options_divi.php:334
 msgid "Order Pages Links by Ascending/Descending"
 msgstr ""
 
-#: ../epanel/options_divi.php:312
+#: ../epanel/options_divi.php:338
 msgid ""
 "Here you can choose to reverse the order that your pages links are "
 "displayed. You can choose between ascending and descending."
 msgstr ""
 
-#: ../epanel/options_divi.php:315 ../epanel/options_divi.php:356
+#: ../epanel/options_divi.php:341 ../epanel/options_divi.php:382
 msgid "Number of dropdown tiers shown"
 msgstr ""
 
-#: ../epanel/options_divi.php:319 ../epanel/options_divi.php:360
+#: ../epanel/options_divi.php:345 ../epanel/options_divi.php:386
 msgid ""
 "This options allows you to control how many teirs your pages dropdown menu "
 "has. Increasing the number allows for additional menu items to be shown."
 msgstr ""
 
-#: ../epanel/options_divi.php:332
+#: ../epanel/options_divi.php:358
+#, fuzzy
 msgid "Exclude categories from the navigation bar"
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:336
+#: ../epanel/options_divi.php:362
+#, fuzzy
 msgid ""
 "Here you can choose to remove certain categories from the navigation menu. "
 "All categories marked with an X will not appear in your navigation bar. "
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:344
+#: ../epanel/options_divi.php:370
+#, fuzzy
 msgid ""
 "If you would like to remove the dropdown menus from the categories "
 "navigation bar disable this feature."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:347
+#: ../epanel/options_divi.php:373
 msgid "Hide empty categories"
 msgstr ""
 
-#: ../epanel/options_divi.php:351
+#: ../epanel/options_divi.php:377
 msgid ""
 "If you would like categories to be displayed in your navigationbar that "
 "don't have any posts in them then disable this option. By default empty "
 "categories are hidden"
 msgstr ""
 
-#: ../epanel/options_divi.php:366
+#: ../epanel/options_divi.php:392
 msgid "Sort Categories Links by Name/ID/Slug/Count/Term Group"
 msgstr ""
 
-#: ../epanel/options_divi.php:370
+#: ../epanel/options_divi.php:396
 msgid ""
 "By default pages are sorted by name. However if you would rather have them "
 "sorted by ID you can adjust this setting."
 msgstr ""
 
-#: ../epanel/options_divi.php:373
+#: ../epanel/options_divi.php:399
 msgid "Order Category Links by Ascending/Descending"
 msgstr ""
 
-#: ../epanel/options_divi.php:377
+#: ../epanel/options_divi.php:403
 msgid ""
 "Here you can choose to reverse the order that your categories links are "
 "displayed. You can choose between ascending and descending."
 msgstr ""
 
-#: ../epanel/options_divi.php:386
+#: ../epanel/options_divi.php:412
 msgid "Disable top tier dropdown menu links"
 msgstr ""
 
-#: ../epanel/options_divi.php:390
+#: ../epanel/options_divi.php:416
+#, fuzzy
 msgid ""
 "In some cases users will want to create parent categories or links as "
 "placeholders to hold a list of child links or categories. In this case it is "
@@ -912,21 +1248,21 @@ msgid ""
 "serve an organizational function. Enabling this options will remove the "
 "links from all parent pages/categories so that they don't lead anywhere when "
 "clicked."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:410
+#: ../epanel/options_divi.php:436
 msgid "Single Post Layout"
 msgstr ""
 
-#: ../epanel/options_divi.php:415
+#: ../epanel/options_divi.php:441
 msgid "Single Page Layout"
 msgstr ""
 
-#: ../epanel/options_divi.php:428
+#: ../epanel/options_divi.php:454
 msgid "Choose which items to display in the postinfo section"
 msgstr ""
 
-#: ../epanel/options_divi.php:432
+#: ../epanel/options_divi.php:458
 msgid ""
 "Here you can choose which items appear in the postinfo section on single "
 "post pages. This is the area, usually below the post title, which displays "
@@ -934,120 +1270,125 @@ msgid ""
 "appear. "
 msgstr ""
 
-#: ../epanel/options_divi.php:436
+#: ../epanel/options_divi.php:462
 msgid "Show comments on posts"
 msgstr ""
 
-#: ../epanel/options_divi.php:440
+#: ../epanel/options_divi.php:466
+#, fuzzy
 msgid ""
 "You can disable this option if you want to remove the comments and comment "
 "form from single post pages. "
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:443
+#: ../epanel/options_divi.php:469
 msgid "Place Thumbs on Posts"
 msgstr ""
 
-#: ../epanel/options_divi.php:447
+#: ../epanel/options_divi.php:473
 msgid ""
 "By default thumbnails are placed at the beginning of your post on single "
 "post pages. If you would like to remove this initial thumbnail image to "
 "avoid repetition simply disable this option. "
 msgstr ""
 
-#: ../epanel/options_divi.php:458
+#: ../epanel/options_divi.php:484
 msgid "Place Thumbs on Pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:462
+#: ../epanel/options_divi.php:488
 msgid ""
 "By default thumbnails are not placed on pages (they are only used on posts). "
 "However, if you want to use thumbnails on posts you can! Just enable this "
 "option. "
 msgstr ""
 
-#: ../epanel/options_divi.php:465
+#: ../epanel/options_divi.php:491
 msgid "Show comments on pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:469
+#: ../epanel/options_divi.php:495
 msgid ""
 "By default comments are not placed on pages, however, if you would like to "
 "allow people to comment on your pages simply enable this option. "
 msgstr ""
 
-#: ../epanel/options_divi.php:480
+#: ../epanel/options_divi.php:506
 msgid "Post info section"
 msgstr ""
 
-#: ../epanel/options_divi.php:484
+#: ../epanel/options_divi.php:510
 msgid ""
 "Here you can choose which items appear in the postinfo section on pages. "
 "This is the area, usually below the post title, which displays basic "
 "information about your post. The highlighted itmes shown below will appear. "
 msgstr ""
 
-#: ../epanel/options_divi.php:489
+#: ../epanel/options_divi.php:515
 msgid "Show Thumbs on Index pages"
 msgstr ""
 
-#: ../epanel/options_divi.php:493
+#: ../epanel/options_divi.php:519
 msgid "Enable this option to show thumbnails on Index Pages."
 msgstr ""
 
-#: ../epanel/options_divi.php:512
+#: ../epanel/options_divi.php:538
 msgid "Homepage SEO"
 msgstr ""
 
-#: ../epanel/options_divi.php:517
+#: ../epanel/options_divi.php:543
 msgid "Single Post Page SEO"
 msgstr ""
 
-#: ../epanel/options_divi.php:522
+#: ../epanel/options_divi.php:548
 msgid "Index Page SEO"
 msgstr ""
 
-#: ../epanel/options_divi.php:530
+#: ../epanel/options_divi.php:556
 msgid " Enable custom title "
 msgstr ""
 
-#: ../epanel/options_divi.php:534
+#: ../epanel/options_divi.php:560
+#, fuzzy
 msgid ""
 "By default the theme uses a combination of your blog name and your blog "
 "description, as defined when you created your blog, to create your homepage "
 "titles. However if you want to create a custom title then simply enable this "
 "option and fill in the custom title field below. "
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:537
+#: ../epanel/options_divi.php:563
 msgid " Enable meta description"
 msgstr ""
 
-#: ../epanel/options_divi.php:541
+#: ../epanel/options_divi.php:567
+#, fuzzy
 msgid ""
 "By default the theme uses your blog description, as defined when you created "
 "your blog, to fill in the meta description field. If you would like to use a "
 "different description then enable this option and fill in the custom "
 "description field below. "
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:544
+#: ../epanel/options_divi.php:570
 msgid " Enable meta keywords"
 msgstr ""
 
-#: ../epanel/options_divi.php:548
+#: ../epanel/options_divi.php:574
+#, fuzzy
 msgid ""
 "By default the theme does not add keywords to your header. Most search "
 "engines don't use keywords to rank your site anymore, but some people define "
 "them anyway just in case. If you want to add meta keywords to your header "
 "then enable this option and fill in the custom keywords field below. "
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../epanel/options_divi.php:551 ../epanel/options_divi.php:684
+#: ../epanel/options_divi.php:577 ../epanel/options_divi.php:710
 msgid " Enable canonical URL's"
 msgstr ""
 
-#: ../epanel/options_divi.php:555
+#: ../epanel/options_divi.php:581
+#, fuzzy
 msgid ""
 "Canonicalization helps to prevent the indexing of duplicate content by "
 "search engines, and as a result, may help avoid duplicate content penalties "
@@ -1059,81 +1400,84 @@ msgid ""
 "destination. Defining a canonical URL tells the search engine which URL you "
 "would like to use officially. The theme bases its canonical URLs off your "
 "permalinks and the domain name defined in the settings tab of wp-admin."
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../epanel/options_divi.php:560
+#: ../epanel/options_divi.php:586
 msgid "Homepage custom title (if enabled)"
 msgstr ""
 
-#: ../epanel/options_divi.php:564
+#: ../epanel/options_divi.php:590
 msgid ""
 "If you have enabled custom titles you can add your custom title here. "
 "Whatever you type here will be placed between the < title >< /title > tags "
 "in header.php"
 msgstr ""
 
-#: ../epanel/options_divi.php:568
+#: ../epanel/options_divi.php:594
 msgid "Homepage meta description (if enabled)"
 msgstr ""
 
-#: ../epanel/options_divi.php:572
+#: ../epanel/options_divi.php:598
 msgid ""
 "If you have enabled meta descriptions you can add your custom description "
 "here."
 msgstr ""
 
-#: ../epanel/options_divi.php:576
+#: ../epanel/options_divi.php:602
 msgid "Homepage meta keywords (if enabled)"
 msgstr ""
 
-#: ../epanel/options_divi.php:580
+#: ../epanel/options_divi.php:606
 msgid ""
 "If you have enabled meta keywords you can add your custom keywords here. "
 "Keywords should be separated by comas. For example: wordpress,themes,"
 "templates,elegant"
 msgstr ""
 
-#: ../epanel/options_divi.php:584 ../epanel/options_divi.php:662
+#: ../epanel/options_divi.php:610 ../epanel/options_divi.php:688
 msgid "If custom titles are disabled, choose autogeneration method"
 msgstr ""
 
-#: ../epanel/options_divi.php:589
+#: ../epanel/options_divi.php:615
+#, fuzzy
 msgid ""
 "If you are not using cutsom post titles you can still have control over how "
 "your titles are generated. Here you can choose which order you would like "
 "your post title and blog name to be displayed, or you can remove the blog "
 "name from the title completely."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:592 ../epanel/options_divi.php:670
-#: ../epanel/options_divi.php:708
+#: ../epanel/options_divi.php:618 ../epanel/options_divi.php:696
+#: ../epanel/options_divi.php:734
 msgid "Define a character to separate BlogName and Post title"
 msgstr ""
 
-#: ../epanel/options_divi.php:596 ../epanel/options_divi.php:674
+#: ../epanel/options_divi.php:622 ../epanel/options_divi.php:700
+#, fuzzy
 msgid ""
 "Here you can change which character separates your blog title and post name "
 "when using autogenerated post titles. Common values are | or -"
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:606
+#: ../epanel/options_divi.php:632
 msgid "Enable custom titles"
 msgstr ""
 
-#: ../epanel/options_divi.php:610
+#: ../epanel/options_divi.php:636
+#, fuzzy
 msgid ""
 "By default the theme creates post titles based on the title of your post and "
 "your blog name. If you would like to make your meta title different than "
 "your actual post title you can define a custom title for each post using "
 "custom fields. This option must be enabled for custom titles to work, and "
 "you must choose a custom field name for your title below."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:613
+#: ../epanel/options_divi.php:639
 msgid "Enable custom description"
 msgstr ""
 
-#: ../epanel/options_divi.php:617
+#: ../epanel/options_divi.php:643
 msgid ""
 "If you would like to add a meta description to your post you can do so using "
 "custom fields. This option must be enabled for descriptions to be displayed "
@@ -1141,11 +1485,11 @@ msgid ""
 "off the custom field name you define below."
 msgstr ""
 
-#: ../epanel/options_divi.php:622
+#: ../epanel/options_divi.php:648
 msgid "Enable custom keywords"
 msgstr ""
 
-#: ../epanel/options_divi.php:626
+#: ../epanel/options_divi.php:652
 msgid ""
 "If you would like to add meta keywords to your post you can do so using "
 "custom fields. This option must be enabled for keywords to be displayed on "
@@ -1153,11 +1497,12 @@ msgid ""
 "custom field name you define below."
 msgstr ""
 
-#: ../epanel/options_divi.php:629
+#: ../epanel/options_divi.php:655
 msgid "Enable canonical URL's"
 msgstr ""
 
-#: ../epanel/options_divi.php:633 ../epanel/options_divi.php:688
+#: ../epanel/options_divi.php:659 ../epanel/options_divi.php:714
+#, fuzzy
 msgid ""
 "Canonicalization helps to prevent the indexing of duplicate content by "
 "search engines, and as a result, may help avoid duplicate content penalties "
@@ -1169,208 +1514,214 @@ msgid ""
 "destination. Defining a canonical URL tells the search engine which URL you "
 "would like to use officially. The theme bases its canonical URLs off your "
 "permalinks and the domain name defined in the settings tab of wp-admin."
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../epanel/options_divi.php:638
+#: ../epanel/options_divi.php:664
 msgid "Custom field Name to be used for title"
 msgstr ""
 
-#: ../epanel/options_divi.php:642
+#: ../epanel/options_divi.php:668
 msgid ""
 "When you define your title using custom fields you should use this value for "
 "the custom field Name. The Value of your custom field should be the custom "
 "title you would like to use."
 msgstr ""
 
-#: ../epanel/options_divi.php:646
+#: ../epanel/options_divi.php:672
 msgid "Custom field Name to be used for description"
 msgstr ""
 
-#: ../epanel/options_divi.php:650
+#: ../epanel/options_divi.php:676
 msgid ""
 "When you define your meta description using custom fields you should use "
 "this value for the custom field Name. The Value of your custom field should "
 "be the custom description you would like to use."
 msgstr ""
 
-#: ../epanel/options_divi.php:654
+#: ../epanel/options_divi.php:680
 msgid "Custom field Name to be used for keywords"
 msgstr ""
 
-#: ../epanel/options_divi.php:658
+#: ../epanel/options_divi.php:684
 msgid ""
 "When you define your keywords using custom fields you should use this value "
 "for the custom field Name. The Value of your custom field should be the meta "
 "keywords you would like to use, separated by comas."
 msgstr ""
 
-#: ../epanel/options_divi.php:667
+#: ../epanel/options_divi.php:693
+#, fuzzy
 msgid ""
 "If you are not using cutsom post titles you can still have control over hw "
 "your titles are generated. Here you can choose which order you would like "
 "your post title and blog name to be displayed, or you can remove the blog "
 "name from the title completely."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:691
+#: ../epanel/options_divi.php:717
 msgid "Enable meta descriptions"
 msgstr ""
 
-#: ../epanel/options_divi.php:695
+#: ../epanel/options_divi.php:721
 msgid ""
 "Check this box if you want to display meta descriptions on category/archive "
 "pages. The description is based off the category description you choose when "
 "creating/edit your category in wp-admin."
 msgstr ""
 
-#: ../epanel/options_divi.php:700
+#: ../epanel/options_divi.php:726
 msgid "Choose title autogeneration method"
 msgstr ""
 
-#: ../epanel/options_divi.php:705
+#: ../epanel/options_divi.php:731
+#, fuzzy
 msgid ""
 "Here you can choose how your titles on index pages are generated. You can "
 "change which order your blog name and index title are displayed, or you can "
 "remove the blog name from the title completely."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:712
+#: ../epanel/options_divi.php:738
+#, fuzzy
 msgid ""
 "Here you can change which character separates your blog title and index page "
 "name when using autogenerated post titles. Common values are | or -"
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:733
+#: ../epanel/options_divi.php:759
 msgid "Code Integration"
 msgstr ""
 
-#: ../epanel/options_divi.php:741
+#: ../epanel/options_divi.php:767
 msgid "Enable header code"
 msgstr ""
 
-#: ../epanel/options_divi.php:745
+#: ../epanel/options_divi.php:771
+#, fuzzy
 msgid ""
 "Disabling this option will remove the header code below from your blog. This "
 "allows you to remove the code while saving it for later use."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:748
+#: ../epanel/options_divi.php:774
 msgid "Enable body code"
 msgstr ""
 
-#: ../epanel/options_divi.php:752
+#: ../epanel/options_divi.php:778
+#, fuzzy
 msgid ""
 "Disabling this option will remove the body code below from your blog. This "
 "allows you to remove the code while saving it for later use."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:757
+#: ../epanel/options_divi.php:783
 msgid "Enable single top code"
 msgstr ""
 
-#: ../epanel/options_divi.php:761
+#: ../epanel/options_divi.php:787
+#, fuzzy
 msgid ""
 "Disabling this option will remove the single top code below from your blog. "
 "This allows you to remove the code while saving it for later use."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:764
+#: ../epanel/options_divi.php:790
 msgid "Enable single bottom code"
 msgstr ""
 
-#: ../epanel/options_divi.php:768
+#: ../epanel/options_divi.php:794
+#, fuzzy
 msgid ""
 "Disabling this option will remove the single bottom code below from your "
 "blog. This allows you to remove the code while saving it for later use."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:773
+#: ../epanel/options_divi.php:799
+#, fuzzy
 msgid "Add code to the < head > of your blog"
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:777
+#: ../epanel/options_divi.php:803
+#, fuzzy
 msgid ""
 "Any code you place here will appear in the head section of every page of "
 "your blog. This is useful when you need to add javascript or css to all "
 "pages."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:780
+#: ../epanel/options_divi.php:806
 msgid ""
 "Add code to the < body > (good for tracking codes such as google analytics)"
 msgstr ""
 
-#: ../epanel/options_divi.php:784
+#: ../epanel/options_divi.php:810
+#, fuzzy
 msgid ""
 "Any code you place here will appear in body section of all pages of your "
 "blog. This is usefull if you need to input a tracking pixel for a state "
 "counter such as Google Analytics."
-msgstr ""
+msgstr "Zanimljivosti"
 
-#: ../epanel/options_divi.php:787
+#: ../epanel/options_divi.php:813
 msgid "Add code to the top of your posts"
 msgstr ""
 
-#: ../epanel/options_divi.php:791 ../epanel/options_divi.php:798
+#: ../epanel/options_divi.php:817 ../epanel/options_divi.php:824
 msgid ""
 "Any code you place here will be placed at the top of all single posts. This "
 "is useful if you are looking to integrating things such as social "
 "bookmarking links."
 msgstr ""
 
-#: ../epanel/options_divi.php:794
+#: ../epanel/options_divi.php:820
 msgid "Add code to the bottom of your posts, before the comments"
 msgstr ""
 
-#: ../epanel/options_divi.php:816
+#: ../epanel/options_divi.php:842
 msgid "Documentation"
 msgstr ""
 
-#: ../epanel/options_divi.php:842
+#: ../epanel/options_divi.php:868
 msgid "Manage Un-widgetized Advertisements"
 msgstr ""
 
-#: ../epanel/options_divi.php:850
+#: ../epanel/options_divi.php:876
 msgid "Enable Single Post 468x60 banner"
 msgstr ""
 
-#: ../epanel/options_divi.php:854
+#: ../epanel/options_divi.php:880
 msgid ""
 "Enabling this option will display a 468x60 banner ad on the bottom of your "
 "post pages below the single post content. If enabled you must fill in the "
 "banner image and destination url below."
 msgstr ""
 
-#: ../epanel/options_divi.php:859
+#: ../epanel/options_divi.php:885
 msgid "Input 468x60 advertisement banner image"
 msgstr ""
 
-#: ../epanel/options_divi.php:863
+#: ../epanel/options_divi.php:889
 msgid "Here you can provide 468x60 banner image url"
 msgstr ""
 
-#: ../epanel/options_divi.php:867
+#: ../epanel/options_divi.php:893
 msgid "Input 468x60 advertisement destination url"
 msgstr ""
 
-#: ../epanel/options_divi.php:871
+#: ../epanel/options_divi.php:897
 msgid "Here you can provide 468x60 banner destination url"
 msgstr ""
 
-#: ../epanel/options_divi.php:875
+#: ../epanel/options_divi.php:901
 msgid "Input 468x60 adsense code"
 msgstr ""
 
-#: ../epanel/options_divi.php:879
+#: ../epanel/options_divi.php:905
 msgid "Place your adsense code here."
 msgstr ""
 
 #: ../epanel/shortcodes/shortcodes.php:15
 msgid "Previous"
-msgstr ""
-
-#: ../epanel/shortcodes/shortcodes.php:15
-msgid "Next"
 msgstr ""
 
 #: ../epanel/shortcodes/shortcodes.php:287
@@ -1385,17 +1736,14 @@ msgstr ""
 msgid "Password: "
 msgstr ""
 
-#: ../epanel/shortcodes/shortcodes.php:292
-msgid "Login"
-msgstr ""
-
 #: ../epanel/shortcodes/shortcodes.php:328
 msgid "Add a Tooltip Text"
 msgstr ""
 
 #: ../epanel/shortcodes/shortcodes.php:350
+#, fuzzy
 msgid "Click here to learn more"
-msgstr ""
+msgstr "Više informacija"
 
 #: ../epanel/shortcodes/shortcodes.php:960
 msgid "Caption"
@@ -1515,8 +1863,9 @@ msgid "Auto Speed"
 msgstr ""
 
 #: ../epanel/shortcodes/shortcodes.php:1064
+#, fuzzy
 msgid "Automattic slider speed (works only if Auto is set to yes)"
-msgstr ""
+msgstr "Zadnje objave"
 
 #: ../epanel/shortcodes/shortcodes.php:1068
 msgid "Tab Text"
@@ -1543,8 +1892,9 @@ msgid "Use resizing"
 msgstr ""
 
 #: ../epanel/shortcodes/shortcodes.php:1168
+#, fuzzy
 msgid "+ Add One More Tab"
-msgstr ""
+msgstr "Više informacija"
 
 #: ../epanel/shortcodes/shortcodes.php:1318
 msgid "Image Height"
@@ -1555,76 +1905,82 @@ msgid "Image Width"
 msgstr ""
 
 #: ../et-pagebuilder/et-pagebuilder.php:33
-#: ../et-pagebuilder/et-pagebuilder.php:54
+#: ../et-pagebuilder/et-pagebuilder.php:72
 msgid "Export Page Builder Layouts"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:49
+#: ../et-pagebuilder/et-pagebuilder.php:67
+#, fuzzy
 msgid ""
 "You do not have sufficient permissions to export the content of this site."
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../et-pagebuilder/et-pagebuilder.php:55
+#: ../et-pagebuilder/et-pagebuilder.php:73
 msgid ""
 "When you click the button below WordPress will create an XML file for you to "
 "save to your computer."
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:56
+#: ../et-pagebuilder/et-pagebuilder.php:74
 msgid ""
 "This format, which we call WordPress eXtended RSS or WXR, will contain all "
 "layouts you created using the Page Builder."
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:57
+#: ../et-pagebuilder/et-pagebuilder.php:75
+#, fuzzy
 msgid ""
 "Once you&#8217;ve saved the download file, you can use the Import function "
 "in another WordPress installation to import all layouts from this site."
-msgstr ""
+msgstr "pretraži stranice..."
 
-#: ../et-pagebuilder/et-pagebuilder.php:63
+#: ../et-pagebuilder/et-pagebuilder.php:81
 msgid "Download Export File"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:83
-#: ../et-pagebuilder/et-pagebuilder.php:85
+#: ../et-pagebuilder/et-pagebuilder.php:97
+#: ../et-pagebuilder/et-pagebuilder.php:99
 msgid "Use Default Editor"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:83
-#: ../et-pagebuilder/et-pagebuilder.php:84
+#: ../et-pagebuilder/et-pagebuilder.php:97
+#: ../et-pagebuilder/et-pagebuilder.php:98
 msgid "Use Page Builder"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:180
+#: ../et-pagebuilder/et-pagebuilder.php:194
 msgid "Replace the existing content with loaded layout"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:198
+#: ../et-pagebuilder/et-pagebuilder.php:212
 msgid "Saved Layouts:"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:226
+#: ../et-pagebuilder/et-pagebuilder.php:242
 msgid "Predefined Layouts:"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:319
+#: ../et-pagebuilder/et-pagebuilder.php:341
 msgid "The section should have at least one row."
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:320
+#: ../et-pagebuilder/et-pagebuilder.php:342
 msgid "Fullwidth module can't be used outside of the Fullwidth Section."
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:321
+#: ../et-pagebuilder/et-pagebuilder.php:343
+msgid "3 column row can't be used in this column."
+msgstr ""
+
+#: ../et-pagebuilder/et-pagebuilder.php:344
 msgid "Preview"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:322
+#: ../et-pagebuilder/et-pagebuilder.php:345
 msgid "Module"
 msgstr ""
 
-#: ../et-pagebuilder/et-pagebuilder.php:335
+#: ../et-pagebuilder/et-pagebuilder.php:359
 msgid "Page Builder"
 msgstr ""
 
@@ -1641,15 +1997,24 @@ msgid "No Results Found"
 msgstr ""
 
 #: ../includes/no-results.php:4
+#, fuzzy
 msgid ""
 "The page you requested could not be found. Try refining your search, or use "
 "the navigation above to locate the post."
+msgstr "pretraži stranice..."
+
+#: ../includes/social_icons.php:20
+msgid "Google"
+msgstr ""
+
+#: ../includes/social_icons.php:32
+msgid "RSS"
 msgstr ""
 
 #: ../includes/functions/comments.php:15
-#, php-format
+#, fuzzy, php-format
 msgid "on %1$s at %2$s"
-msgstr ""
+msgstr "by %1$s | Powered by %2$s"
 
 #: ../includes/functions/comments.php:18
 msgid "(Edit)"

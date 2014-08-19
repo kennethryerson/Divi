@@ -9,7 +9,7 @@
   /* Displays the Widget in the front-end */
     function widget($args, $instance){
 		extract($args);
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? 'About Me' : esc_html( $instance['title'] ) );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? 'Advertisement' : esc_html( $instance['title'] ) );
 		$use_relpath = isset($instance['use_relpath']) ? $instance['use_relpath'] : false;
 		$new_window = isset($instance['new_window']) ? $instance['new_window'] : false;
 		$bannerPath[1] = empty($instance['bannerOnePath']) ? '' : esc_attr($instance['bannerOnePath']);

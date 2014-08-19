@@ -136,7 +136,7 @@ if ( ! function_exists( 'et_build_epanel' ) ){
 
 		<?php
 			foreach ($options as $value) {
-				if ( in_array( $value['type'], array( 'text', 'textlimit', 'textarea', 'select', 'checkboxes', 'different_checkboxes', 'colorpicker', 'textcolorpopup', 'upload' ) ) ) { ?>
+				if ( in_array( $value['type'], array( 'text', 'textlimit', 'textarea', 'select', 'checkboxes', 'different_checkboxes', 'colorpicker', 'textcolorpopup', 'upload', 'callback_function' ) ) ) { ?>
 					<div class="epanel-box">
 						<div class="box-title">
 							<h3><?php echo esc_html( $value['name'] ); ?></h3>
@@ -283,6 +283,10 @@ if ( ! function_exists( 'et_build_epanel' ) ){
 									</p>
 								<?php } ?>
 								<br class="clearfix"/>
+
+							<?php } elseif ( 'callback_function' == $value['type'] ) {
+
+								call_user_func( $value['function_name'] ); ?>
 
 							<?php } ?>
 

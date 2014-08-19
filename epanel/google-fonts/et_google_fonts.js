@@ -108,25 +108,25 @@
 		maybe_request_font: function( font_name, font_option ) {
 			if ( font_option.val() === 'none' ) return;
 
-			if ( $('head').find( 'link#' + this.fontname_to_class( font_name ) ).length ) return;
+			var $head = this.frontend_customizer ? $('head') : $( "#customize-preview iframe" ).contents().find('head');
 
-			$('head').append( '<link id="' + this.fontname_to_class( font_name ) + '" href="http://fonts.googleapis.com/css?family=' + this.convert_to_google_font_name( font_name ) + '" rel="stylesheet" type="text/css" />' );
+			if ( $head.find( 'link#' + this.fontname_to_class( font_name ) ).length ) return;
+
+			$head.append( '<link id="' + this.fontname_to_class( font_name ) + '" href="http://fonts.googleapis.com/css?family=' + this.convert_to_google_font_name( font_name ) + '" rel="stylesheet" type="text/css" />' );
 		},
 
 		apply_font: function( font_name, font_option ) {
-			var $head = $( 'head' );
+			var $head = this.frontend_customizer ? $('head') : $( "#customize-preview iframe" ).contents().find('head');
 
 			$head.find( 'style.' + this.options.used_for ).remove();
 
 			if ( font_option.val() === 'none' )
 				return;
 
-			$head.append( '<style class="' + this.options.used_for + '">' + this.options.apply_font_to + ' { font-family: "' + font_name + '", sans-serif; } </style>' );
+				$head.append( '<style class="' + this.options.used_for + '">' + this.options.apply_font_to + ' { font-family: "' + font_name + '", sans-serif; } </style>' );
 		},
 
 		change_font: function() {
-			if ( ! this.frontend_customizer ) return;
-
 			var self = this,
 				$active_option = self.element.find('option:selected'),
 				active_option_value = $active_option.val(),
@@ -168,6 +168,6 @@
 		et_body_font_option_name = '_body_font';
 	}
 
-	$('select[data-customize-setting-link$="' + et_heading_font_option_name + '"]').et_google_fonts();
-	$('select[data-customize-setting-link$="' + et_body_font_option_name + '"]').et_google_fonts();
+	$('select[data-customize-setting-link$="' + et_heading_font_option_name + '"]').et_google_fonts({apply_font_to	: 'h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a', used_for : 'et_header_font'});
+	$('select[data-customize-setting-link$="' + et_body_font_option_name + '"]').et_google_fonts({apply_font_to	: 'body', used_for : 'et_body_font'});
 })(jQuery)

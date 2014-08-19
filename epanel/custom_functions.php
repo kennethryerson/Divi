@@ -57,7 +57,10 @@ if ( ! function_exists( 'et_get_option' ) ){
 			$option_value = get_option( $option_name );
 		}
 
-		if ( ! $option_value && '' != $default_value ) $option_value = $default_value;
+		// option value might be equal to false, so check if the option is not set in the database
+		if ( ! isset ( $et_theme_options[$option_name] ) && '' != $default_value ) {
+			$option_value = $default_value;
+		}
 
 		if ( '' != $used_for_object && in_array( $used_for_object, array( 'page', 'category' ) ) && is_array( $option_value ) )
 			$option_value = et_generate_wpml_ids( $option_value, $used_for_object );
